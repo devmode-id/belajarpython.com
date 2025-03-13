@@ -48,6 +48,15 @@ Ketika skrip Python menimbulkan Exception, ia harus menangani Exception begitu s
 
 ---
 
+```
+Contoh Penggunaan:
+try:
+  angka = 10
+  print("Angka nya adalah" + angka)
+except TypeError as error:
+  ...
+```
+
 > [Edit tutorial ini](https://github.com/belajarpythoncom/belajarpython.com/blob/master/docs/tutorial/exception-python.md)
 
 <div class="mt-8 inline justify-between gap-x-4 md:flex">
