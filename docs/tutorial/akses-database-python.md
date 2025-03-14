@@ -1,7 +1,7 @@
 ---
 layout: tutorial
-title: Pengembangan Web Python
-order: 24
+title: Akses Database
+order: 22
 ---
 
 Standar Interface Python untuk database adalah Python DB-API. Kebanyakan Interface database Python mematuhi standar ini.
