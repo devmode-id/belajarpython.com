@@ -25,7 +25,7 @@ Dibawah ini adalah contoh penggunaan pengulangan While Loop.
 count = 0
 while (count < 9):
   print ("The count is: ", count)
-  count = count + 1
+  count = count + 1 #dalam hal ini kamu bisa menggunakan count += 1 seperti materi [Operator Penugasan (Assignment Operators)]([#operator-penugasan](https://belajarpython.com/tutorial/operator-python/#operator-penugasan))
 
 print ("Good bye!")
 ```
