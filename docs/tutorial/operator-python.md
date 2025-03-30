@@ -85,7 +85,6 @@ Operator perbandingan (comparison operators) digunakan untuk membandingkan suatu
 | --------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------- |
 | Sama dengan `==`                  | `1 == 1` | bernilai True Jika masing-masing operan memiliki nilai yang sama, maka kondisi bernilai benar atau True.         |
 | Tidak sama dengan `!=`            | `2 != 2` | bernilai False Akan menghasilkan nilai kebalikan dari kondisi sebenarnya.                                        |
-| Tidak sama dengan `<>`            | `2 <> 2` | bernilai False Akan menghasilkan nilai kebalikan dari kondisi sebenarnya.                                        |
 | Lebih besar dari `>`              | `5 > 3`  | bernilai True Jika nilai operan kiri lebih besar dari nilai operan kanan, maka kondisi menjadi benar.            |
 | Lebih kecil dari `<`              | `5 < 3`  | bernilai True Jika nilai operan kiri lebih kecil dari nilai operan kanan, maka kondisi menjadi benar.            |
 | Lebih besar atau sama dengan `>=` | `5 >= 3` | bernilai True Jika nilai operan kiri lebih besar dari nilai operan kanan, atau sama, maka kondisi menjadi benar. |
