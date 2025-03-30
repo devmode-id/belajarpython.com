@@ -42,7 +42,7 @@ print("Biodata\n", nama, "\n", umur, "\n", hobi)
 #contoh variabel lainya
 inivariabel = "Halo"
 ini_juga_variabel = "Hai"
-\_inivariabeljuga = "Hi"
+_inivariabeljuga = "Hi"
 inivariabel222 = "Bye"
 
 panjang = 10
