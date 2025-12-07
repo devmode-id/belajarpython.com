@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta name="author" content="Belajarpython" />
+  <meta name="language" content="Indonesia" />
+  <meta name="description" content="Belajarpython adalah situs terbuka (open source) yang dikembangkan oleh developer untuk developer. Semua orang baik dari kalangan developer, mahasiswa, pengajar, bahkan anak kecil yang baru mempelajari bahasa pemrograman python bisa ikut memberikan kontribusinya">
+  <meta name="google-site-verification" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:title" content="Belajarpython – Situs Open Source Tutorial Pemrograman Python Bahasa Indonesia." />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Situs Open Source Tutorial Pemrograman Python" />
+  <meta property="og:image" content="" />
+  <meta name="twitter:description" content="Situs Open Source Tutorial Pemrograman Python" />
+  <meta name="twitter:image:src" content="" />
+  <meta name="twitter:title"
+    content="Belajarpython – Situs Open Source Tutorial Pemrograman Python Bahasa Indonesia." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="Belajarpython.com" />
+  <meta name="twitter:creator" content="Belajarpython" />
+  <link rel="icon" href="/img/favicon.png" />
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="theme-color" content="#2a5880" />
+  <meta name="msvalidate.01" content="8CFBF57F61ECFF6C84740E37B7FCDE15" />
+  <link rel="stylesheet" type="text/css" href="/css/base.css?v=1.2.8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark-reasonable.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "url": "https://belajarpython.com",
+      "name": "Number Python",
+      "description": "Belajarpython – Situs Open Source Tutorial Pemrograman Python Bahasa Indonesia"
+    }
+  </script>
+  <title>Number Python - Belajarpython – Situs Open Source Tutorial Pemrograman Python Bahasa Indonesia</title>
+</head>
+
+<body class="overflow-x-hidden"><nav class="h-16 bg-primary-500 text-white">
+  <div class="flex justify-center md:justify-between pt-3 max-w-7xl px-4 md:px-10 mx-auto">
+    <a href="/">
+      <img class="h-10 pt-1" src="/img/logo-belajarpython-140.png" alt="logo-belajarpython" />
+    </a>
+    <div class="hidden md:flex items-center justify-end">
+      <div class="mr-5 flex gap-5">
+        <a class="text-white text-opacity-70 hover:text-opacity-100" href="/tutorial/apa-itu-python"
+          class="">Tutorial</a>
+        <a class="text-white text-opacity-70 hover:text-opacity-100" href="/article" class="">Artikel</a>
+        <a class="text-white text-opacity-70 hover:text-opacity-100" href="/contribute" class="">Kontribusi</a>
+      </div>
+      <a class="flex h-9 items-center rounded-full bg-gradient-to-l from-secondary-500 to-secondary-400 px-7 text-sm text-black"
+        href="https://github.com/belajarpythoncom/belajarpython.com">
+        <span class="-mt-0.5">Join on Github</span>
+        <img class="ml-2 h-4" src="/img/icon-github.svg" class="button-github-yellow-img" />
+      </a>
+    </div>
+  </div>
+</nav>
+  <div class="max-w-4xl mx-auto py-10 flex ">
+  <sidebar class="hidden md:block md:w-3/12">
+  <ul class="leading-normal">
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/apa-itu-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Pendahuluan
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/instalasi-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Instalasi
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/menjalankan-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Menjalankan
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/hello-world-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Hello World
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/komentar-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Komentar
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/tipe-data-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Tipe Data
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/variabel-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Variabel
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/operator-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Operator
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/kondisi-if-else-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Kondisi
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/loop-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Loop
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-primary-500 py-1">
+      <a href="/tutorial/number-python"
+        class="font-bold text-primary-500 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Number
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/string-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        String
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/list-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        List
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/tuple-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Tuple
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/dictionary-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Dictionary
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/tanggal-waktu-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Tanggal &amp; Waktu
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/fungsi-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Fungsi
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/modul-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Modul
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/file-io-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        File I/O
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/exception-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Exception
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/object-class-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Object &amp; Class
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/akses-database-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Akses Database
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/networking-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Networking
+      </a>
+    </li>
+    <li
+      class="border-l-2 border-slate-200 py-1">
+      <a href="/tutorial/pengembangan-web-python"
+        class="font-medium text-slate-400 hover:text-primary-500 leading-relaxed text-primary-500 px-4">
+        Pengembangan Web
+      </a>
+    </li>
+  </ul>
+</sidebar>
+  
+  <main class="w-12/12 pb-10 px-4 md:w-9/12 tutorial">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
+         crossorigin="anonymous"></script>
+    <!-- Iklan Belajarpython Okt 2024 -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2371526032008656"
+         data-ad-slot="5950576158"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <br/>
+    <h1 class="text-primary-500 font-medium text-3xl mb-3">Number Python</h1>
+    <p>Number adalah tipe data Python yang menyimpan nilai numerik. Number adalah tipe data yang tidak berubah. Ini berarti, mengubah nilai dari sejumlah tipe data akan menghasilkan objek yang baru dialokasikan.</p>
+<p>Objek Number dibuat saat Anda memberikan nilai pada-nya. Sebagai contoh : <code>angkaPertama = 1</code>
+<code>angkaKedua = 33</code></p>
+<p>Python mendukung beberapa tipe data Number diantaranya :</p>
+<ul>
+<li>Int</li>
+<li>Float</li>
+<li>Complex</li>
+</ul>
+<p>Berikut ini adalah beberapa contoh dari Tipe data Number pada Python :</p>
+<table>
+<thead>
+<tr>
+<th>Int</th>
+<th>Float</th>
+<th>Complex</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>20</code></td>
+<td><code>0.1</code></td>
+<td><code>3.14j</code></td>
+</tr>
+<tr>
+<td><code>300</code></td>
+<td><code>1.20</code></td>
+<td><code>35.j</code></td>
+</tr>
+<tr>
+<td><code>-13</code></td>
+<td><code>-41.2</code></td>
+<td><code>3.12e-12j</code></td>
+</tr>
+<tr>
+<td><code>020</code></td>
+<td><code>32.23+e123</code></td>
+<td><code>.873j</code></td>
+</tr>
+<tr>
+<td><code>-0103</code></td>
+<td><code>-92.</code></td>
+<td><code>-.123+0J</code></td>
+</tr>
+<tr>
+<td><code>-0x212</code></td>
+<td><code>-32.52e10</code></td>
+<td><code>3e+123J</code></td>
+</tr>
+<tr>
+<td><code>0x56</code></td>
+<td><code>60.2-E13</code></td>
+<td><code>4.31e-4j</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="konversi-tipe-data-number-python">Konversi Tipe Data Number Python</h3>
+<p>Pada Python Anda bisa mengkonversi tipe data dengan menggunakan fungsi. Dibawah ini adalah beberapa fungsi untuk mengkonversi tipe data number Python.</p>
+<ul>
+<li><code>int(x)</code>
+  untuk meng-konversi x menjadi plain integer.</li>
+<li><code>long(x)</code>
+  untuk meng-konversi x menjadi long integer.</li>
+<li><code>float(x)</code>
+  untuk meng-konversi x menjadi floating point number.</li>
+<li><code>complex(x)</code>
+  untuk meng-konversi x menjadi complex number dengna real part x dan imaginary part zero.</li>
+<li><code>complex(x, y)</code>
+  untuk meng-konversi x dan y menjadi complex number dengan real part x dan imaginary part y. x dan numeric expressions y.</li>
+</ul>
+<h3 id="fungsi-matematika-python">Fungsi Matematika Python</h3>
+<p>Pada bahasa pemrograman Python terdapat fungsi untuk melakukan perhitungan matematis, berikut adalah daftarnya :</p>
+<table>
+<thead>
+<tr>
+<th>Nama</th>
+<th>Penggunaan</th>
+<th>Penjelasan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Absolute</td>
+<td><code>abs(x)</code></td>
+<td>Nilai absolut dari x:(positive) jarak antara x and 0.</td>
+</tr>
+<tr>
+<td>Ceiling</td>
+<td><code>ceil(x)</code></td>
+<td>Ceiling dari x: integer terkecil yang kurang dari x.</td>
+</tr>
+<tr>
+<td>Cmp</td>
+<td><code>cmp(x, y)</code></td>
+<td>-1 if x &lt; y, 0 if x == y, or 1 if x &gt; y. Tidak berlaku lagi dengan Python 3. Sebaliknya gunakan return (x&gt;y)-(x</td>
+</tr>
+<tr>
+<td>Eksponen</td>
+<td><code>exp(x)</code></td>
+<td>Nilai eksponen dari x: ex</td>
+</tr>
+<tr>
+<td>Fabs</td>
+<td><code>fabs(x)</code></td>
+<td>Nilai absolut dari x.</td>
+</tr>
+<tr>
+<td>Floor</td>
+<td><code>floor(x)</code></td>
+<td>Nilai dasar dari x: internet terbesar tidak lebih besar dari x.</td>
+</tr>
+<tr>
+<td>Log</td>
+<td><code>log(x)</code></td>
+<td>Logaritma dari x, untuk x &gt; 0.</td>
+</tr>
+<tr>
+<td>Log 10</td>
+<td><code>log10(x)</code></td>
+<td>Basis 10 logaritma dari x, untuk x &gt; 0.</td>
+</tr>
+<tr>
+<td>Max</td>
+<td><code>max(x1, x2,...)</code></td>
+<td>Argumen terbesar: Nilai terdekat dengan tak terhingga positif</td>
+</tr>
+<tr>
+<td>Min</td>
+<td><code>min(x1, x2,...)</code></td>
+<td>Argumen terkecil: nilai yang paling mendekati tak berhingga negatif.</td>
+</tr>
+<tr>
+<td>Modf</td>
+<td><code>modf(x)</code></td>
+<td>Bagian pecahan dan bilangan bulat dari x dalam tupel dua item. Kedua bagian memiliki tanda yang sama dengan x. Bagian integer dikembalikan sebagai float.</td>
+</tr>
+<tr>
+<td>Pow</td>
+<td><code>pow(x, y)</code></td>
+<td>Nilai x ** y.</td>
+</tr>
+<tr>
+<td>Round</td>
+<td><code>round(x [,n])</code></td>
+<td>X dibulatkan menjadi n digit dari titik desimal. Putaran Python jauh dari nol sebagai tie-breaker: round (0.5) adalah 1.0 dan round (-0.5) adalah -1.0.</td>
+</tr>
+<tr>
+<td>Akar Kuadrat</td>
+<td><code>sqrt(x)</code></td>
+<td>Akar kuadrat x untuk x&gt; 0.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fungsi-nomor-acak-python">Fungsi Nomor Acak Python</h3>
+<p>Nomor acak digunakan untuk aplikasi permainan, simulasi, pengujian, keamanan, dan privasi. Python mencakup fungsi berikut yang umum digunakan. Berikut adalah daftarnya :</p>
+<table>
+<thead>
+<tr>
+<th>Nama</th>
+<th>Penggunaan</th>
+<th>Penjelasan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Choice</td>
+<td><code>choice(seq)</code></td>
+<td>Item acak dari list, tuple, atau string.</td>
+</tr>
+<tr>
+<td>RandRange</td>
+<td><code>randrange ([start,] stop [,step])</code></td>
+<td>Elemen yang dipilih secara acak dari jangkauan (start, stop, step).</td>
+</tr>
+<tr>
+<td>Random</td>
+<td><code>random()</code></td>
+<td>A random float r, sehingga 0 kurang dari atau sama dengan r dan r kurang dari 1</td>
+</tr>
+<tr>
+<td>Seed</td>
+<td><code>seed([x])</code></td>
+<td>Menetapkan nilai awal integer yang digunakan dalam menghasilkan bilangan acak. Panggil fungsi ini sebelum memanggil fungsi modul acak lainnya. Tidak ada pengembalian</td>
+</tr>
+<tr>
+<td>Shuffle</td>
+<td><code>shuffle(lst)</code></td>
+<td>Mengacak daftar dari daftar di tempat. Tidak ada pengembalian</td>
+</tr>
+<tr>
+<td>Floor</td>
+<td><code>floor(x)</code></td>
+<td>The floor of x: the largest integer not greater than x.</td>
+</tr>
+<tr>
+<td>Uniform</td>
+<td><code>uniform(x, y)</code></td>
+<td>Sebuah float acak r, sedemikian rupa sehingga x kurang dari atau sama dengan r dan r kurang dari y.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fungsi-trigonometri-python">Fungsi Trigonometri Python</h3>
+<p>Python mencakup fungsi berikut yang melakukan perhitungan trigonometri. Berikut adalah daftarnya :</p>
+<table>
+<thead>
+<tr>
+<th>Nama</th>
+<th>Penggunaan Penjelasan</th>
+<th>Penjelasan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acos</td>
+<td><code>acos(x)</code></td>
+<td>Kembalikan kosinus x, di radian.</td>
+</tr>
+<tr>
+<td>Asin</td>
+<td><code>asin(x)</code></td>
+<td>Kembalikan busur sinus x, dalam radian.</td>
+</tr>
+<tr>
+<td>Atan</td>
+<td><code>atan(x)</code></td>
+<td>Kembalikan busur singgung x, di radian.</td>
+</tr>
+<tr>
+<td>Atan 2</td>
+<td><code>atan2(y, x)</code></td>
+<td>Kembali atan (y / x), di radian.</td>
+</tr>
+<tr>
+<td>Kosinus</td>
+<td><code>cos(x)</code></td>
+<td>Kembalikan kosinus x radian.</td>
+</tr>
+<tr>
+<td>Hypot</td>
+<td><code>hypot(x, y)</code></td>
+<td>Kembalikan norma Euclidean, sqrt (x _ x + y _ y).</td>
+</tr>
+<tr>
+<td>Sin</td>
+<td><code>sin(x)</code></td>
+<td>Kembalikan sinus dari x radian.</td>
+</tr>
+<tr>
+<td>Tan</td>
+<td><code>tan(x)</code></td>
+<td>Kembalikan tangen x radian.</td>
+</tr>
+<tr>
+<td>Derajat</td>
+<td><code>degrees(x)</code></td>
+<td>Mengonversi sudut x dari radian ke derajat.</td>
+</tr>
+<tr>
+<td>Radian</td>
+<td><code>radians(x)</code></td>
+<td>Mengonversi sudut x dari derajat ke radian.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="konstanta-matematika-python">Konstanta Matematika Python</h3>
+<p>Modul ini juga mendefinisikan dua konstanta matematika. Berikut adalah daftarnya :</p>
+<table>
+<thead>
+<tr>
+<th>Nama</th>
+<th>Penggunaan</th>
+<th>Penjelasan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pi</td>
+<td><code>pi</code></td>
+<td>Konstanta Pi matematika</td>
+</tr>
+<tr>
+<td>e</td>
+<td><code>e</code></td>
+<td>Konstanta e matematika</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p><a href="https://github.com/belajarpythoncom/belajarpython.com/blob/master/docs/tutorial/number-python.md">Edit tutorial ini</a></p>
+</blockquote>
+<div class="mt-8 inline justify-between gap-x-4 md:flex">
+  <div class="flex justify-center mb-4 md:mb-0">
+    <a href="/tutorial/loop-python" class="text-primary-300 hover:text-primary-300 order-2 flex h-12 items-center rounded-full bg-blue-500 bg-opacity-20 px-8 text-base hover:no-underline md:order-1">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+      </svg>
+      <span class="-mt-0.5">Loop Python</span>
+    </a>
+  </div>
+  <div class="order-1 flex justify-center">
+    <a href="/tutorial/string-python" class="order-1 flex h-12 items-center rounded-full bg-gradient-to-l from-yellow-500 to-yellow-400 px-8 text-base text-black shadow-xl hover:text-black hover:no-underline hover:shadow md:order-2">
+      <span class="-mt-0.5">String Python</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
+      </svg>
+    </a>
+  </div>
+</div>
+  </main>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
+    crossorigin="anonymous"></script>
+  <!-- Iklan manual content belajarpython -->
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2371526032008656" data-ad-slot="4149104089"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+  <footer class="bg-slate-300 py-4">
+  <div class="flex justify-center">
+    <div class="flex gap-4 text-sm font-bold uppercase text-slate-600 md:gap-6">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a target="_blank" href="https://goo.gl/forms/ZPyZgIagXcanYwzH2">Contact</a>
+    </div>
+  </div>
+
+  // dark Mode
+  <button id="toggleDarkMode" style="position: fixed; bottom: 20px; right: 20px; z-index: 99;">
+    🌙 Dark Mode
+  </button>
+
+</footer><!-- Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118615030-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-118615030-1');
+	</script>
+	<!-- End Google Analytics -->
+</body>
+
+</html>
