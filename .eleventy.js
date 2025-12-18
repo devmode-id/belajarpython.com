@@ -1,5 +1,4 @@
 const markdownIt = require("markdown-it");
-const markdownItPrism = require("markdown-it-prism");
 
 module.exports = function(eleventyConfig) {
   // Markdown configuration
@@ -41,11 +40,6 @@ module.exports = function(eleventyConfig) {
       return parts[1];
     }
     return "";
-  });
-
-  // Safe content output
-  eleventyConfig.addFilter("safe", function(content) {
-    return content;
   });
 
   // Collections

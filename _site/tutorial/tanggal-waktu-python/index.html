@@ -59,12 +59,8 @@
   </div>
 </nav>
   
-  
-
-
-<div class="max-w-4xl mx-auto py-10 flex">
-  
-  
+  <div class="max-w-4xl mx-auto py-10 flex">
+    
 
 <sidebar class="hidden md:block md:w-3/12">
   <ul class="leading-normal">
@@ -214,344 +210,321 @@
     </li>
   </ul>
 </sidebar>
-  
-  <main class="w-12/12 pb-10 px-4 md:w-9/12 tutorial">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
-         crossorigin="anonymous"></script>
-    <!-- Iklan Belajarpython Okt 2024 -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-2371526032008656"
-         data-ad-slot="5950576158"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    <br/>
-    <h1 class="text-primary-500 font-medium text-3xl mb-3">Tanggal &amp; Waktu Python</h1>
-    &amp;lt;p&amp;gt;Program Python dapat menangani tanggal dan waktu dengan beberapa cara. Konversi antara format tanggal adalah tugas umum untuk komputer. Modul waktu dan kalender Python melacak tanggal dan waktu.&amp;lt;/p&amp;gt;
-&amp;lt;h3&amp;gt;Apa itu Tick?&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Interval waktu adalah bilangan floating-point dalam satuan detik. Instansi tertentu dalam waktu dinyatakan dalam hitungan detik sejak pukul 12:00 1 Januari 1970.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Dibawah ini adalah contoh penggunanaya.&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-python&amp;quot;&amp;gt;import time; # Digunakan untuk meng-import modul time
+    <main class="w-12/12 pb-10 px-4 md:w-9/12 tutorial">
+      <h1 class="text-primary-500 font-medium text-3xl mb-3">Tanggal &amp; Waktu Python</h1>
+      <p>Program Python dapat menangani tanggal dan waktu dengan beberapa cara. Konversi antara format tanggal adalah tugas umum untuk komputer. Modul waktu dan kalender Python melacak tanggal dan waktu.</p>
+<h3>Apa itu Tick?</h3>
+<p>Interval waktu adalah bilangan floating-point dalam satuan detik. Instansi tertentu dalam waktu dinyatakan dalam hitungan detik sejak pukul 12:00 1 Januari 1970.</p>
+<p>Dibawah ini adalah contoh penggunanaya.</p>
+<pre><code class="language-python">import time; # Digunakan untuk meng-import modul time
 
 ticks = time.time()
-print &amp;amp;quot;Berjalan sejak 12:00am, January 1, 1970:&amp;amp;quot;, ticks #python 2
-print (&amp;amp;quot;Berjalan sejak 12:00am, January 1, 1970:&amp;amp;quot;, ticks) #untuk python 3 gunakan tanda kurung, print()
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;h3&amp;gt;Apa itu TimeTuple Python?&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Banyak fungsi waktu Python menangani waktu sebagai tuple dari 9 nomor, seperti yang terdapat pada tabel di bawah ini.&amp;lt;/p&amp;gt;
-&amp;lt;table&amp;gt;
-&amp;lt;thead&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;th&amp;gt;Index&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Field&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Value&amp;lt;/th&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/thead&amp;gt;
-&amp;lt;tbody&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;0&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;4-digit year&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;2008&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;1&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Bulan&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;1 sampai 12&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;2&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Hari&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;1 sampai 31&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;3&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Jam&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;0 sampai 23&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;4&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Menit&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;0 sampai 59&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;5&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Detik&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;0 sampai 61&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;6&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Hari dalam Minggu&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;0 sampai 6 (0 adalah Senin)&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;7&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Hari dalam Bulan&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;1 sampai 366&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;8&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Daylight savings&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;-1, 0, 1, -1 means library determines DST&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;
-&amp;lt;p&amp;gt;Tuple di atas setara dengan struktur struct_time. Struktur ini memiliki atribut berikut&amp;lt;/p&amp;gt;
-&amp;lt;table&amp;gt;
-&amp;lt;thead&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;th&amp;gt;Index&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Atribut&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Value&amp;lt;/th&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/thead&amp;gt;
-&amp;lt;tbody&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;0&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;tm_year&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;2008&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;1&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;tm_mon &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;1 sampai 12&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;2&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;tm_mday&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;1 sampai 31&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;3&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;tm_hour&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;0 sampai 23&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;4&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;tm_min &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;0 sampai 59&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;5&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;tm_sec &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;0 sampai 61&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;6&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;tm_wday&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;0 sampai 6 (0 adalah Senin)&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;7&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;tm_yday&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;1 sampai 366&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;8&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt; tm_isdst&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;-1, 0, 1, -1 means library determines DST&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;
-&amp;lt;h3&amp;gt;Mendapatkan Waktu Saat Ini&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Untuk menerjemahkan waktu instan dari satu detik sejak nilai floating-point ke waktu menjadi tupel waktu, lewati nilai floating-point ke fungsi (mis., Localtime) yang mengembalikan waktu tupel dengan semua sembilan item valid.&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-python&amp;quot;&amp;gt;import time;
+print &quot;Berjalan sejak 12:00am, January 1, 1970:&quot;, ticks #python 2
+print (&quot;Berjalan sejak 12:00am, January 1, 1970:&quot;, ticks) #untuk python 3 gunakan tanda kurung, print()
+</code></pre>
+<h3>Apa itu TimeTuple Python?</h3>
+<p>Banyak fungsi waktu Python menangani waktu sebagai tuple dari 9 nomor, seperti yang terdapat pada tabel di bawah ini.</p>
+<table>
+<thead>
+<tr>
+<th>Index</th>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>4-digit year</td>
+<td>2008</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Bulan</td>
+<td>1 sampai 12</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Hari</td>
+<td>1 sampai 31</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Jam</td>
+<td>0 sampai 23</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Menit</td>
+<td>0 sampai 59</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Detik</td>
+<td>0 sampai 61</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Hari dalam Minggu</td>
+<td>0 sampai 6 (0 adalah Senin)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Hari dalam Bulan</td>
+<td>1 sampai 366</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Daylight savings</td>
+<td>-1, 0, 1, -1 means library determines DST</td>
+</tr>
+</tbody>
+</table>
+<p>Tuple di atas setara dengan struktur struct_time. Struktur ini memiliki atribut berikut</p>
+<table>
+<thead>
+<tr>
+<th>Index</th>
+<th>Atribut</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>tm_year</code></td>
+<td>2008</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>tm_mon </code></td>
+<td>1 sampai 12</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>tm_mday</code></td>
+<td>1 sampai 31</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>tm_hour</code></td>
+<td>0 sampai 23</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>tm_min </code></td>
+<td>0 sampai 59</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>tm_sec </code></td>
+<td>0 sampai 61</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>tm_wday</code></td>
+<td>0 sampai 6 (0 adalah Senin)</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>tm_yday</code></td>
+<td>1 sampai 366</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code> tm_isdst</code></td>
+<td>-1, 0, 1, -1 means library determines DST</td>
+</tr>
+</tbody>
+</table>
+<h3>Mendapatkan Waktu Saat Ini</h3>
+<p>Untuk menerjemahkan waktu instan dari satu detik sejak nilai floating-point ke waktu menjadi tupel waktu, lewati nilai floating-point ke fungsi (mis., Localtime) yang mengembalikan waktu tupel dengan semua sembilan item valid.</p>
+<pre><code class="language-python">import time;
 
 localtime = time.localtime(time.time())
-print &amp;amp;quot;Waktu lokal saat ini :&amp;amp;quot;, localtime #python 2
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;h3&amp;gt;Mendapatkan Waktu yang berformat&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Anda dapat memformat kapan saja sesuai kebutuhan Anda, namun metode sederhana untuk mendapatkan waktu dalam format yang mudah dibaca adalah asctime ()&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-python&amp;quot;&amp;gt;import time;
+print &quot;Waktu lokal saat ini :&quot;, localtime #python 2
+</code></pre>
+<h3>Mendapatkan Waktu yang berformat</h3>
+<p>Anda dapat memformat kapan saja sesuai kebutuhan Anda, namun metode sederhana untuk mendapatkan waktu dalam format yang mudah dibaca adalah asctime ()</p>
+<pre><code class="language-python">import time;
 
 localtime = time.asctime( time.localtime(time.time()) )
-print &amp;amp;quot;Waktu lokal saat ini :&amp;amp;quot;, localtime #python 2
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;h3&amp;gt;Mendapatkan kalender dalam sebulan&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Modul kalender memberikan berbagai macam metode untuk dimainkan dengan kalender tahunan dan bulanan. Di sini, kami mencetak kalender untuk bulan tertentu (Jan 2008)&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-python&amp;quot;&amp;gt;import calendar
+print &quot;Waktu lokal saat ini :&quot;, localtime #python 2
+</code></pre>
+<h3>Mendapatkan kalender dalam sebulan</h3>
+<p>Modul kalender memberikan berbagai macam metode untuk dimainkan dengan kalender tahunan dan bulanan. Di sini, kami mencetak kalender untuk bulan tertentu (Jan 2008)</p>
+<pre><code class="language-python">import calendar
 
 cal = calendar.month(2008, 1)
-print &amp;amp;quot;Dibawah ini adalah kalender:&amp;amp;quot; #python 2
+print &quot;Dibawah ini adalah kalender:&quot; #python 2
 print cal
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;h3&amp;gt;Modul time pada Python&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Ada modul waktu populer yang tersedia dengan Python yang menyediakan fungsi untuk bekerja dengan waktu dan untuk mengkonversi antara representasi. Dibawah ini adalah tabel dari modul time pada python yang ada.&amp;lt;/p&amp;gt;
-&amp;lt;table&amp;gt;
-&amp;lt;thead&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;th&amp;gt;Fungsi Python&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Penjelasan&amp;lt;/th&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/thead&amp;gt;
-&amp;lt;tbody&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;time.altzone&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Diimbangi zona waktu DST lokal, dalam detik di sebelah barat UTC, jika seseorang didefinisikan. Ini negatif jika zona waktu DST lokal berada di sebelah timur UTC (seperti di Eropa Barat, termasuk Inggris). Gunakan saja ini jika siang hari tidak nol.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;time.asctime([tupletime])&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Menerima time-tupel dan mengembalikan string 24-karakter yang dapat dibaca seperti &amp;#39;Tue Dec 11 18:07:14 2008&amp;#39;.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;time.clock() &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan waktu CPU saat ini sebagai jumlah floating-point detik. Untuk mengukur biaya komputasi dari berbagai pendekatan, nilai time.clock lebih bermanfaat daripada time.time ().&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;time.ctime([secs]) &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Seperti asctime (localtime (detik)) dan tanpa argumen seperti asctime ()&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;time.gmtime([secs]) &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Menerima instan yang diungkapkan dalam hitungan detik sejak zaman dan mengembalikan waktu tuple t dengan waktu UTC. Catatan: t.tm_isdst selalu 0&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;time.localtime([secs]) &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Menerima instan yang dinyatakan dalam hitungan detik sejak zaman dan mengembalikan waktu tuple t dengan waktu setempat (t.tm_isdst adalah 0 atau 1, tergantung pada apakah DST berlaku seketika oleh peraturan lokal).&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;time.mktime(tupletime) &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Menerima instan dinyatakan sebagai time-tuple di waktu setempat dan mengembalikan nilai floating-point dengan instan yang dinyatakan dalam hitungan detik sejak zaman.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;time.sleep(secs) &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Menangguhkan panggilan untuk beberapa detik.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;time.strftime(fmt[,tupletime])&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Menerima instan dinyatakan sebagai tupel waktu di waktu lokal dan mengembalikan sebuah string yang mewakili instan seperti yang ditentukan oleh string fmt.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;time.strptime(str,fmt=&amp;#39;%a %b %d %H:%M:%S %Y&amp;#39;)&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Parses str sesuai dengan format string fmt dan mengembalikan format instant-tuple.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;time.time() &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan waktu saat ini secara instan, jumlah detik mengambang beberapa detik sejak zaman itu.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;time.tzset() &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengatur ulang aturan konversi waktu yang digunakan oleh rutinitas perpustakaan. Variabel lingkungan TZ menentukan bagaimana hal ini dilakukan.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;
-&amp;lt;p&amp;gt;Ada dua atribut penting yang tersedia dengan modul waktu:&amp;lt;/p&amp;gt;
-&amp;lt;table&amp;gt;
-&amp;lt;thead&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;th&amp;gt;Method Python&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Penjelasan&amp;lt;/th&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/thead&amp;gt;
-&amp;lt;tbody&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt; time.timezone&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Atribut time.timezone adalah offset dalam detik zona waktu lokal (tanpa DST) dari UTC (&amp;amp;gt; 0 di Amerika; &amp;amp;lt;= 0 di sebagian besar Eropa, Asia, Afrika).&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;time.tzname &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Atribut time.tzname adalah sepasang string yang bergantung pada lokal, yang merupakan nama zona waktu lokal tanpa dan dengan DST.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;
-&amp;lt;h3&amp;gt;Modul calendar pada Python&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Modul kalender menyimpan fungsi yang berhubungan dengan kalender, termasuk fungsi untuk mencetak kalender teks untuk bulan atau tahun tertentu.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Secara default, kalender mengambil hari Senin sebagai hari pertama dalam minggu dan minggu sebagai yang terakhir. Untuk mengubah ini, fungsi call calendar.setfirstweekday ().&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Berikut adalah daftar fungsi yang tersedia dengan modul kalender:&amp;lt;/p&amp;gt;
-&amp;lt;table&amp;gt;
-&amp;lt;thead&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;th&amp;gt;Fungsi Python&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Penjelasan&amp;lt;/th&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/thead&amp;gt;
-&amp;lt;tbody&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;calendar.calendar(year,w=2,l=1,c=6)&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan string multiline dengan kalender untuk tahun tahun yang diformat menjadi tiga kolom yang dipisahkan oleh ruang c. W adalah lebar karakter setiap tanggal; Setiap baris memiliki panjang 21 _ w + 18 + 2 _ c. L adalah jumlah baris untuk setiap minggu.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;calendar.firstweekday( ) &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan pengaturan saat ini untuk hari kerja yang dimulai setiap minggu. Secara default, saat kalender pertama kali diimpor, ini adalah 0, yang berarti Senin.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;calendar.isleap(year) &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Pengembalian True jika tahun adalah tahun kabisat; Jika tidak, False&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;calendar.leapdays(y1,y2) &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan jumlah lompatan hari dalam tahun-tahun dalam rentang (y1, y2).&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;calendar.month(year,month,w=2,l=1) &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan string multiline dengan kalender untuk bulan bulan tahun, satu baris per minggu ditambah dua baris header. W adalah lebar karakter setiap tanggal; Setiap baris memiliki panjang 7 * w + 6. L adalah jumlah baris untuk setiap minggu.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;calendar.monthcalendar(year,month)&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan daftar daftar int. Setiap sublist menunjukkan seminggu. Hari di luar bulan bulan tahun diatur ke 0; Hari dalam bulan ditetapkan ke hari ke bulan, 1 dan ke atas.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;calendar.monthrange(year,month)&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan dua bilangan bulat. Yang pertama adalah kode hari kerja untuk hari pertama bulan bulan di tahun; Yang kedua adalah jumlah hari dalam sebulan. Kode hari kerja adalah 0 (Senin) sampai 6 (Minggu); Angka bulan adalah 1 sampai 12.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;calendar.prcal(year,w=2,l=1,c=6)&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Seperti kalender cetak.calendar (tahun, w, l, c).&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;calendar.prmonth(year,month,w=2,l=1)&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Seperti kalender cetak. Bulan (tahun, bulan, w, l).&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;calendar.setfirstweekday(weekday)&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengatur hari pertama setiap minggu sampai hari kerja kode hari kerja. Kode hari kerja adalah 0 (Senin) sampai 6 (Minggu).&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;calendar.timegm(tupletime) &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Kebalikan dari time.gmtime: menerima waktu instan dalam bentuk tupel waktu dan mengembalikan detik yang sama seperti jumlah floating-point dalam hitungan detik sejak zaman.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;calendar.weekday(year,month,day)&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan kode hari kerja untuk tanggal yang ditentukan. Kode hari kerja adalah 0 (Senin) sampai 6 (Minggu); Bulan adalah 1 (Januari) sampai 12 (Desember).&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;
-&amp;lt;hr&amp;gt;
-&amp;lt;blockquote&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/belajarpythoncom/belajarpython.com/blob/master/docs/tutorial/tanggal-waktu-python.md&amp;quot;&amp;gt;Edit tutorial ini&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;/blockquote&amp;gt;
-&amp;lt;div class=&amp;quot;mt-8 inline justify-between gap-x-4 md:flex&amp;quot;&amp;gt;
-  &amp;lt;div class=&amp;quot;flex justify-center mb-4 md:mb-0&amp;quot;&amp;gt;
-    &amp;lt;a href=&amp;quot;/tutorial/dictionary-python&amp;quot; class=&amp;quot;text-primary-300 hover:text-primary-300 order-2 flex h-12 items-center rounded-full bg-blue-500 bg-opacity-20 px-8 text-base hover:no-underline md:order-1&amp;quot;&amp;gt;
-      &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; class=&amp;quot;mr-1 h-5 w-5&amp;quot; viewBox=&amp;quot;0 0 20 20&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;
-        &amp;lt;path fill-rule=&amp;quot;evenodd&amp;quot; d=&amp;quot;M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z&amp;quot; clip-rule=&amp;quot;evenodd&amp;quot; /&amp;gt;
-      &amp;lt;/svg&amp;gt;
-      &amp;lt;span class=&amp;quot;-mt-0.5&amp;quot;&amp;gt;Dictionary Python&amp;lt;/span&amp;gt;
-    &amp;lt;/a&amp;gt;
-  &amp;lt;/div&amp;gt;
-  &amp;lt;div class=&amp;quot;order-1 flex justify-center&amp;quot;&amp;gt;
-    &amp;lt;a href=&amp;quot;/tutorial/fungsi-python&amp;quot; class=&amp;quot;order-1 flex h-12 items-center rounded-full bg-gradient-to-l from-yellow-500 to-yellow-400 px-8 text-base text-black shadow-xl hover:text-black hover:no-underline hover:shadow md:order-2&amp;quot;&amp;gt;
-      &amp;lt;span class=&amp;quot;-mt-0.5&amp;quot;&amp;gt;Fungsi Python&amp;lt;/span&amp;gt;
-      &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; class=&amp;quot;ml-1 h-5 w-5&amp;quot; viewBox=&amp;quot;0 0 20 20&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;
-        &amp;lt;path fill-rule=&amp;quot;evenodd&amp;quot; d=&amp;quot;M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z&amp;quot; clip-rule=&amp;quot;evenodd&amp;quot; /&amp;gt;
-      &amp;lt;/svg&amp;gt;
-    &amp;lt;/a&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-
-  </main>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
-    crossorigin="anonymous"></script>
-  <!-- Iklan manual content belajarpython -->
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2371526032008656" data-ad-slot="4149104089"
-    data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+</code></pre>
+<h3>Modul time pada Python</h3>
+<p>Ada modul waktu populer yang tersedia dengan Python yang menyediakan fungsi untuk bekerja dengan waktu dan untuk mengkonversi antara representasi. Dibawah ini adalah tabel dari modul time pada python yang ada.</p>
+<table>
+<thead>
+<tr>
+<th>Fungsi Python</th>
+<th>Penjelasan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>time.altzone</code></td>
+<td>Diimbangi zona waktu DST lokal, dalam detik di sebelah barat UTC, jika seseorang didefinisikan. Ini negatif jika zona waktu DST lokal berada di sebelah timur UTC (seperti di Eropa Barat, termasuk Inggris). Gunakan saja ini jika siang hari tidak nol.</td>
+</tr>
+<tr>
+<td><code>time.asctime([tupletime])</code></td>
+<td>Menerima time-tupel dan mengembalikan string 24-karakter yang dapat dibaca seperti 'Tue Dec 11 18:07:14 2008'.</td>
+</tr>
+<tr>
+<td><code>time.clock() </code></td>
+<td>Mengembalikan waktu CPU saat ini sebagai jumlah floating-point detik. Untuk mengukur biaya komputasi dari berbagai pendekatan, nilai time.clock lebih bermanfaat daripada time.time ().</td>
+</tr>
+<tr>
+<td><code>time.ctime([secs]) </code></td>
+<td>Seperti asctime (localtime (detik)) dan tanpa argumen seperti asctime ()</td>
+</tr>
+<tr>
+<td><code>time.gmtime([secs]) </code></td>
+<td>Menerima instan yang diungkapkan dalam hitungan detik sejak zaman dan mengembalikan waktu tuple t dengan waktu UTC. Catatan: t.tm_isdst selalu 0</td>
+</tr>
+<tr>
+<td><code>time.localtime([secs]) </code></td>
+<td>Menerima instan yang dinyatakan dalam hitungan detik sejak zaman dan mengembalikan waktu tuple t dengan waktu setempat (t.tm_isdst adalah 0 atau 1, tergantung pada apakah DST berlaku seketika oleh peraturan lokal).</td>
+</tr>
+<tr>
+<td><code>time.mktime(tupletime) </code></td>
+<td>Menerima instan dinyatakan sebagai time-tuple di waktu setempat dan mengembalikan nilai floating-point dengan instan yang dinyatakan dalam hitungan detik sejak zaman.</td>
+</tr>
+<tr>
+<td><code>time.sleep(secs) </code></td>
+<td>Menangguhkan panggilan untuk beberapa detik.</td>
+</tr>
+<tr>
+<td><code>time.strftime(fmt[,tupletime])</code></td>
+<td>Menerima instan dinyatakan sebagai tupel waktu di waktu lokal dan mengembalikan sebuah string yang mewakili instan seperti yang ditentukan oleh string fmt.</td>
+</tr>
+<tr>
+<td><code>time.strptime(str,fmt='%a %b %d %H:%M:%S %Y')</code></td>
+<td>Parses str sesuai dengan format string fmt dan mengembalikan format instant-tuple.</td>
+</tr>
+<tr>
+<td><code>time.time() </code></td>
+<td>Mengembalikan waktu saat ini secara instan, jumlah detik mengambang beberapa detik sejak zaman itu.</td>
+</tr>
+<tr>
+<td><code>time.tzset() </code></td>
+<td>Mengatur ulang aturan konversi waktu yang digunakan oleh rutinitas perpustakaan. Variabel lingkungan TZ menentukan bagaimana hal ini dilakukan.</td>
+</tr>
+</tbody>
+</table>
+<p>Ada dua atribut penting yang tersedia dengan modul waktu:</p>
+<table>
+<thead>
+<tr>
+<th>Method Python</th>
+<th>Penjelasan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code> time.timezone</code></td>
+<td>Atribut time.timezone adalah offset dalam detik zona waktu lokal (tanpa DST) dari UTC (&gt; 0 di Amerika; &lt;= 0 di sebagian besar Eropa, Asia, Afrika).</td>
+</tr>
+<tr>
+<td><code>time.tzname </code></td>
+<td>Atribut time.tzname adalah sepasang string yang bergantung pada lokal, yang merupakan nama zona waktu lokal tanpa dan dengan DST.</td>
+</tr>
+</tbody>
+</table>
+<h3>Modul calendar pada Python</h3>
+<p>Modul kalender menyimpan fungsi yang berhubungan dengan kalender, termasuk fungsi untuk mencetak kalender teks untuk bulan atau tahun tertentu.</p>
+<p>Secara default, kalender mengambil hari Senin sebagai hari pertama dalam minggu dan minggu sebagai yang terakhir. Untuk mengubah ini, fungsi call calendar.setfirstweekday ().</p>
+<p>Berikut adalah daftar fungsi yang tersedia dengan modul kalender:</p>
+<table>
+<thead>
+<tr>
+<th>Fungsi Python</th>
+<th>Penjelasan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>calendar.calendar(year,w=2,l=1,c=6)</code></td>
+<td>Mengembalikan string multiline dengan kalender untuk tahun tahun yang diformat menjadi tiga kolom yang dipisahkan oleh ruang c. W adalah lebar karakter setiap tanggal; Setiap baris memiliki panjang 21 _ w + 18 + 2 _ c. L adalah jumlah baris untuk setiap minggu.</td>
+</tr>
+<tr>
+<td><code>calendar.firstweekday( ) </code></td>
+<td>Mengembalikan pengaturan saat ini untuk hari kerja yang dimulai setiap minggu. Secara default, saat kalender pertama kali diimpor, ini adalah 0, yang berarti Senin.</td>
+</tr>
+<tr>
+<td><code>calendar.isleap(year) </code></td>
+<td>Pengembalian True jika tahun adalah tahun kabisat; Jika tidak, False</td>
+</tr>
+<tr>
+<td><code>calendar.leapdays(y1,y2) </code></td>
+<td>Mengembalikan jumlah lompatan hari dalam tahun-tahun dalam rentang (y1, y2).</td>
+</tr>
+<tr>
+<td><code>calendar.month(year,month,w=2,l=1) </code></td>
+<td>Mengembalikan string multiline dengan kalender untuk bulan bulan tahun, satu baris per minggu ditambah dua baris header. W adalah lebar karakter setiap tanggal; Setiap baris memiliki panjang 7 * w + 6. L adalah jumlah baris untuk setiap minggu.</td>
+</tr>
+<tr>
+<td><code>calendar.monthcalendar(year,month)</code></td>
+<td>Mengembalikan daftar daftar int. Setiap sublist menunjukkan seminggu. Hari di luar bulan bulan tahun diatur ke 0; Hari dalam bulan ditetapkan ke hari ke bulan, 1 dan ke atas.</td>
+</tr>
+<tr>
+<td><code>calendar.monthrange(year,month)</code></td>
+<td>Mengembalikan dua bilangan bulat. Yang pertama adalah kode hari kerja untuk hari pertama bulan bulan di tahun; Yang kedua adalah jumlah hari dalam sebulan. Kode hari kerja adalah 0 (Senin) sampai 6 (Minggu); Angka bulan adalah 1 sampai 12.</td>
+</tr>
+<tr>
+<td><code>calendar.prcal(year,w=2,l=1,c=6)</code></td>
+<td>Seperti kalender cetak.calendar (tahun, w, l, c).</td>
+</tr>
+<tr>
+<td><code>calendar.prmonth(year,month,w=2,l=1)</code></td>
+<td>Seperti kalender cetak. Bulan (tahun, bulan, w, l).</td>
+</tr>
+<tr>
+<td><code>calendar.setfirstweekday(weekday)</code></td>
+<td>Mengatur hari pertama setiap minggu sampai hari kerja kode hari kerja. Kode hari kerja adalah 0 (Senin) sampai 6 (Minggu).</td>
+</tr>
+<tr>
+<td><code>calendar.timegm(tupletime) </code></td>
+<td>Kebalikan dari time.gmtime: menerima waktu instan dalam bentuk tupel waktu dan mengembalikan detik yang sama seperti jumlah floating-point dalam hitungan detik sejak zaman.</td>
+</tr>
+<tr>
+<td><code>calendar.weekday(year,month,day)</code></td>
+<td>Mengembalikan kode hari kerja untuk tanggal yang ditentukan. Kode hari kerja adalah 0 (Senin) sampai 6 (Minggu); Bulan adalah 1 (Januari) sampai 12 (Desember).</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<blockquote>
+<p><a href="https://github.com/belajarpythoncom/belajarpython.com/blob/master/docs/tutorial/tanggal-waktu-python.md">Edit tutorial ini</a></p>
+</blockquote>
+<div class="mt-8 inline justify-between gap-x-4 md:flex">
+  <div class="flex justify-center mb-4 md:mb-0">
+    <a href="/tutorial/dictionary-python" class="text-primary-300 hover:text-primary-300 order-2 flex h-12 items-center rounded-full bg-blue-500 bg-opacity-20 px-8 text-base hover:no-underline md:order-1">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+      </svg>
+      <span class="-mt-0.5">Dictionary Python</span>
+    </a>
+  </div>
+  <div class="order-1 flex justify-center">
+    <a href="/tutorial/fungsi-python" class="order-1 flex h-12 items-center rounded-full bg-gradient-to-l from-yellow-500 to-yellow-400 px-8 text-base text-black shadow-xl hover:text-black hover:no-underline hover:shadow md:order-2">
+      <span class="-mt-0.5">Fungsi Python</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
+      </svg>
+    </a>
+  </div>
 </div>
-  
+
+    </main>
+  </div>
   <footer class="bg-slate-300 py-4">
   <div class="flex justify-center">
     <div class="flex gap-4 text-sm font-bold uppercase text-slate-600 md:gap-6">

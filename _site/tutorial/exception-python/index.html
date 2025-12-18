@@ -59,12 +59,8 @@
   </div>
 </nav>
   
-  
-
-
-<div class="max-w-4xl mx-auto py-10 flex">
-  
-  
+  <div class="max-w-4xl mx-auto py-10 flex">
+    
 
 <sidebar class="hidden md:block md:w-3/12">
   <ul class="leading-normal">
@@ -214,190 +210,167 @@
     </li>
   </ul>
 </sidebar>
-  
-  <main class="w-12/12 pb-10 px-4 md:w-9/12 tutorial">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
-         crossorigin="anonymous"></script>
-    <!-- Iklan Belajarpython Okt 2024 -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-2371526032008656"
-         data-ad-slot="5950576158"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    <br/>
-    <h1 class="text-primary-500 font-medium text-3xl mb-3">Exception Python</h1>
-    &amp;lt;p&amp;gt;Python menyediakan dua fitur yang sangat penting untuk menangani kesalahan tak terduga dalam program Python Anda dan menambahkan kemampuan debugging di dalamnya.&amp;lt;/p&amp;gt;
-&amp;lt;ul&amp;gt;
-&amp;lt;li&amp;gt;Exception Handling&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Assertions
-Exception adalah sebuah peristiwa, yang terjadi selama pelaksanaan program yang mengganggu aliran normal instruksi program. Secara umum, ketika skrip Python menemukan situasi yang tidak dapat diatasi, hal itu menimbulkan pengecualian. Exception adalah objek Python yang mewakili kesalahan.&amp;lt;/li&amp;gt;
-&amp;lt;/ul&amp;gt;
-&amp;lt;p&amp;gt;Ketika skrip Python menimbulkan Exception, ia harus menangani Exception begitu saja sehingga berhenti dan berhenti.&amp;lt;/p&amp;gt;
-&amp;lt;h3&amp;gt;Standard Exceptions&amp;lt;/h3&amp;gt;
-&amp;lt;table&amp;gt;
-&amp;lt;thead&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;th&amp;gt;Nama&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Penjelasan&amp;lt;/th&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/thead&amp;gt;
-&amp;lt;tbody&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;Exception&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Kelas dasar untuk semua pengecualian / exception&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;StopIteration &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan ketika metode (iterator) berikutnya dari iterator tidak mengarah ke objek apa pun.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;SystemExit &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan oleh fungsi sys.exit ().&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;StandardError &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Kelas dasar untuk semua pengecualian built-in kecuali StopIteration dan SystemExit.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;ArithmeticError &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Kelas dasar untuk semua kesalahan yang terjadi untuk perhitungan numerik.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;OverflowError &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan saat perhitungan melebihi batas maksimum untuk tipe numerik.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;FloatingPointError&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan saat perhitungan floating point gagal.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;ZeroDivisonError &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan saat pembagian atau modulo nol dilakukan untuk semua tipe numerik.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;AssertionError&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan jika terjadi kegagalan pernyataan Assert.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;AttributeError&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan jika terjadi kegagalan referensi atribut atau penugasan.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;EOFError&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan bila tidak ada input dari fungsi raw_input () atau input () dan akhir file tercapai.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;ImportError &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan saat sebuah pernyataan impor gagal.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;KeyboardInterrupt &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan saat pengguna menyela eksekusi program, biasanya dengan menekan Ctrl + c.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;LookupError&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Kelas dasar untuk semua kesalahan pencarian.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;IndexError &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan saat sebuah indeks tidak ditemukan secara berurutan.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;KeyError &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan saat kunci yang ditentukan tidak ditemukan dalam kamus.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;NameError&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan saat pengenal tidak ditemukan di namespace lokal atau global.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;UnboundLocalError&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan saat mencoba mengakses variabel lokal dalam suatu fungsi atau metode namun tidak ada nilai yang ditugaskan padanya.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;EnvironmentError&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Kelas dasar untuk semua pengecualian yang terjadi di luar lingkungan Python.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;IOError&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan saat operasi input / output gagal, seperti pernyataan cetak atau fungsi open () saat mencoba membuka file yang tidak ada.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;OSError&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibangkitkan untuk kesalahan terkait sistem operasi.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;SyntaxError&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan saat ada kesalahan dengan sintaks Python.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;IndentationError&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan saat indentasi tidak ditentukan dengan benar.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;SystemError&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan saat penafsir menemukan masalah internal, namun bila kesalahan ini ditemui juru bahasa Python tidak keluar.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;SystemExit &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan saat juru bahasa Python berhenti dengan menggunakan fungsi sys.exit (). Jika tidak ditangani dalam kode, menyebabkan penafsir untuk keluar.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;TypeError&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan saat operasi atau fungsi dicoba yang tidak valid untuk tipe data yang ditentukan.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;ValueError&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan ketika fungsi bawaan untuk tipe data memiliki jenis argumen yang valid, namun argumen tersebut memiliki nilai yang tidak valid yang ditentukan.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;RuntimeError&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan saat kesalahan yang dihasilkan tidak termasuk dalam kategori apa pun.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;NotImplementedError&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dibesarkan ketika metode abstrak yang perlu diimplementasikan di kelas warisan sebenarnya tidak dilaksanakan.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;
-&amp;lt;hr&amp;gt;
-&amp;lt;blockquote&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/belajarpythoncom/belajarpython.com/blob/master/docs/tutorial/exception-python.md&amp;quot;&amp;gt;Edit tutorial ini&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;/blockquote&amp;gt;
-&amp;lt;div class=&amp;quot;mt-8 inline justify-between gap-x-4 md:flex&amp;quot;&amp;gt;
-  &amp;lt;div class=&amp;quot;flex justify-center mb-4 md:mb-0&amp;quot;&amp;gt;
-    &amp;lt;a href=&amp;quot;/tutorial/file-io-python&amp;quot; class=&amp;quot;text-primary-300 hover:text-primary-300 order-2 flex h-12 items-center rounded-full bg-blue-500 bg-opacity-20 px-8 text-base hover:no-underline md:order-1&amp;quot;&amp;gt;
-      &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; class=&amp;quot;mr-1 h-5 w-5&amp;quot; viewBox=&amp;quot;0 0 20 20&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;
-        &amp;lt;path fill-rule=&amp;quot;evenodd&amp;quot; d=&amp;quot;M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z&amp;quot; clip-rule=&amp;quot;evenodd&amp;quot; /&amp;gt;
-      &amp;lt;/svg&amp;gt;
-      &amp;lt;span class=&amp;quot;-mt-0.5&amp;quot;&amp;gt;File I/O Python&amp;lt;/span&amp;gt;
-    &amp;lt;/a&amp;gt;
-  &amp;lt;/div&amp;gt;
-  &amp;lt;div class=&amp;quot;order-1 flex justify-center&amp;quot;&amp;gt;
-    &amp;lt;a href=&amp;quot;/tutorial/object-class-python&amp;quot; class=&amp;quot;order-1 flex h-12 items-center rounded-full bg-gradient-to-l from-yellow-500 to-yellow-400 px-8 text-base text-black shadow-xl hover:text-black hover:no-underline hover:shadow md:order-2&amp;quot;&amp;gt;
-      &amp;lt;span class=&amp;quot;-mt-0.5&amp;quot;&amp;gt;Object &amp;amp;amp; Class Python&amp;lt;/span&amp;gt;
-      &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; class=&amp;quot;ml-1 h-5 w-5&amp;quot; viewBox=&amp;quot;0 0 20 20&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;
-        &amp;lt;path fill-rule=&amp;quot;evenodd&amp;quot; d=&amp;quot;M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z&amp;quot; clip-rule=&amp;quot;evenodd&amp;quot; /&amp;gt;
-      &amp;lt;/svg&amp;gt;
-    &amp;lt;/a&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-
-  </main>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
-    crossorigin="anonymous"></script>
-  <!-- Iklan manual content belajarpython -->
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2371526032008656" data-ad-slot="4149104089"
-    data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+    <main class="w-12/12 pb-10 px-4 md:w-9/12 tutorial">
+      <h1 class="text-primary-500 font-medium text-3xl mb-3">Exception Python</h1>
+      <p>Python menyediakan dua fitur yang sangat penting untuk menangani kesalahan tak terduga dalam program Python Anda dan menambahkan kemampuan debugging di dalamnya.</p>
+<ul>
+<li>Exception Handling</li>
+<li>Assertions
+Exception adalah sebuah peristiwa, yang terjadi selama pelaksanaan program yang mengganggu aliran normal instruksi program. Secara umum, ketika skrip Python menemukan situasi yang tidak dapat diatasi, hal itu menimbulkan pengecualian. Exception adalah objek Python yang mewakili kesalahan.</li>
+</ul>
+<p>Ketika skrip Python menimbulkan Exception, ia harus menangani Exception begitu saja sehingga berhenti dan berhenti.</p>
+<h3>Standard Exceptions</h3>
+<table>
+<thead>
+<tr>
+<th>Nama</th>
+<th>Penjelasan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Exception</code></td>
+<td>Kelas dasar untuk semua pengecualian / exception</td>
+</tr>
+<tr>
+<td><code>StopIteration </code></td>
+<td>Dibesarkan ketika metode (iterator) berikutnya dari iterator tidak mengarah ke objek apa pun.</td>
+</tr>
+<tr>
+<td><code>SystemExit </code></td>
+<td>Dibesarkan oleh fungsi sys.exit ().</td>
+</tr>
+<tr>
+<td><code>StandardError </code></td>
+<td>Kelas dasar untuk semua pengecualian built-in kecuali StopIteration dan SystemExit.</td>
+</tr>
+<tr>
+<td><code>ArithmeticError </code></td>
+<td>Kelas dasar untuk semua kesalahan yang terjadi untuk perhitungan numerik.</td>
+</tr>
+<tr>
+<td><code>OverflowError </code></td>
+<td>Dibesarkan saat perhitungan melebihi batas maksimum untuk tipe numerik.</td>
+</tr>
+<tr>
+<td><code>FloatingPointError</code></td>
+<td>Dibesarkan saat perhitungan floating point gagal.</td>
+</tr>
+<tr>
+<td><code>ZeroDivisonError </code></td>
+<td>Dibesarkan saat pembagian atau modulo nol dilakukan untuk semua tipe numerik.</td>
+</tr>
+<tr>
+<td><code>AssertionError</code></td>
+<td>Dibesarkan jika terjadi kegagalan pernyataan Assert.</td>
+</tr>
+<tr>
+<td><code>AttributeError</code></td>
+<td>Dibesarkan jika terjadi kegagalan referensi atribut atau penugasan.</td>
+</tr>
+<tr>
+<td><code>EOFError</code></td>
+<td>Dibesarkan bila tidak ada input dari fungsi raw_input () atau input () dan akhir file tercapai.</td>
+</tr>
+<tr>
+<td><code>ImportError </code></td>
+<td>Dibesarkan saat sebuah pernyataan impor gagal.</td>
+</tr>
+<tr>
+<td><code>KeyboardInterrupt </code></td>
+<td>Dibesarkan saat pengguna menyela eksekusi program, biasanya dengan menekan Ctrl + c.</td>
+</tr>
+<tr>
+<td><code>LookupError</code></td>
+<td>Kelas dasar untuk semua kesalahan pencarian.</td>
+</tr>
+<tr>
+<td><code>IndexError </code></td>
+<td>Dibesarkan saat sebuah indeks tidak ditemukan secara berurutan.</td>
+</tr>
+<tr>
+<td><code>KeyError </code></td>
+<td>Dibesarkan saat kunci yang ditentukan tidak ditemukan dalam kamus.</td>
+</tr>
+<tr>
+<td><code>NameError</code></td>
+<td>Dibesarkan saat pengenal tidak ditemukan di namespace lokal atau global.</td>
+</tr>
+<tr>
+<td><code>UnboundLocalError</code></td>
+<td>Dibesarkan saat mencoba mengakses variabel lokal dalam suatu fungsi atau metode namun tidak ada nilai yang ditugaskan padanya.</td>
+</tr>
+<tr>
+<td><code>EnvironmentError</code></td>
+<td>Kelas dasar untuk semua pengecualian yang terjadi di luar lingkungan Python.</td>
+</tr>
+<tr>
+<td><code>IOError</code></td>
+<td>Dibesarkan saat operasi input / output gagal, seperti pernyataan cetak atau fungsi open () saat mencoba membuka file yang tidak ada.</td>
+</tr>
+<tr>
+<td><code>OSError</code></td>
+<td>Dibangkitkan untuk kesalahan terkait sistem operasi.</td>
+</tr>
+<tr>
+<td><code>SyntaxError</code></td>
+<td>Dibesarkan saat ada kesalahan dengan sintaks Python.</td>
+</tr>
+<tr>
+<td><code>IndentationError</code></td>
+<td>Dibesarkan saat indentasi tidak ditentukan dengan benar.</td>
+</tr>
+<tr>
+<td><code>SystemError</code></td>
+<td>Dibesarkan saat penafsir menemukan masalah internal, namun bila kesalahan ini ditemui juru bahasa Python tidak keluar.</td>
+</tr>
+<tr>
+<td><code>SystemExit </code></td>
+<td>Dibesarkan saat juru bahasa Python berhenti dengan menggunakan fungsi sys.exit (). Jika tidak ditangani dalam kode, menyebabkan penafsir untuk keluar.</td>
+</tr>
+<tr>
+<td><code>TypeError</code></td>
+<td>Dibesarkan saat operasi atau fungsi dicoba yang tidak valid untuk tipe data yang ditentukan.</td>
+</tr>
+<tr>
+<td><code>ValueError</code></td>
+<td>Dibesarkan ketika fungsi bawaan untuk tipe data memiliki jenis argumen yang valid, namun argumen tersebut memiliki nilai yang tidak valid yang ditentukan.</td>
+</tr>
+<tr>
+<td><code>RuntimeError</code></td>
+<td>Dibesarkan saat kesalahan yang dihasilkan tidak termasuk dalam kategori apa pun.</td>
+</tr>
+<tr>
+<td><code>NotImplementedError</code></td>
+<td>Dibesarkan ketika metode abstrak yang perlu diimplementasikan di kelas warisan sebenarnya tidak dilaksanakan.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<blockquote>
+<p><a href="https://github.com/belajarpythoncom/belajarpython.com/blob/master/docs/tutorial/exception-python.md">Edit tutorial ini</a></p>
+</blockquote>
+<div class="mt-8 inline justify-between gap-x-4 md:flex">
+  <div class="flex justify-center mb-4 md:mb-0">
+    <a href="/tutorial/file-io-python" class="text-primary-300 hover:text-primary-300 order-2 flex h-12 items-center rounded-full bg-blue-500 bg-opacity-20 px-8 text-base hover:no-underline md:order-1">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+      </svg>
+      <span class="-mt-0.5">File I/O Python</span>
+    </a>
+  </div>
+  <div class="order-1 flex justify-center">
+    <a href="/tutorial/object-class-python" class="order-1 flex h-12 items-center rounded-full bg-gradient-to-l from-yellow-500 to-yellow-400 px-8 text-base text-black shadow-xl hover:text-black hover:no-underline hover:shadow md:order-2">
+      <span class="-mt-0.5">Object &amp; Class Python</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
+      </svg>
+    </a>
+  </div>
 </div>
-  
+
+    </main>
+  </div>
   <footer class="bg-slate-300 py-4">
   <div class="flex justify-center">
     <div class="flex gap-4 text-sm font-bold uppercase text-slate-600 md:gap-6">

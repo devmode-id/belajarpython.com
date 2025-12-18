@@ -58,79 +58,52 @@
     </div>
   </div>
 </nav>
-  
-  
+  <div class="max-w-4xl mx-auto py-10 flex">
+    <main class="w-12/12 pb-10 px-4 md:w-12/12">
+      <h1 class="text-primary-500 font-medium text-3xl mb-3">Tutorial Membuat Bot Telegram dengan Python</h1>
+      <p>Telegram adalah aplikasi yang sangat populer. Salah satu keunggulan telegram dibanding aplikasi messenger lain adalah fitur bot. Disini akan dijelaskan cara membuat bot di telegram. Tapi sebelum kita mulai membuat bot, pastikan Anda sudah mengetahui beberapa requirement dibawah ini :</p>
+<ul>
+<li>Pengetahuan dasar pemrograman Python</li>
+<li>Akun telegram</li>
+</ul>
+<p>Pada tutorial ini kita akan membuat bot dari sangat awal, mengetahui lebih jauh tentang setup untuk memaksimalkan semua kekuatan dari <strong>Bot API</strong> dan membuat 'real-world application'</p>
+<h2>Code/Project</h2>
+<p>Semua snipet kode dan project terkait tutorial ini bisa anda temukan di repository ini <a href="https://github.com/guides-to/BUILDING-TELEGRAM-BOT-IN-PYTHON/blob/master/projects">project</a></p>
+<h2>Apa itu Bot Telegram?</h2>
+<ul>
+<li>Akun telegram simpel yang dioperasikan oleh aplikasi</li>
+<li>Tidak terlalu di desain untuk chatting</li>
+<li>Bisa digunakan untuk mempermudah:
+<ul>
+<li>Belajar</li>
+<li>Bermain</li>
+<li>Mencari</li>
+<li>Menyebarkan</li>
+<li>Mengingatkan</li>
+<li>Mengkoneksikan</li>
+</ul>
+</li>
+<li>Pengguna bisa berinteraksi ke bot dengan:
+<ul>
+<li>Pesan</li>
+<li>Emoji</li>
+<li>Perintah/Command</li>
+<li>Inline requests</li>
+</ul>
+</li>
+</ul>
+<h2>Setup Bot Telegram</h2>
+<ol>
+<li>Buka telegram, kemudian cari 'BotFather'</li>
+<li>Kirim perintah <code>/start</code> untuk mulai menghubungkan akun Anda</li>
+<li>Kirim perintah <code>/help</code> untuk menampilkan daftar bantuan yang tersedia</li>
+<li>Kirim perintah <code>/newbot</code> dan ikuti langkah selanjutnya</li>
+<li>Kirim perintah <code>/mybots</code> untuk menampilkan semua bot anda dan memilihnya</li>
+<li>Klik pada <strong>API Token</strong></li>
+</ol>
 
-
-<div class="max-w-4xl mx-auto py-10 flex">
-  
-  <main class="w-12/12 pb-10 px-4 md:w-12/12">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
-         crossorigin="anonymous"></script>
-    <!-- Iklan Belajarpython Okt 2024 -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-2371526032008656"
-         data-ad-slot="5950576158"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    <br/>
-    <h1 class="text-primary-500 font-medium text-3xl mb-3">Tutorial Membuat Bot Telegram dengan Python</h1>
-    &amp;lt;p&amp;gt;Telegram adalah aplikasi yang sangat populer. Salah satu keunggulan telegram dibanding aplikasi messenger lain adalah fitur bot. Disini akan dijelaskan cara membuat bot di telegram. Tapi sebelum kita mulai membuat bot, pastikan Anda sudah mengetahui beberapa requirement dibawah ini :&amp;lt;/p&amp;gt;
-&amp;lt;ul&amp;gt;
-&amp;lt;li&amp;gt;Pengetahuan dasar pemrograman Python&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Akun telegram&amp;lt;/li&amp;gt;
-&amp;lt;/ul&amp;gt;
-&amp;lt;p&amp;gt;Pada tutorial ini kita akan membuat bot dari sangat awal, mengetahui lebih jauh tentang setup untuk memaksimalkan semua kekuatan dari &amp;lt;strong&amp;gt;Bot API&amp;lt;/strong&amp;gt; dan membuat &amp;#39;real-world application&amp;#39;&amp;lt;/p&amp;gt;
-&amp;lt;h2&amp;gt;Code/Project&amp;lt;/h2&amp;gt;
-&amp;lt;p&amp;gt;Semua snipet kode dan project terkait tutorial ini bisa anda temukan di repository ini &amp;lt;a href=&amp;quot;https://github.com/guides-to/BUILDING-TELEGRAM-BOT-IN-PYTHON/blob/master/projects&amp;quot;&amp;gt;project&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;h2&amp;gt;Apa itu Bot Telegram?&amp;lt;/h2&amp;gt;
-&amp;lt;ul&amp;gt;
-&amp;lt;li&amp;gt;Akun telegram simpel yang dioperasikan oleh aplikasi&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Tidak terlalu di desain untuk chatting&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Bisa digunakan untuk mempermudah:
-&amp;lt;ul&amp;gt;
-&amp;lt;li&amp;gt;Belajar&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Bermain&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Mencari&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Menyebarkan&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Mengingatkan&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Mengkoneksikan&amp;lt;/li&amp;gt;
-&amp;lt;/ul&amp;gt;
-&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Pengguna bisa berinteraksi ke bot dengan:
-&amp;lt;ul&amp;gt;
-&amp;lt;li&amp;gt;Pesan&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Emoji&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Perintah/Command&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Inline requests&amp;lt;/li&amp;gt;
-&amp;lt;/ul&amp;gt;
-&amp;lt;/li&amp;gt;
-&amp;lt;/ul&amp;gt;
-&amp;lt;h2&amp;gt;Setup Bot Telegram&amp;lt;/h2&amp;gt;
-&amp;lt;ol&amp;gt;
-&amp;lt;li&amp;gt;Buka telegram, kemudian cari &amp;#39;BotFather&amp;#39;&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Kirim perintah &amp;lt;code&amp;gt;/start&amp;lt;/code&amp;gt; untuk mulai menghubungkan akun Anda&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Kirim perintah &amp;lt;code&amp;gt;/help&amp;lt;/code&amp;gt; untuk menampilkan daftar bantuan yang tersedia&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Kirim perintah &amp;lt;code&amp;gt;/newbot&amp;lt;/code&amp;gt; dan ikuti langkah selanjutnya&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Kirim perintah &amp;lt;code&amp;gt;/mybots&amp;lt;/code&amp;gt; untuk menampilkan semua bot anda dan memilihnya&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Klik pada &amp;lt;strong&amp;gt;API Token&amp;lt;/strong&amp;gt;&amp;lt;/li&amp;gt;
-&amp;lt;/ol&amp;gt;
-
-  </main>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
-    crossorigin="anonymous"></script>
-  <!-- Iklan manual content belajarpython -->
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2371526032008656" data-ad-slot="4149104089"
-    data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
-  
+    </main>
+  </div>
   <footer class="bg-slate-300 py-4">
   <div class="flex justify-center">
     <div class="flex gap-4 text-sm font-bold uppercase text-slate-600 md:gap-6">

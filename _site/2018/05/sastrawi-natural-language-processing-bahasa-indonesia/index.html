@@ -58,44 +58,26 @@
     </div>
   </div>
 </nav>
-  
-  
-
-
-<div class="max-w-4xl mx-auto py-10 flex">
-  
-  <main class="w-12/12 pb-10 px-4 md:w-12/12">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
-         crossorigin="anonymous"></script>
-    <!-- Iklan Belajarpython Okt 2024 -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-2371526032008656"
-         data-ad-slot="5950576158"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    <br/>
-    <h1 class="text-primary-500 font-medium text-3xl mb-3">Sastrawi, Natural Language Processing Mudah Dengan Python</h1>
-    &amp;lt;hr&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;img src=&amp;quot;/img/sastrawi.jpg&amp;quot; alt=&amp;quot;Sastrawi NLP Bahasa Indonesia&amp;quot; title=&amp;quot;NLP Bahasa Indonesia&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Sastrawi adalah perpustakaan PHP sederhana yang memungkinkan Anda untuk mengurangi kata-kata yang terinfleksi dalam Bahasa Indonesia (Bahasa Indonesia) ke bentuk dasarnya (batang)&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Stemming adalah proses mengubah kata berimbuhan menjadi kata dasar. Contoh:&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;menahan =&amp;amp;gt; tahan&amp;lt;/code&amp;gt;
-&amp;lt;code&amp;gt;berbalas-balasan =&amp;amp;gt; balas&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;h5&amp;gt;Contoh kasus&amp;lt;/h5&amp;gt;
-&amp;lt;p&amp;gt;Misalnya sebuah blog post berisi:&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;Rakyat memenuhi halaman gedung untuk menyuarakan isi hatinya.&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Pencarian dengan &amp;lt;code&amp;gt;query&amp;lt;/code&amp;gt; di bawah ini tidak akan menemukan post di atas&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;SELECT * FROM posts WHERE content LIKE &amp;#39;%suara%&amp;#39;&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Proses stemming dapat membantu menemukan dokumen yang sedang dicari yaitu dengan menanggalkan imbuhan-imbuhan hingga hanya menyisakan kata dasar seperti berikut:&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;rakyat penuh halaman gedung suara isi hati&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Lalu kata kunci pencarian juga dijadikan kata dasar:&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;Bersuara =&amp;amp;gt; suara&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;h4&amp;gt;Penggunaan&amp;lt;/h4&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-python&amp;quot;&amp;gt;# import StemmerFactory class
+  <div class="max-w-4xl mx-auto py-10 flex">
+    <main class="w-12/12 pb-10 px-4 md:w-12/12">
+      <h1 class="text-primary-500 font-medium text-3xl mb-3">Sastrawi, Natural Language Processing Mudah Dengan Python</h1>
+      <hr>
+<p><img src="/img/sastrawi.jpg" alt="Sastrawi NLP Bahasa Indonesia" title="NLP Bahasa Indonesia"></p>
+<p>Sastrawi adalah perpustakaan PHP sederhana yang memungkinkan Anda untuk mengurangi kata-kata yang terinfleksi dalam Bahasa Indonesia (Bahasa Indonesia) ke bentuk dasarnya (batang)</p>
+<p>Stemming adalah proses mengubah kata berimbuhan menjadi kata dasar. Contoh:</p>
+<p><code>menahan =&gt; tahan</code>
+<code>berbalas-balasan =&gt; balas</code></p>
+<h5>Contoh kasus</h5>
+<p>Misalnya sebuah blog post berisi:</p>
+<p><code>Rakyat memenuhi halaman gedung untuk menyuarakan isi hatinya.</code></p>
+<p>Pencarian dengan <code>query</code> di bawah ini tidak akan menemukan post di atas</p>
+<p><code>SELECT * FROM posts WHERE content LIKE '%suara%'</code></p>
+<p>Proses stemming dapat membantu menemukan dokumen yang sedang dicari yaitu dengan menanggalkan imbuhan-imbuhan hingga hanya menyisakan kata dasar seperti berikut:</p>
+<p><code>rakyat penuh halaman gedung suara isi hati</code></p>
+<p>Lalu kata kunci pencarian juga dijadikan kata dasar:</p>
+<p><code>Bersuara =&gt; suara</code></p>
+<h4>Penggunaan</h4>
+<pre><code class="language-python"># import StemmerFactory class
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 
 # create stemmer
@@ -103,32 +85,23 @@ factory = StemmerFactory()
 stemmer = factory.create_stemmer()
 
 # stemming process
-sentence = &amp;#39;Perekonomian Indonesia sedang dalam pertumbuhan yang membanggakan&amp;#39;
+sentence = 'Perekonomian Indonesia sedang dalam pertumbuhan yang membanggakan'
 output   = stemmer.stem(sentence)
 
 print(output)
 # ekonomi indonesia sedang dalam tumbuh yang bangga
 
-print(stemmer.stem(&amp;#39;Mereka meniru-nirukannya&amp;#39;))
+print(stemmer.stem('Mereka meniru-nirukannya'))
 # mereka tiru
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;p&amp;gt;Untuk lebih lengkapnya silahkan lihat di &amp;lt;a href=&amp;quot;https://github.com/har07/PySastrawi&amp;quot;&amp;gt;Github&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;hr&amp;gt;
-&amp;lt;blockquote&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;em&amp;gt;penulis: Purwanto &amp;lt;a href=&amp;quot;https://github.com/purwnt&amp;quot;&amp;gt;https://github.com/purwnt&amp;lt;/a&amp;gt;&amp;lt;/em&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;/blockquote&amp;gt;
+</code></pre>
+<p>Untuk lebih lengkapnya silahkan lihat di <a href="https://github.com/har07/PySastrawi">Github</a></p>
+<hr>
+<blockquote>
+<p><em>penulis: Purwanto <a href="https://github.com/purwnt">https://github.com/purwnt</a></em></p>
+</blockquote>
 
-  </main>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
-    crossorigin="anonymous"></script>
-  <!-- Iklan manual content belajarpython -->
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2371526032008656" data-ad-slot="4149104089"
-    data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
-  
+    </main>
+  </div>
   <footer class="bg-slate-300 py-4">
   <div class="flex justify-center">
     <div class="flex gap-4 text-sm font-bold uppercase text-slate-600 md:gap-6">

@@ -59,12 +59,8 @@
   </div>
 </nav>
   
-  
-
-
-<div class="max-w-4xl mx-auto py-10 flex">
-  
-  
+  <div class="max-w-4xl mx-auto py-10 flex">
+    
 
 <sidebar class="hidden md:block md:w-3/12">
   <ul class="leading-normal">
@@ -214,105 +210,91 @@
     </li>
   </ul>
 </sidebar>
-  
-  <main class="w-12/12 pb-10 px-4 md:w-9/12 tutorial">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
-         crossorigin="anonymous"></script>
-    <!-- Iklan Belajarpython Okt 2024 -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-2371526032008656"
-         data-ad-slot="5950576158"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    <br/>
-    <h1 class="text-primary-500 font-medium text-3xl mb-3">Networking Python</h1>
-    &amp;lt;p&amp;gt;Python menyediakan dua tingkat akses ke layanan jaringan. Pada tingkat rendah, Anda dapat mengakses dukungan soket dasar dalam sistem operasi yang mendasarinya, yang memungkinkan Anda untuk mengimplementasikan klien dan server untuk kedua protokol berorientasi koneksi dan tanpa sambungan.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Python juga memiliki pustaka yang menyediakan akses tingkat lebih tinggi ke protokol jaringan tingkat aplikasi tertentu, seperti FTP, HTTP, dan seterusnya.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Bab ini memberi Anda pemahaman tentang konsep paling terkenal dalam Networking - Socket Programming.&amp;lt;/p&amp;gt;
-&amp;lt;h3&amp;gt;Apa itu Socket?&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Soket adalah titik akhir dari saluran komunikasi dua arah. Soket dapat berkomunikasi dalam suatu proses, antara proses pada mesin yang sama, atau antara proses di berbagai benua.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Soket dapat diimplementasikan melalui sejumlah jenis saluran yang berbeda: soket domain Unix, TCP, UDP, dan sebagainya. Pustaka socket menyediakan kelas khusus untuk menangani transportasi umum serta antarmuka umum untuk menangani sisanya.&amp;lt;/p&amp;gt;
-&amp;lt;h3&amp;gt;Modul Socket&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Untuk membuat soket, Anda harus menggunakan fungsi socket.socket () yang tersedia dalam modul soket, yang memiliki sintaks umum&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;s = socket.socket (socket_family, socket_type, protocol=0)&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;h3&amp;gt;Server Socket Method&amp;lt;/h3&amp;gt;
-&amp;lt;table&amp;gt;
-&amp;lt;thead&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;th&amp;gt;Method&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Penjelasan&amp;lt;/th&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/thead&amp;gt;
-&amp;lt;tbody&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;s.bind()&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;This method binds address (hostname, port number pair) to socket.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;s.listen()&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;This method sets up and start TCP listener.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;s.accept()&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;This passively accept TCP client connection, waiting until connection arrives (blocking).&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;
-&amp;lt;h3&amp;gt;Client Socket Method&amp;lt;/h3&amp;gt;
-&amp;lt;table&amp;gt;
-&amp;lt;thead&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;th&amp;gt;Method&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Penjelasan&amp;lt;/th&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/thead&amp;gt;
-&amp;lt;tbody&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;s.connect()&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;This method actively initiates TCP server connection.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;
-&amp;lt;h2&amp;gt;General Method Socket&amp;lt;/h2&amp;gt;
-&amp;lt;table&amp;gt;
-&amp;lt;thead&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;th&amp;gt;Method&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Penjelasan&amp;lt;/th&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/thead&amp;gt;
-&amp;lt;tbody&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;s.recv()&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;This method receives TCP message&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;s.send()&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;This method transmits TCP message&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;s.recvfrom()&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;This method receives UDP message&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;s.sendto()&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;This method transmits UDP message&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;s.close()&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;This method closes socket&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;socket.gethostname()&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Returns the hostname.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-python&amp;quot;&amp;gt;#!/usr/bin/python # This is server.py file
+    <main class="w-12/12 pb-10 px-4 md:w-9/12 tutorial">
+      <h1 class="text-primary-500 font-medium text-3xl mb-3">Networking Python</h1>
+      <p>Python menyediakan dua tingkat akses ke layanan jaringan. Pada tingkat rendah, Anda dapat mengakses dukungan soket dasar dalam sistem operasi yang mendasarinya, yang memungkinkan Anda untuk mengimplementasikan klien dan server untuk kedua protokol berorientasi koneksi dan tanpa sambungan.</p>
+<p>Python juga memiliki pustaka yang menyediakan akses tingkat lebih tinggi ke protokol jaringan tingkat aplikasi tertentu, seperti FTP, HTTP, dan seterusnya.</p>
+<p>Bab ini memberi Anda pemahaman tentang konsep paling terkenal dalam Networking - Socket Programming.</p>
+<h3>Apa itu Socket?</h3>
+<p>Soket adalah titik akhir dari saluran komunikasi dua arah. Soket dapat berkomunikasi dalam suatu proses, antara proses pada mesin yang sama, atau antara proses di berbagai benua.</p>
+<p>Soket dapat diimplementasikan melalui sejumlah jenis saluran yang berbeda: soket domain Unix, TCP, UDP, dan sebagainya. Pustaka socket menyediakan kelas khusus untuk menangani transportasi umum serta antarmuka umum untuk menangani sisanya.</p>
+<h3>Modul Socket</h3>
+<p>Untuk membuat soket, Anda harus menggunakan fungsi socket.socket () yang tersedia dalam modul soket, yang memiliki sintaks umum</p>
+<p><code>s = socket.socket (socket_family, socket_type, protocol=0)</code></p>
+<h3>Server Socket Method</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Penjelasan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s.bind()</td>
+<td>This method binds address (hostname, port number pair) to socket.</td>
+</tr>
+<tr>
+<td>s.listen()</td>
+<td>This method sets up and start TCP listener.</td>
+</tr>
+<tr>
+<td>s.accept()</td>
+<td>This passively accept TCP client connection, waiting until connection arrives (blocking).</td>
+</tr>
+</tbody>
+</table>
+<h3>Client Socket Method</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Penjelasan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s.connect()</td>
+<td>This method actively initiates TCP server connection.</td>
+</tr>
+</tbody>
+</table>
+<h2>General Method Socket</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Penjelasan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s.recv()</td>
+<td>This method receives TCP message</td>
+</tr>
+<tr>
+<td>s.send()</td>
+<td>This method transmits TCP message</td>
+</tr>
+<tr>
+<td>s.recvfrom()</td>
+<td>This method receives UDP message</td>
+</tr>
+<tr>
+<td>s.sendto()</td>
+<td>This method transmits UDP message</td>
+</tr>
+<tr>
+<td>s.close()</td>
+<td>This method closes socket</td>
+</tr>
+<tr>
+<td>socket.gethostname()</td>
+<td>Returns the hostname.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">#!/usr/bin/python # This is server.py file
 
 import socket # Import socket module
 
@@ -324,19 +306,19 @@ s.bind((host, port)) # Bind to the port
 s.listen(5) # Now wait for client connection.
 while True:
 c, addr = s.accept() # Establish connection with client.
-print &amp;#39;Got connection from&amp;#39;, addr
-c.send(&amp;#39;Thank you for connecting&amp;#39;)
+print 'Got connection from', addr
+c.send('Thank you for connecting')
 c.close() # Close the connection
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;h3&amp;gt;Server Sederhana&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Untuk menulis server Internet, kami menggunakan fungsi soket yang tersedia di modul soket untuk membuat objek soket. Objek soket kemudian digunakan untuk memanggil fungsi lain untuk menyiapkan server soket.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Sekarang sebut &amp;lt;code&amp;gt;bind(hostname,port)&amp;lt;/code&amp;gt; berfungsi untuk menentukan port untuk layanan Anda pada host yang diberikan.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Selanjutnya, panggil metode penerimaan objek yang dikembalikan. Metode ini menunggu sampai klien terhubung ke port yang Anda tentukan, dan kemudian mengembalikan objek koneksi yang mewakili koneksi ke klien itu.&amp;lt;/p&amp;gt;
-&amp;lt;h3&amp;gt;Client Sederhana&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Mari kita menulis program klien yang sangat sederhana yang membuka koneksi ke port yang diberikan 12345 dan host yang diberikan. Ini sangat sederhana untuk membuat klien soket menggunakan fungsi modul soket Python.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Socket.connect (hosname, port) membuka koneksi TCP ke hostname pada port. Setelah Anda memiliki soket terbuka, Anda dapat membaca darinya seperti objek IO apa pun. Setelah selesai, jangan lupa untuk menutupnya, karena Anda akan menutup file.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Kode berikut adalah klien yang sangat sederhana yang terhubung ke host dan port yang diberikan, membaca data yang tersedia dari soket, dan kemudian keluar&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-python&amp;quot;&amp;gt;#!/usr/bin/python # This is client.py file
+</code></pre>
+<h3>Server Sederhana</h3>
+<p>Untuk menulis server Internet, kami menggunakan fungsi soket yang tersedia di modul soket untuk membuat objek soket. Objek soket kemudian digunakan untuk memanggil fungsi lain untuk menyiapkan server soket.</p>
+<p>Sekarang sebut <code>bind(hostname,port)</code> berfungsi untuk menentukan port untuk layanan Anda pada host yang diberikan.</p>
+<p>Selanjutnya, panggil metode penerimaan objek yang dikembalikan. Metode ini menunggu sampai klien terhubung ke port yang Anda tentukan, dan kemudian mengembalikan objek koneksi yang mewakili koneksi ke klien itu.</p>
+<h3>Client Sederhana</h3>
+<p>Mari kita menulis program klien yang sangat sederhana yang membuka koneksi ke port yang diberikan 12345 dan host yang diberikan. Ini sangat sederhana untuk membuat klien soket menggunakan fungsi modul soket Python.</p>
+<p>Socket.connect (hosname, port) membuka koneksi TCP ke hostname pada port. Setelah Anda memiliki soket terbuka, Anda dapat membaca darinya seperti objek IO apa pun. Setelah selesai, jangan lupa untuk menutupnya, karena Anda akan menutup file.</p>
+<p>Kode berikut adalah klien yang sangat sederhana yang terhubung ke host dan port yang diberikan, membaca data yang tersedia dari soket, dan kemudian keluar</p>
+<pre><code class="language-python">#!/usr/bin/python # This is client.py file
 
 import socket # Import socket module
 
@@ -347,112 +329,103 @@ port = 12345 # Reserve a port for your service.
 s.connect((host, port))
 print s.recv(1024)
 s.close # Close the socket when done
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;p&amp;gt;Sekarang jalankan &amp;lt;a href=&amp;quot;http://server.py&amp;quot;&amp;gt;server.py&amp;lt;/a&amp;gt; ini di latar belakang dan kemudian jalankan di atas &amp;lt;a href=&amp;quot;http://client.py&amp;quot;&amp;gt;client.py&amp;lt;/a&amp;gt; untuk melihat hasilnya.&amp;lt;/p&amp;gt;
-&amp;lt;h5&amp;gt;Jalankan server.&amp;lt;/h5&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;python server.py &amp;amp;amp;&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Setelah server berjalan lanjutkan&amp;lt;/p&amp;gt;
-&amp;lt;h5&amp;gt;Jalankan client:&amp;lt;/h5&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;python client.py&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Hasilnya akan seperti ini :
-&amp;lt;code&amp;gt;Got connection from (&amp;#39;127.0.0.1&amp;#39;, 48437)&amp;lt;/code&amp;gt;
-&amp;lt;code&amp;gt;Thank you for connecting&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;h3&amp;gt;Modul Internet pada Python&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Berikut tabel daftar beberapa modul penting dalam pemrograman Jaringan / Internet Python.&amp;lt;/p&amp;gt;
-&amp;lt;table&amp;gt;
-&amp;lt;thead&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;th&amp;gt;Protocol&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Common function&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Port No&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Python module&amp;lt;/th&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/thead&amp;gt;
-&amp;lt;tbody&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;HTTP&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Web pages&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;80&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;httplib, urllib, xmlrpclib&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;NNTP&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Usenet news&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;119&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;nntplib&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;FTP&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Transfer file&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;20&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;ftplib, urllib&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;SMTP&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengirim email&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;25&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;smtplib&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;POP3&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Fetching email&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;110&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;poplib&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;IMAP4&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Fetching email&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;143&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;imaplib&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;Telnet&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Command lines&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;23&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;telnetlib&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;Gopher&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Document transfers&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;70&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;gopherlib, urllib&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;
-&amp;lt;hr&amp;gt;
-&amp;lt;blockquote&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/belajarpythoncom/belajarpython.com/blob/master/docs/tutorial/networking-python.md&amp;quot;&amp;gt;Edit tutorial ini&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;/blockquote&amp;gt;
-&amp;lt;div class=&amp;quot;mt-8 inline justify-between gap-x-4 md:flex&amp;quot;&amp;gt;
-  &amp;lt;div class=&amp;quot;flex justify-center mb-4 md:mb-0&amp;quot;&amp;gt;
-    &amp;lt;a href=&amp;quot;/tutorial/akses-database-python&amp;quot; class=&amp;quot;text-primary-300 hover:text-primary-300 order-2 flex h-12 items-center rounded-full bg-blue-500 bg-opacity-20 px-8 text-base hover:no-underline md:order-1&amp;quot;&amp;gt;
-      &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; class=&amp;quot;mr-1 h-5 w-5&amp;quot; viewBox=&amp;quot;0 0 20 20&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;
-        &amp;lt;path fill-rule=&amp;quot;evenodd&amp;quot; d=&amp;quot;M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z&amp;quot; clip-rule=&amp;quot;evenodd&amp;quot; /&amp;gt;
-      &amp;lt;/svg&amp;gt;
-      &amp;lt;span class=&amp;quot;-mt-0.5&amp;quot;&amp;gt;Akses Database Python&amp;lt;/span&amp;gt;
-    &amp;lt;/a&amp;gt;
-  &amp;lt;/div&amp;gt;
-  &amp;lt;div class=&amp;quot;order-1 flex justify-center&amp;quot;&amp;gt;
-    &amp;lt;a href=&amp;quot;/tutorial/pengembangan-web-python&amp;quot; class=&amp;quot;order-1 flex h-12 items-center rounded-full bg-gradient-to-l from-yellow-500 to-yellow-400 px-8 text-base text-black shadow-xl hover:text-black hover:no-underline hover:shadow md:order-2&amp;quot;&amp;gt;
-      &amp;lt;span class=&amp;quot;-mt-0.5&amp;quot;&amp;gt;Pengembangan Web Python&amp;lt;/span&amp;gt;
-      &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; class=&amp;quot;ml-1 h-5 w-5&amp;quot; viewBox=&amp;quot;0 0 20 20&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;
-        &amp;lt;path fill-rule=&amp;quot;evenodd&amp;quot; d=&amp;quot;M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z&amp;quot; clip-rule=&amp;quot;evenodd&amp;quot; /&amp;gt;
-      &amp;lt;/svg&amp;gt;
-    &amp;lt;/a&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-
-  </main>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
-    crossorigin="anonymous"></script>
-  <!-- Iklan manual content belajarpython -->
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2371526032008656" data-ad-slot="4149104089"
-    data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+</code></pre>
+<p>Sekarang jalankan <a href="http://server.py">server.py</a> ini di latar belakang dan kemudian jalankan di atas <a href="http://client.py">client.py</a> untuk melihat hasilnya.</p>
+<h5>Jalankan server.</h5>
+<p><code>python server.py &amp;</code></p>
+<p>Setelah server berjalan lanjutkan</p>
+<h5>Jalankan client:</h5>
+<p><code>python client.py</code></p>
+<p>Hasilnya akan seperti ini :
+<code>Got connection from ('127.0.0.1', 48437)</code>
+<code>Thank you for connecting</code></p>
+<h3>Modul Internet pada Python</h3>
+<p>Berikut tabel daftar beberapa modul penting dalam pemrograman Jaringan / Internet Python.</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Common function</th>
+<th>Port No</th>
+<th>Python module</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP</td>
+<td>Web pages</td>
+<td>80</td>
+<td>httplib, urllib, xmlrpclib</td>
+</tr>
+<tr>
+<td>NNTP</td>
+<td>Usenet news</td>
+<td>119</td>
+<td>nntplib</td>
+</tr>
+<tr>
+<td>FTP</td>
+<td>Transfer file</td>
+<td>20</td>
+<td>ftplib, urllib</td>
+</tr>
+<tr>
+<td>SMTP</td>
+<td>Mengirim email</td>
+<td>25</td>
+<td>smtplib</td>
+</tr>
+<tr>
+<td>POP3</td>
+<td>Fetching email</td>
+<td>110</td>
+<td>poplib</td>
+</tr>
+<tr>
+<td>IMAP4</td>
+<td>Fetching email</td>
+<td>143</td>
+<td>imaplib</td>
+</tr>
+<tr>
+<td>Telnet</td>
+<td>Command lines</td>
+<td>23</td>
+<td>telnetlib</td>
+</tr>
+<tr>
+<td>Gopher</td>
+<td>Document transfers</td>
+<td>70</td>
+<td>gopherlib, urllib</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<blockquote>
+<p><a href="https://github.com/belajarpythoncom/belajarpython.com/blob/master/docs/tutorial/networking-python.md">Edit tutorial ini</a></p>
+</blockquote>
+<div class="mt-8 inline justify-between gap-x-4 md:flex">
+  <div class="flex justify-center mb-4 md:mb-0">
+    <a href="/tutorial/akses-database-python" class="text-primary-300 hover:text-primary-300 order-2 flex h-12 items-center rounded-full bg-blue-500 bg-opacity-20 px-8 text-base hover:no-underline md:order-1">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+      </svg>
+      <span class="-mt-0.5">Akses Database Python</span>
+    </a>
+  </div>
+  <div class="order-1 flex justify-center">
+    <a href="/tutorial/pengembangan-web-python" class="order-1 flex h-12 items-center rounded-full bg-gradient-to-l from-yellow-500 to-yellow-400 px-8 text-base text-black shadow-xl hover:text-black hover:no-underline hover:shadow md:order-2">
+      <span class="-mt-0.5">Pengembangan Web Python</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
+      </svg>
+    </a>
+  </div>
 </div>
-  
+
+    </main>
+  </div>
   <footer class="bg-slate-300 py-4">
   <div class="flex justify-center">
     <div class="flex gap-4 text-sm font-bold uppercase text-slate-600 md:gap-6">

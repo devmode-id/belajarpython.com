@@ -7,7 +7,16 @@
   {% if isHomepage %}
   {% include "landing.njk" %}
   {% else %}
-  {% include "content.njk" %}
+  {% set currentTutorial = page.url | getTutorialName %}
+  <div class="max-w-4xl mx-auto py-10 flex">
+    {% if isTutorial %}
+    {% include "sidebar.njk" %}
+    {% endif %}
+    <main class="w-12/12 pb-10 px-4 {{ 'md:w-9/12 tutorial' if isTutorial else 'md:w-12/12' }}">
+      <h1 class="text-primary-500 font-medium text-3xl mb-3">{{ title }}</h1>
+      {{ content | safe }}
+    </main>
+  </div>
   {% endif %}
   {% include "footer.njk" %}
   {% include "analytics.njk" %}

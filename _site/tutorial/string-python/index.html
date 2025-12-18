@@ -59,12 +59,8 @@
   </div>
 </nav>
   
-  
-
-
-<div class="max-w-4xl mx-auto py-10 flex">
-  
-  
+  <div class="max-w-4xl mx-auto py-10 flex">
+    
 
 <sidebar class="hidden md:block md:w-3/12">
   <ul class="leading-normal">
@@ -214,472 +210,449 @@
     </li>
   </ul>
 </sidebar>
-  
-  <main class="w-12/12 pb-10 px-4 md:w-9/12 tutorial">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
-         crossorigin="anonymous"></script>
-    <!-- Iklan Belajarpython Okt 2024 -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-2371526032008656"
-         data-ad-slot="5950576158"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    <br/>
-    <h1 class="text-primary-500 font-medium text-3xl mb-3">String Python</h1>
-    &amp;lt;p&amp;gt;String adalah jenis yang paling populer di bahasa pemrograman. Kita bisa membuatnya hanya dengan melampirkan karakter dalam tanda kutip. Python memperlakukan tanda kutip tunggal sama dengan tanda kutip ganda. Membuat string semudah memberi nilai pada sebuah variabel.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Dibawah ini adalah contoh sederhana dari sebuah string pada bahasa pemrograman Python.&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-python&amp;quot;&amp;gt;print(&amp;amp;quot;Hello World&amp;amp;quot;)
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;h3&amp;gt;Mengakses Nilai dalam String&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Python tidak menggunakan tipe karakter titik koma ; Ini diperlakukan sebagai string dengan panjang satu, sehingga juga dianggap sebagai substring.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Untuk mengakses substring, gunakan tanda kurung siku untuk mengiris beserta indeks atau indeks untuk mendapatkan substring Anda. Sebagai contoh :&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-python&amp;quot;&amp;gt;name = &amp;#39;John Doe&amp;#39; message = &amp;amp;quot;John Doe belajar bahasa python di Belajarpython&amp;amp;quot;
-print (&amp;amp;quot;name[0]: &amp;amp;quot;, name[0])
-print (&amp;amp;quot;message[1:4]: &amp;amp;quot;, message[1:4])
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;p&amp;gt;Bila kode diatas dieksekusi, maka akan menghasilkan hasil sebagai berikut :&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;name[0]: J&amp;lt;/code&amp;gt;
-&amp;lt;code&amp;gt;message[1:4]: ohn &amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;h3&amp;gt;Mengupdate String&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Anda dapat &amp;amp;quot;memperbarui&amp;amp;quot; string yang ada dengan (kembali) menugaskan variabel ke string lain. Nilai baru dapat dikaitkan dengan nilai sebelumnya atau ke string yang sama sekali berbeda sama sekali. Sebagai contoh&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-python&amp;quot;&amp;gt;message = &amp;#39;Hello World&amp;#39;
-print (&amp;amp;quot;Updated String :- &amp;amp;quot;, message[:6] + &amp;#39;Python&amp;#39;)
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;p&amp;gt;Bila kode diatas dieksekusi, maka akan menghasilkan hasil sebagai berikut :&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;Updated String :- Hello Python&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;h3&amp;gt;Escape Characters / Karakter Escape Python&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Dibawah ini adalah tabel dari daftar karakter escape atau karakter non-printable yang dapat diwakili/ditulis dengan awalan notasi backslash.&amp;lt;/p&amp;gt;
-&amp;lt;table&amp;gt;
-&amp;lt;thead&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;th&amp;gt;Notasi Backslash&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Karakter Hexadecimal&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Penjelasan&amp;lt;/th&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/thead&amp;gt;
-&amp;lt;tbody&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;&amp;#92;a &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;0x07 &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Bell atau alert&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;&amp;#92;b &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;0x08 &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Backspace&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;&amp;#92;cx &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Control-x&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;&amp;#92;C-x &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Control-x&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;&amp;#92;e &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;0x1b &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Escape&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;&amp;#92;f &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;0x0c &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Formfeed&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;&amp;#92;M-&amp;#92;C-x &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Meta-Control-x&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;&amp;#92;n &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;0x0a &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Newline&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;&amp;#92;nnn &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Octal notation, dimana n berada di range 0.7&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;&amp;#92;r &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;0x0d &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Carriage return&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;&amp;#92;s &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;0x20 &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Space&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;&amp;#92;t &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;0x09 &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Tab&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;&amp;#92;v &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;0x0b &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Vertical tab&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;&amp;#92;x &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Character x&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;&amp;#92;xnn &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Notasi Hexadecimal, dimana n berada di range 0.9, a.f, atau A.F&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;
-&amp;lt;h3&amp;gt;Operator Spesial String Python&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Asumsikan variabel string adalah &amp;#39;Belajar&amp;#39; dan variabel b adalah &amp;#39;Python&amp;#39;, lalu dibawah ini adalah operator yang bisa dipakai pada kedua string di variabel tersebut. &amp;lt;code&amp;gt;a = &amp;amp;quot;Belajar&amp;amp;quot;&amp;lt;/code&amp;gt; &amp;lt;code&amp;gt;b = &amp;amp;quot;Python&amp;amp;quot;&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Berikut adalah daftar operator spesial string pada Python :&amp;lt;/p&amp;gt;
-&amp;lt;table&amp;gt;
-&amp;lt;thead&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;th&amp;gt;Operator&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Contoh Penjelasan&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Penjelasan&amp;lt;/th&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/thead&amp;gt;
-&amp;lt;tbody&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;+ &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;a + b &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;akan menghasilkan BelajarPython Concatenation - Menambahkan nilai pada kedua sisi operator&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;* &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;a*2&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;akan menghasilkan BelajarBelajar Pengulangan - Membuat string baru, menggabungkan beberapa salinan dari string yang sama&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt; []&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;a[1]&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;akan menghasilkan e Slice - Memberikan karakter dari indeks yang diberikan&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;[ : ]&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;a[1:4]&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;akan menghasilkan ela Range Slice - Memberikan karakter dari kisaran yang diberikan&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;in&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;B in a &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;akan menghasilkan 1 Keanggotaan - Mengembalikan nilai true jika ada karakter dalam string yang diberikan&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt; not in&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt; Z not in a&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;akan menghasilkan 1 Keanggotaan - Mengembalikan nilai true jika karakter tidak ada dalam string yang diberikan&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;r/R &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;print r&amp;#39;&amp;#92;n&amp;#39; prints &amp;#92;n dan print R&amp;#39;&amp;#92;n&amp;#39;prints &amp;#92;n Raw String -&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Menekan arti aktual karakter Escape. Sintaks untuk string mentah sama persis dengan string biasa kecuali operator string mentah, huruf &amp;amp;quot;r&amp;amp;quot;, yang mendahului tanda petik. &amp;amp;quot;R&amp;amp;quot; bisa berupa huruf kecil (r) atau huruf besar (R) dan harus ditempatkan tepat sebelum tanda kutip pertama.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;%&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Format - Melakukan format String&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;
-&amp;lt;h3&amp;gt;Operator Format String Python&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Salah satu fitur Python yang paling keren adalah format string operator %. Operator ini unik untuk string dan membuat paket memiliki fungsi dari keluarga printf C () C.
-berikut adalah contoh sederhananya : &amp;lt;code&amp;gt;print (&amp;amp;quot;My name is %s and weight is %d kg!&amp;amp;quot; % (&amp;#39;Zara&amp;#39;, 21)) &amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Berikut adalah daftar lengkap simbol yang bisa digunakan bersamaan dengan % :&amp;lt;/p&amp;gt;
-&amp;lt;table&amp;gt;
-&amp;lt;thead&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;th&amp;gt;Operator&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Penjelasan&amp;lt;/th&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/thead&amp;gt;
-&amp;lt;tbody&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;%c&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;character&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;%s&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Konversi string melalui str () sebelum memformat&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;%i&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dianggap sebagai bilangan bulat desimal&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;%d&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dianggap sebagai bilangan bulat desimal&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;%u&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Unsigned decimal integer&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;%o&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Bilangan bulat oktal&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;%x&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Bilangan bulat heksadesimal (huruf kecil)&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;%X&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Bilangan bulat heksadesimal (huruf besar)&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;%e&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Notasi eksponensial (dengan huruf kecil &amp;#39;e&amp;#39;)&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;%E&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Notasi eksponensial (dengan huruf besar &amp;#39;E&amp;#39;)&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;%f&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Bilangan real floating point&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;%g&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Yang lebih pendek dari% f dan% e&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;%G&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Lebih pendek dari% f dan% E&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;
-&amp;lt;h3&amp;gt;Triple Quote Python&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Python triple quotes digunakan dengan membiarkan string untuk ditulis dalam beberapa baris, termasuk kata kerja NEWLINEs, TABs, dan karakter khusus lainnya.
+    <main class="w-12/12 pb-10 px-4 md:w-9/12 tutorial">
+      <h1 class="text-primary-500 font-medium text-3xl mb-3">String Python</h1>
+      <p>String adalah jenis yang paling populer di bahasa pemrograman. Kita bisa membuatnya hanya dengan melampirkan karakter dalam tanda kutip. Python memperlakukan tanda kutip tunggal sama dengan tanda kutip ganda. Membuat string semudah memberi nilai pada sebuah variabel.</p>
+<p>Dibawah ini adalah contoh sederhana dari sebuah string pada bahasa pemrograman Python.</p>
+<pre><code class="language-python">print(&quot;Hello World&quot;)
+</code></pre>
+<h3>Mengakses Nilai dalam String</h3>
+<p>Python tidak menggunakan tipe karakter titik koma ; Ini diperlakukan sebagai string dengan panjang satu, sehingga juga dianggap sebagai substring.</p>
+<p>Untuk mengakses substring, gunakan tanda kurung siku untuk mengiris beserta indeks atau indeks untuk mendapatkan substring Anda. Sebagai contoh :</p>
+<pre><code class="language-python">name = 'John Doe' message = &quot;John Doe belajar bahasa python di Belajarpython&quot;
+print (&quot;name[0]: &quot;, name[0])
+print (&quot;message[1:4]: &quot;, message[1:4])
+</code></pre>
+<p>Bila kode diatas dieksekusi, maka akan menghasilkan hasil sebagai berikut :</p>
+<p><code>name[0]: J</code>
+<code>message[1:4]: ohn </code></p>
+<h3>Mengupdate String</h3>
+<p>Anda dapat &quot;memperbarui&quot; string yang ada dengan (kembali) menugaskan variabel ke string lain. Nilai baru dapat dikaitkan dengan nilai sebelumnya atau ke string yang sama sekali berbeda sama sekali. Sebagai contoh</p>
+<pre><code class="language-python">message = 'Hello World'
+print (&quot;Updated String :- &quot;, message[:6] + 'Python')
+</code></pre>
+<p>Bila kode diatas dieksekusi, maka akan menghasilkan hasil sebagai berikut :</p>
+<p><code>Updated String :- Hello Python</code></p>
+<h3>Escape Characters / Karakter Escape Python</h3>
+<p>Dibawah ini adalah tabel dari daftar karakter escape atau karakter non-printable yang dapat diwakili/ditulis dengan awalan notasi backslash.</p>
+<table>
+<thead>
+<tr>
+<th>Notasi Backslash</th>
+<th>Karakter Hexadecimal</th>
+<th>Penjelasan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\a </code></td>
+<td><code>0x07 </code></td>
+<td>Bell atau alert</td>
+</tr>
+<tr>
+<td><code>\b </code></td>
+<td><code>0x08 </code></td>
+<td>Backspace</td>
+</tr>
+<tr>
+<td><code>\cx </code></td>
+<td></td>
+<td>Control-x</td>
+</tr>
+<tr>
+<td><code>\C-x </code></td>
+<td></td>
+<td>Control-x</td>
+</tr>
+<tr>
+<td><code>\e </code></td>
+<td><code>0x1b </code></td>
+<td>Escape</td>
+</tr>
+<tr>
+<td><code>\f </code></td>
+<td><code>0x0c </code></td>
+<td>Formfeed</td>
+</tr>
+<tr>
+<td><code>\M-\C-x </code></td>
+<td></td>
+<td>Meta-Control-x</td>
+</tr>
+<tr>
+<td><code>\n </code></td>
+<td><code>0x0a </code></td>
+<td>Newline</td>
+</tr>
+<tr>
+<td><code>\nnn </code></td>
+<td></td>
+<td>Octal notation, dimana n berada di range 0.7</td>
+</tr>
+<tr>
+<td><code>\r </code></td>
+<td><code>0x0d </code></td>
+<td>Carriage return</td>
+</tr>
+<tr>
+<td><code>\s </code></td>
+<td><code>0x20 </code></td>
+<td>Space</td>
+</tr>
+<tr>
+<td><code>\t </code></td>
+<td><code>0x09 </code></td>
+<td>Tab</td>
+</tr>
+<tr>
+<td><code>\v </code></td>
+<td><code>0x0b </code></td>
+<td>Vertical tab</td>
+</tr>
+<tr>
+<td><code>\x </code></td>
+<td></td>
+<td>Character x</td>
+</tr>
+<tr>
+<td><code>\xnn </code></td>
+<td></td>
+<td>Notasi Hexadecimal, dimana n berada di range 0.9, a.f, atau A.F</td>
+</tr>
+</tbody>
+</table>
+<h3>Operator Spesial String Python</h3>
+<p>Asumsikan variabel string adalah 'Belajar' dan variabel b adalah 'Python', lalu dibawah ini adalah operator yang bisa dipakai pada kedua string di variabel tersebut. <code>a = &quot;Belajar&quot;</code> <code>b = &quot;Python&quot;</code></p>
+<p>Berikut adalah daftar operator spesial string pada Python :</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Contoh Penjelasan</th>
+<th>Penjelasan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+ </code></td>
+<td><code>a + b </code></td>
+<td>akan menghasilkan BelajarPython Concatenation - Menambahkan nilai pada kedua sisi operator</td>
+</tr>
+<tr>
+<td><code>* </code></td>
+<td><code>a*2</code></td>
+<td>akan menghasilkan BelajarBelajar Pengulangan - Membuat string baru, menggabungkan beberapa salinan dari string yang sama</td>
+</tr>
+<tr>
+<td><code> []</code></td>
+<td><code>a[1]</code></td>
+<td>akan menghasilkan e Slice - Memberikan karakter dari indeks yang diberikan</td>
+</tr>
+<tr>
+<td><code>[ : ]</code></td>
+<td><code>a[1:4]</code></td>
+<td>akan menghasilkan ela Range Slice - Memberikan karakter dari kisaran yang diberikan</td>
+</tr>
+<tr>
+<td><code>in</code></td>
+<td><code>B in a </code></td>
+<td>akan menghasilkan 1 Keanggotaan - Mengembalikan nilai true jika ada karakter dalam string yang diberikan</td>
+</tr>
+<tr>
+<td><code> not in</code></td>
+<td><code> Z not in a</code></td>
+<td>akan menghasilkan 1 Keanggotaan - Mengembalikan nilai true jika karakter tidak ada dalam string yang diberikan</td>
+</tr>
+<tr>
+<td><code>r/R </code></td>
+<td><code>print r'\n' prints \n dan print R'\n'prints \n Raw String -</code></td>
+<td>Menekan arti aktual karakter Escape. Sintaks untuk string mentah sama persis dengan string biasa kecuali operator string mentah, huruf &quot;r&quot;, yang mendahului tanda petik. &quot;R&quot; bisa berupa huruf kecil (r) atau huruf besar (R) dan harus ditempatkan tepat sebelum tanda kutip pertama.</td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td></td>
+<td>Format - Melakukan format String</td>
+</tr>
+</tbody>
+</table>
+<h3>Operator Format String Python</h3>
+<p>Salah satu fitur Python yang paling keren adalah format string operator %. Operator ini unik untuk string dan membuat paket memiliki fungsi dari keluarga printf C () C.
+berikut adalah contoh sederhananya : <code>print (&quot;My name is %s and weight is %d kg!&quot; % ('Zara', 21)) </code></p>
+<p>Berikut adalah daftar lengkap simbol yang bisa digunakan bersamaan dengan % :</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Penjelasan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%c</code></td>
+<td>character</td>
+</tr>
+<tr>
+<td><code>%s</code></td>
+<td>Konversi string melalui str () sebelum memformat</td>
+</tr>
+<tr>
+<td><code>%i</code></td>
+<td>Dianggap sebagai bilangan bulat desimal</td>
+</tr>
+<tr>
+<td><code>%d</code></td>
+<td>Dianggap sebagai bilangan bulat desimal</td>
+</tr>
+<tr>
+<td><code>%u</code></td>
+<td>Unsigned decimal integer</td>
+</tr>
+<tr>
+<td><code>%o</code></td>
+<td>Bilangan bulat oktal</td>
+</tr>
+<tr>
+<td><code>%x</code></td>
+<td>Bilangan bulat heksadesimal (huruf kecil)</td>
+</tr>
+<tr>
+<td><code>%X</code></td>
+<td>Bilangan bulat heksadesimal (huruf besar)</td>
+</tr>
+<tr>
+<td><code>%e</code></td>
+<td>Notasi eksponensial (dengan huruf kecil 'e')</td>
+</tr>
+<tr>
+<td><code>%E</code></td>
+<td>Notasi eksponensial (dengan huruf besar 'E')</td>
+</tr>
+<tr>
+<td><code>%f</code></td>
+<td>Bilangan real floating point</td>
+</tr>
+<tr>
+<td><code>%g</code></td>
+<td>Yang lebih pendek dari% f dan% e</td>
+</tr>
+<tr>
+<td><code>%G</code></td>
+<td>Lebih pendek dari% f dan% E</td>
+</tr>
+</tbody>
+</table>
+<h3>Triple Quote Python</h3>
+<p>Python triple quotes digunakan dengan membiarkan string untuk ditulis dalam beberapa baris, termasuk kata kerja NEWLINEs, TABs, dan karakter khusus lainnya.
 Sintaks untuk triple quotes terdiri dari tiga tanda kutip tunggal atau ganda ditulis berturut-turut :
-Berikut adalah contohnya :&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-python&amp;quot;&amp;gt;kutipantiga = &amp;amp;quot;&amp;amp;quot;&amp;amp;quot;this is a long string that is made up of
+Berikut adalah contohnya :</p>
+<pre><code class="language-python">kutipantiga = &quot;&quot;&quot;this is a long string that is made up of
 several lines and non-printable characters such as
-TAB ( &amp;#92;t ) and they will show up that way when displayed.
+TAB ( \t ) and they will show up that way when displayed.
 NEWLINEs within the string, whether explicitly given like
-this within the brackets [ &amp;#92;n ], or just a NEWLINE within
+this within the brackets [ \n ], or just a NEWLINE within
 the variable assignment will also show up.
-&amp;amp;quot;&amp;amp;quot;&amp;amp;quot;
+&quot;&quot;&quot;
 print (kutipantiga)
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;h3&amp;gt;String Unicode Python&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Pada Python 3, semua string diwakili dalam Unicode. Sedangkan pada Python 2 disimpan secara internal sebagai 8-bit ASCII, maka diperlukanlampiran &amp;#39;u&amp;#39; untuk membuatnya menjadi Unicode. Tetapi hal ini tidak lagi diperlukan sekarang. :&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Metode String Built-in&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Python menyertakan metode built-in berikut untuk memanipulasi string&amp;lt;/p&amp;gt;
-&amp;lt;table&amp;gt;
-&amp;lt;thead&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;th&amp;gt;Metode&amp;lt;/th&amp;gt;
-&amp;lt;th&amp;gt;Penjelasan&amp;lt;/th&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/thead&amp;gt;
-&amp;lt;tbody&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;capitalize()&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Meng-kapitalkan huruf pertama string&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;center(width, fillchar)&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan string yang dilapisi dengan fillchar dengan string asli yang dipusatkan pada total width kolom.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;count(str, beg = 0,end = len(string))&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Menghitung berapa kali str yang terjadi dalam string atau dalam substring string jika memulai indeks beg dan end index end diberikan.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;decode(encoding = &amp;#39;UTF-8&amp;#39;,errors = &amp;#39;strict&amp;#39;)&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Dekode string menggunakan codec yang terdaftar untuk pengkodean. Encoding default ke pengkodean string default.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;encode(encoding = &amp;#39;UTF-8&amp;#39;,errors = &amp;#39;strict&amp;#39;)&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan versi string yang dikodekan string; Pada kesalahan, default adalah menaikkan ValueError kecuali jika kesalahan diberikan dengan &amp;#39;ignore&amp;#39; atau &amp;#39;replace&amp;#39;.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;endswith(suffix, beg = 0, end = len(string))&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Menentukan apakah string atau substring string (jika memulai indeks memohon dan mengakhiri akhir indeks diberikan) berakhir dengan akhiran; Mengembalikan nilai true jika benar dan salah.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;expandtabs(tabsize = 8)&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Memperluas tab dalam string ke banyak ruang; Default ke 8 spasi per tab jika tabsize tidak tersedia.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;find(str, beg = 0 end = len(string))&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Tentukan jika str terjadi dalam string atau dalam substring string jika memulai indeks beg dan end index end diberikan return index jika ditemukan dan -1 sebaliknya.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;index(str, beg = 0, end = len(string))&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Sama seperti find (), namun menimbulkan pengecualian jika str tidak ditemukan.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;isalnum()&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan true jika string memiliki minimal 1 karakter dan semua karakternya alfanumerik dan false sebaliknya.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;isalpha()&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan true jika string memiliki minimal 1 karakter dan semua karakter adalah abjad dan false sebaliknya.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;isdigit()&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan true jika string hanya berisi digit dan false sebaliknya.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;islower()&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan true jika string memiliki setidaknya 1 karakter casing dan semua karakter casing dalam huruf kecil dan false sebaliknya.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;isnumeric()&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan true jika string unicode hanya berisi karakter numerik dan false sebaliknya.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;isspace()&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan true jika string hanya berisi karakter spasi dan false sebaliknya.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;istitle()&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan true jika string benar &amp;amp;quot;titlecased&amp;amp;quot; dan false sebaliknya.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;isupper()&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan true jika string memiliki setidaknya satu karakter casing dan semua karakter casing ada dalam huruf besar dan false sebaliknya.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;join(seq)&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Merges (concatenates) representasi string elemen dalam urutan seq menjadi string, dengan string pemisah.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;len(string)&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan panjang string&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;ljust(width[, fillchar])&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan string berlapis ruang dengan string asli dibiarkan dibenarkan ke kolom lebar total.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;lower()&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengonversi semua huruf besar dalam bentuk string menjadi huruf kecil.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;lstrip()&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Menghapus semua spasi utama dalam string.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;maketrans()&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan tabel terjemahan untuk digunakan dalam fungsi terjemahan.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;max(str)&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan karakter alfabetik dari string str.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;min(str)&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan min karakter abjad dari string str.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;replace(old, new [, max])&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Menggantikan semua kemunculan lama dalam string dengan kejadian baru atau paling maksimal jika max diberikan.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;rfind(str, beg = 0,end = len(string))&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Sama seperti find (), tapi cari mundur dalam string.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;rindex( str, beg = 0, end = len(string))&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Sama seperti index (), tapi cari mundur dalam string.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;rjust(width,[, fillchar])&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan string berlapis ruang dengan senar asli benar-dibenarkan untuk total kolom lebar.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;rstrip()&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Menghapus semua spasi spasi string.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;split(str=&amp;amp;quot;&amp;amp;quot;, num=string.count(str))&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Membagi string sesuai dengan pemisah str (ruang jika tidak disediakan) dan mengembalikan daftar substring; Terpecah menjadi paling banyak substring jika diberikan.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;splitlines( num=string.count(&amp;#39;&amp;#92;n&amp;#39;)) &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Membagi string sama sekali (atau num) NEWLINEs dan mengembalikan daftar setiap baris dengan NEWLINEs dihapus.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;startswith(str, beg=0,end=len(string)&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Determines if string or a substring of string (if starting index beg and ending index end are given) starts with substring str; returns true if so and false otherwise.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;strip([chars])&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Lakukan kedua lstrip () dan rstrip () pada string&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;swapcase()&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Kasus invers untuk semua huruf dalam string.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;title()&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan versi string &amp;amp;quot;titlecased&amp;amp;quot;, yaitu, semua kata diawali dengan huruf besar dan sisanya huruf kecil.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;translate(table, deletechars=&amp;amp;quot;&amp;amp;quot;) &amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Menerjemahkan string sesuai dengan tabel terjemahan str (256 karakter), menghapus string del.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;upper()&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengonversi huruf kecil dalam bentuk string ke huruf besar.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;zfill (width)&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan string asli yang tertinggal dengan angka nol ke total karakter lebar; Dimaksudkan untuk angka, zfill () mempertahankan tanda apapun yang diberikan (kurang satu nol).&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;tr&amp;gt;
-&amp;lt;td&amp;gt;&amp;lt;code&amp;gt;isdecimal()&amp;lt;/code&amp;gt;&amp;lt;/td&amp;gt;
-&amp;lt;td&amp;gt;Mengembalikan nilai true jika string unicode hanya berisi karakter desimal dan false sebaliknya.&amp;lt;/td&amp;gt;
-&amp;lt;/tr&amp;gt;
-&amp;lt;/tbody&amp;gt;
-&amp;lt;/table&amp;gt;
-&amp;lt;hr&amp;gt;
-&amp;lt;blockquote&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/belajarpythoncom/belajarpython.com/blob/master/docs/tutorial/string-python.md&amp;quot;&amp;gt;Edit tutorial ini&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;/blockquote&amp;gt;
-&amp;lt;div class=&amp;quot;mt-8 inline justify-between gap-x-4 md:flex&amp;quot;&amp;gt;
-  &amp;lt;div class=&amp;quot;flex justify-center mb-4 md:mb-0&amp;quot;&amp;gt;
-    &amp;lt;a href=&amp;quot;/tutorial/number-python&amp;quot; class=&amp;quot;text-primary-300 hover:text-primary-300 order-2 flex h-12 items-center rounded-full bg-blue-500 bg-opacity-20 px-8 text-base hover:no-underline md:order-1&amp;quot;&amp;gt;
-      &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; class=&amp;quot;mr-1 h-5 w-5&amp;quot; viewBox=&amp;quot;0 0 20 20&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;
-        &amp;lt;path fill-rule=&amp;quot;evenodd&amp;quot; d=&amp;quot;M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z&amp;quot; clip-rule=&amp;quot;evenodd&amp;quot; /&amp;gt;
-      &amp;lt;/svg&amp;gt;
-      &amp;lt;span class=&amp;quot;-mt-0.5&amp;quot;&amp;gt;Number Python&amp;lt;/span&amp;gt;
-    &amp;lt;/a&amp;gt;
-  &amp;lt;/div&amp;gt;
-  &amp;lt;div class=&amp;quot;order-1 flex justify-center&amp;quot;&amp;gt;
-    &amp;lt;a href=&amp;quot;/tutorial/list-python&amp;quot; class=&amp;quot;order-1 flex h-12 items-center rounded-full bg-gradient-to-l from-yellow-500 to-yellow-400 px-8 text-base text-black shadow-xl hover:text-black hover:no-underline hover:shadow md:order-2&amp;quot;&amp;gt;
-      &amp;lt;span class=&amp;quot;-mt-0.5&amp;quot;&amp;gt;List Python&amp;lt;/span&amp;gt;
-      &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; class=&amp;quot;ml-1 h-5 w-5&amp;quot; viewBox=&amp;quot;0 0 20 20&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;
-        &amp;lt;path fill-rule=&amp;quot;evenodd&amp;quot; d=&amp;quot;M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z&amp;quot; clip-rule=&amp;quot;evenodd&amp;quot; /&amp;gt;
-      &amp;lt;/svg&amp;gt;
-    &amp;lt;/a&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-
-  </main>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
-    crossorigin="anonymous"></script>
-  <!-- Iklan manual content belajarpython -->
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2371526032008656" data-ad-slot="4149104089"
-    data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+</code></pre>
+<h3>String Unicode Python</h3>
+<p>Pada Python 3, semua string diwakili dalam Unicode. Sedangkan pada Python 2 disimpan secara internal sebagai 8-bit ASCII, maka diperlukanlampiran 'u' untuk membuatnya menjadi Unicode. Tetapi hal ini tidak lagi diperlukan sekarang. :</p>
+<p>Metode String Built-in</p>
+<p>Python menyertakan metode built-in berikut untuk memanipulasi string</p>
+<table>
+<thead>
+<tr>
+<th>Metode</th>
+<th>Penjelasan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>capitalize()</code></td>
+<td>Meng-kapitalkan huruf pertama string</td>
+</tr>
+<tr>
+<td><code>center(width, fillchar)</code></td>
+<td>Mengembalikan string yang dilapisi dengan fillchar dengan string asli yang dipusatkan pada total width kolom.</td>
+</tr>
+<tr>
+<td><code>count(str, beg = 0,end = len(string))</code></td>
+<td>Menghitung berapa kali str yang terjadi dalam string atau dalam substring string jika memulai indeks beg dan end index end diberikan.</td>
+</tr>
+<tr>
+<td><code>decode(encoding = 'UTF-8',errors = 'strict')</code></td>
+<td>Dekode string menggunakan codec yang terdaftar untuk pengkodean. Encoding default ke pengkodean string default.</td>
+</tr>
+<tr>
+<td><code>encode(encoding = 'UTF-8',errors = 'strict')</code></td>
+<td>Mengembalikan versi string yang dikodekan string; Pada kesalahan, default adalah menaikkan ValueError kecuali jika kesalahan diberikan dengan 'ignore' atau 'replace'.</td>
+</tr>
+<tr>
+<td><code>endswith(suffix, beg = 0, end = len(string))</code></td>
+<td>Menentukan apakah string atau substring string (jika memulai indeks memohon dan mengakhiri akhir indeks diberikan) berakhir dengan akhiran; Mengembalikan nilai true jika benar dan salah.</td>
+</tr>
+<tr>
+<td><code>expandtabs(tabsize = 8)</code></td>
+<td>Memperluas tab dalam string ke banyak ruang; Default ke 8 spasi per tab jika tabsize tidak tersedia.</td>
+</tr>
+<tr>
+<td><code>find(str, beg = 0 end = len(string))</code></td>
+<td>Tentukan jika str terjadi dalam string atau dalam substring string jika memulai indeks beg dan end index end diberikan return index jika ditemukan dan -1 sebaliknya.</td>
+</tr>
+<tr>
+<td><code>index(str, beg = 0, end = len(string))</code></td>
+<td>Sama seperti find (), namun menimbulkan pengecualian jika str tidak ditemukan.</td>
+</tr>
+<tr>
+<td><code>isalnum()</code></td>
+<td>Mengembalikan true jika string memiliki minimal 1 karakter dan semua karakternya alfanumerik dan false sebaliknya.</td>
+</tr>
+<tr>
+<td><code>isalpha()</code></td>
+<td>Mengembalikan true jika string memiliki minimal 1 karakter dan semua karakter adalah abjad dan false sebaliknya.</td>
+</tr>
+<tr>
+<td><code>isdigit()</code></td>
+<td>Mengembalikan true jika string hanya berisi digit dan false sebaliknya.</td>
+</tr>
+<tr>
+<td><code>islower()</code></td>
+<td>Mengembalikan true jika string memiliki setidaknya 1 karakter casing dan semua karakter casing dalam huruf kecil dan false sebaliknya.</td>
+</tr>
+<tr>
+<td><code>isnumeric()</code></td>
+<td>Mengembalikan true jika string unicode hanya berisi karakter numerik dan false sebaliknya.</td>
+</tr>
+<tr>
+<td><code>isspace()</code></td>
+<td>Mengembalikan true jika string hanya berisi karakter spasi dan false sebaliknya.</td>
+</tr>
+<tr>
+<td><code>istitle()</code></td>
+<td>Mengembalikan true jika string benar &quot;titlecased&quot; dan false sebaliknya.</td>
+</tr>
+<tr>
+<td><code>isupper()</code></td>
+<td>Mengembalikan true jika string memiliki setidaknya satu karakter casing dan semua karakter casing ada dalam huruf besar dan false sebaliknya.</td>
+</tr>
+<tr>
+<td><code>join(seq)</code></td>
+<td>Merges (concatenates) representasi string elemen dalam urutan seq menjadi string, dengan string pemisah.</td>
+</tr>
+<tr>
+<td><code>len(string)</code></td>
+<td>Mengembalikan panjang string</td>
+</tr>
+<tr>
+<td><code>ljust(width[, fillchar])</code></td>
+<td>Mengembalikan string berlapis ruang dengan string asli dibiarkan dibenarkan ke kolom lebar total.</td>
+</tr>
+<tr>
+<td><code>lower()</code></td>
+<td>Mengonversi semua huruf besar dalam bentuk string menjadi huruf kecil.</td>
+</tr>
+<tr>
+<td><code>lstrip()</code></td>
+<td>Menghapus semua spasi utama dalam string.</td>
+</tr>
+<tr>
+<td><code>maketrans()</code></td>
+<td>Mengembalikan tabel terjemahan untuk digunakan dalam fungsi terjemahan.</td>
+</tr>
+<tr>
+<td><code>max(str)</code></td>
+<td>Mengembalikan karakter alfabetik dari string str.</td>
+</tr>
+<tr>
+<td><code>min(str)</code></td>
+<td>Mengembalikan min karakter abjad dari string str.</td>
+</tr>
+<tr>
+<td><code>replace(old, new [, max])</code></td>
+<td>Menggantikan semua kemunculan lama dalam string dengan kejadian baru atau paling maksimal jika max diberikan.</td>
+</tr>
+<tr>
+<td><code>rfind(str, beg = 0,end = len(string))</code></td>
+<td>Sama seperti find (), tapi cari mundur dalam string.</td>
+</tr>
+<tr>
+<td><code>rindex( str, beg = 0, end = len(string))</code></td>
+<td>Sama seperti index (), tapi cari mundur dalam string.</td>
+</tr>
+<tr>
+<td><code>rjust(width,[, fillchar])</code></td>
+<td>Mengembalikan string berlapis ruang dengan senar asli benar-dibenarkan untuk total kolom lebar.</td>
+</tr>
+<tr>
+<td><code>rstrip()</code></td>
+<td>Menghapus semua spasi spasi string.</td>
+</tr>
+<tr>
+<td><code>split(str=&quot;&quot;, num=string.count(str))</code></td>
+<td>Membagi string sesuai dengan pemisah str (ruang jika tidak disediakan) dan mengembalikan daftar substring; Terpecah menjadi paling banyak substring jika diberikan.</td>
+</tr>
+<tr>
+<td><code>splitlines( num=string.count('\n')) </code></td>
+<td>Membagi string sama sekali (atau num) NEWLINEs dan mengembalikan daftar setiap baris dengan NEWLINEs dihapus.</td>
+</tr>
+<tr>
+<td><code>startswith(str, beg=0,end=len(string)</code></td>
+<td>Determines if string or a substring of string (if starting index beg and ending index end are given) starts with substring str; returns true if so and false otherwise.</td>
+</tr>
+<tr>
+<td><code>strip([chars])</code></td>
+<td>Lakukan kedua lstrip () dan rstrip () pada string</td>
+</tr>
+<tr>
+<td><code>swapcase()</code></td>
+<td>Kasus invers untuk semua huruf dalam string.</td>
+</tr>
+<tr>
+<td><code>title()</code></td>
+<td>Mengembalikan versi string &quot;titlecased&quot;, yaitu, semua kata diawali dengan huruf besar dan sisanya huruf kecil.</td>
+</tr>
+<tr>
+<td><code>translate(table, deletechars=&quot;&quot;) </code></td>
+<td>Menerjemahkan string sesuai dengan tabel terjemahan str (256 karakter), menghapus string del.</td>
+</tr>
+<tr>
+<td><code>upper()</code></td>
+<td>Mengonversi huruf kecil dalam bentuk string ke huruf besar.</td>
+</tr>
+<tr>
+<td><code>zfill (width)</code></td>
+<td>Mengembalikan string asli yang tertinggal dengan angka nol ke total karakter lebar; Dimaksudkan untuk angka, zfill () mempertahankan tanda apapun yang diberikan (kurang satu nol).</td>
+</tr>
+<tr>
+<td><code>isdecimal()</code></td>
+<td>Mengembalikan nilai true jika string unicode hanya berisi karakter desimal dan false sebaliknya.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<blockquote>
+<p><a href="https://github.com/belajarpythoncom/belajarpython.com/blob/master/docs/tutorial/string-python.md">Edit tutorial ini</a></p>
+</blockquote>
+<div class="mt-8 inline justify-between gap-x-4 md:flex">
+  <div class="flex justify-center mb-4 md:mb-0">
+    <a href="/tutorial/number-python" class="text-primary-300 hover:text-primary-300 order-2 flex h-12 items-center rounded-full bg-blue-500 bg-opacity-20 px-8 text-base hover:no-underline md:order-1">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+      </svg>
+      <span class="-mt-0.5">Number Python</span>
+    </a>
+  </div>
+  <div class="order-1 flex justify-center">
+    <a href="/tutorial/list-python" class="order-1 flex h-12 items-center rounded-full bg-gradient-to-l from-yellow-500 to-yellow-400 px-8 text-base text-black shadow-xl hover:text-black hover:no-underline hover:shadow md:order-2">
+      <span class="-mt-0.5">List Python</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
+      </svg>
+    </a>
+  </div>
 </div>
-  
+
+    </main>
+  </div>
   <footer class="bg-slate-300 py-4">
   <div class="flex justify-center">
     <div class="flex gap-4 text-sm font-bold uppercase text-slate-600 md:gap-6">

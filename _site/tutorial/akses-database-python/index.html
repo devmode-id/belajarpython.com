@@ -59,12 +59,8 @@
   </div>
 </nav>
   
-  
-
-
-<div class="max-w-4xl mx-auto py-10 flex">
-  
-  
+  <div class="max-w-4xl mx-auto py-10 flex">
+    
 
 <sidebar class="hidden md:block md:w-3/12">
   <ul class="leading-normal">
@@ -214,126 +210,112 @@
     </li>
   </ul>
 </sidebar>
-  
-  <main class="w-12/12 pb-10 px-4 md:w-9/12 tutorial">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
-         crossorigin="anonymous"></script>
-    <!-- Iklan Belajarpython Okt 2024 -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-2371526032008656"
-         data-ad-slot="5950576158"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    <br/>
-    <h1 class="text-primary-500 font-medium text-3xl mb-3">Akses Database Python</h1>
-    &amp;lt;p&amp;gt;Standar Interface Python untuk database adalah Python DB-API. Kebanyakan Interface database Python mematuhi standar ini.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Anda bisa memilih database yang tepat untuk aplikasi Anda. API Database Python mendukung berbagai macam server database seperti.&amp;lt;/p&amp;gt;
-&amp;lt;ul&amp;gt;
-&amp;lt;li&amp;gt;GadFly&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;mSQL&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;MySQL&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;PostgreSQL&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Microsoft SQL Server 2000&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Informix&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Interbase&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Oracle&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Sybase&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;SQLite&amp;lt;/li&amp;gt;
-&amp;lt;/ul&amp;gt;
-&amp;lt;p&amp;gt;Berikut adalah link untuk mempelajari lebih lengkap daftar antarmuka/interface database Python - Antarmuka dan API Database Python. Anda harus mendownload modul DB API terpisah untuk setiap database yang perlu Anda akses. Sebagai contoh, jika Anda perlu mengakses database Oracle dan juga database MySQL, Anda harus mendownload kedua modul database Oracle dan MySQL.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;API DB menyediakan standar minimal untuk bekerja dengan database menggunakan struktur dan sintaks Python sedapat mungkin. API ini meliputi:&amp;lt;/p&amp;gt;
-&amp;lt;ul&amp;gt;
-&amp;lt;li&amp;gt;Mengimpor modul API.&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Mendapatkan koneksi dengan database.&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Menerbitkan pernyataan SQL dan prosedur tersimpan.&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Menutup koneksi&amp;lt;/li&amp;gt;
-&amp;lt;/ul&amp;gt;
-&amp;lt;p&amp;gt;Python memiliki dukungan built-in untuk SQLite. Pada bagian ini, kita akan mempelajari semua konsep menggunakan MySQL. Modul MySQLdb, antarmuka yang populer dengan MySQL tidak kompatibel dengan Python 3. Sebagai gantinya, kita akan menggunakan modul PyMySQL.&amp;lt;/p&amp;gt;
-&amp;lt;h3&amp;gt;Apa itu PyMySQL ?&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;PyMySQL adalah sebuah antarmuka untuk menghubungkan ke server database MySQL dari Python. Ini mengimplementasikan API Database Python v2.0 dan berisi perpustakaan klien MySQL murni-Python. Tujuan PyMySQL adalah penggantian drop-in untuk MySQLdb. Anda dapat melihat dokumentasi lengkap penggunaan PyMySQL di &amp;lt;a href=&amp;quot;https://pymysql.readthedocs.io/en/latest/&amp;quot;&amp;gt;https://pymysql.readthedocs.io/en/latest/&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
-&amp;lt;h3&amp;gt;Cara Instal PyMySQL&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Sebelum melanjutkan, pastikan Anda telah menginstal PyMySQL di komputer Anda. Cukup ketik berikut ini di skrip Python Anda dan jalankan.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;import pymysql.cursors&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Jika menghasilkan hasil berikut, berarti modul MySQLdb tidak terpasang:&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;Traceback (most recent call last):&amp;lt;/code&amp;gt;
-&amp;lt;code&amp;gt;File &amp;amp;quot;test.py&amp;amp;quot;, line 3, in &amp;lt;/code&amp;gt;
-&amp;lt;code&amp;gt;Import PyMySQL&amp;lt;/code&amp;gt;
-&amp;lt;code&amp;gt;ImportError: No module named PyMySQL&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Untuk menginstal modul PyMySQL silahkan gunakan command/perintah berikut di command prompt:&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;python -m pip install PyMySQL&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;h3&amp;gt;Database Connection&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Sebelum terhubung ke database MySQL, pastikan beberapa hal dibawah ini :&amp;lt;/p&amp;gt;
-&amp;lt;ul&amp;gt;
-&amp;lt;li&amp;gt;Anda telah membuat database TESTDB.&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Anda telah membuat tabel EMPLOYEE di TESTDB.&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Tabel ini memiliki bidang FIRST_NAME, LAST_NAME, AGE, SEX, dan INCOME.&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;User ID &amp;amp;quot;testuser&amp;amp;quot; dan password &amp;amp;quot;test123&amp;amp;quot; diatur untuk mengakses TESTDB.&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Python modul PyMySQL terinstal dengan benar pada mesin Anda.&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Anda telah melalui tutorial MySQL untuk memahami Dasar-Dasar MySQL&amp;lt;/li&amp;gt;
-&amp;lt;/ul&amp;gt;
-&amp;lt;p&amp;gt;Berikut ini adalah contoh koneksi dengan database MySQL &amp;amp;quot;TESTDB&amp;amp;quot;&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-python&amp;quot;&amp;gt;import pymysql.cursors
+    <main class="w-12/12 pb-10 px-4 md:w-9/12 tutorial">
+      <h1 class="text-primary-500 font-medium text-3xl mb-3">Akses Database Python</h1>
+      <p>Standar Interface Python untuk database adalah Python DB-API. Kebanyakan Interface database Python mematuhi standar ini.</p>
+<p>Anda bisa memilih database yang tepat untuk aplikasi Anda. API Database Python mendukung berbagai macam server database seperti.</p>
+<ul>
+<li>GadFly</li>
+<li>mSQL</li>
+<li>MySQL</li>
+<li>PostgreSQL</li>
+<li>Microsoft SQL Server 2000</li>
+<li>Informix</li>
+<li>Interbase</li>
+<li>Oracle</li>
+<li>Sybase</li>
+<li>SQLite</li>
+</ul>
+<p>Berikut adalah link untuk mempelajari lebih lengkap daftar antarmuka/interface database Python - Antarmuka dan API Database Python. Anda harus mendownload modul DB API terpisah untuk setiap database yang perlu Anda akses. Sebagai contoh, jika Anda perlu mengakses database Oracle dan juga database MySQL, Anda harus mendownload kedua modul database Oracle dan MySQL.</p>
+<p>API DB menyediakan standar minimal untuk bekerja dengan database menggunakan struktur dan sintaks Python sedapat mungkin. API ini meliputi:</p>
+<ul>
+<li>Mengimpor modul API.</li>
+<li>Mendapatkan koneksi dengan database.</li>
+<li>Menerbitkan pernyataan SQL dan prosedur tersimpan.</li>
+<li>Menutup koneksi</li>
+</ul>
+<p>Python memiliki dukungan built-in untuk SQLite. Pada bagian ini, kita akan mempelajari semua konsep menggunakan MySQL. Modul MySQLdb, antarmuka yang populer dengan MySQL tidak kompatibel dengan Python 3. Sebagai gantinya, kita akan menggunakan modul PyMySQL.</p>
+<h3>Apa itu PyMySQL ?</h3>
+<p>PyMySQL adalah sebuah antarmuka untuk menghubungkan ke server database MySQL dari Python. Ini mengimplementasikan API Database Python v2.0 dan berisi perpustakaan klien MySQL murni-Python. Tujuan PyMySQL adalah penggantian drop-in untuk MySQLdb. Anda dapat melihat dokumentasi lengkap penggunaan PyMySQL di <a href="https://pymysql.readthedocs.io/en/latest/">https://pymysql.readthedocs.io/en/latest/</a>.</p>
+<h3>Cara Instal PyMySQL</h3>
+<p>Sebelum melanjutkan, pastikan Anda telah menginstal PyMySQL di komputer Anda. Cukup ketik berikut ini di skrip Python Anda dan jalankan.</p>
+<p><code>import pymysql.cursors</code></p>
+<p>Jika menghasilkan hasil berikut, berarti modul MySQLdb tidak terpasang:</p>
+<p><code>Traceback (most recent call last):</code>
+<code>File &quot;test.py&quot;, line 3, in </code>
+<code>Import PyMySQL</code>
+<code>ImportError: No module named PyMySQL</code></p>
+<p>Untuk menginstal modul PyMySQL silahkan gunakan command/perintah berikut di command prompt:</p>
+<p><code>python -m pip install PyMySQL</code></p>
+<h3>Database Connection</h3>
+<p>Sebelum terhubung ke database MySQL, pastikan beberapa hal dibawah ini :</p>
+<ul>
+<li>Anda telah membuat database TESTDB.</li>
+<li>Anda telah membuat tabel EMPLOYEE di TESTDB.</li>
+<li>Tabel ini memiliki bidang FIRST_NAME, LAST_NAME, AGE, SEX, dan INCOME.</li>
+<li>User ID &quot;testuser&quot; dan password &quot;test123&quot; diatur untuk mengakses TESTDB.</li>
+<li>Python modul PyMySQL terinstal dengan benar pada mesin Anda.</li>
+<li>Anda telah melalui tutorial MySQL untuk memahami Dasar-Dasar MySQL</li>
+</ul>
+<p>Berikut ini adalah contoh koneksi dengan database MySQL &quot;TESTDB&quot;</p>
+<pre><code class="language-python">import pymysql.cursors
 
 # Open database connection
-db = pymysql.connect(&amp;amp;quot;localhost&amp;amp;quot;,&amp;amp;quot;testuser&amp;amp;quot;,&amp;amp;quot;test123&amp;amp;quot;,&amp;amp;quot;TESTDB&amp;amp;quot; )
+db = pymysql.connect(&quot;localhost&quot;,&quot;testuser&quot;,&quot;test123&quot;,&quot;TESTDB&quot; )
 
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
 
 # execute SQL query using execute() method.
-cursor.execute(&amp;amp;quot;SELECT VERSION()&amp;amp;quot;)
+cursor.execute(&quot;SELECT VERSION()&quot;)
 
 # Fetch a single row using fetchone() method.
 data = cursor.fetchone()
 
-print (&amp;amp;quot;Database version : %s &amp;amp;quot; % data)
+print (&quot;Database version : %s &quot; % data)
 
 # disconnect from server
 db.close()
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;h3&amp;gt;Membuat Tabel Database&amp;lt;/h3&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-python&amp;quot;&amp;gt;import pymysql.cursors
+</code></pre>
+<h3>Membuat Tabel Database</h3>
+<pre><code class="language-python">import pymysql.cursors
 
 # Open database connection
-db = pymysql.connect(&amp;amp;quot;localhost&amp;amp;quot;,&amp;amp;quot;testuser&amp;amp;quot;,&amp;amp;quot;test123&amp;amp;quot;,&amp;amp;quot;TESTDB&amp;amp;quot; )
+db = pymysql.connect(&quot;localhost&quot;,&quot;testuser&quot;,&quot;test123&quot;,&quot;TESTDB&quot; )
 
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
 
 # Drop table if it already exist using execute() method.
-cursor.execute(&amp;amp;quot;DROP TABLE IF EXISTS EMPLOYEE&amp;amp;quot;)
+cursor.execute(&quot;DROP TABLE IF EXISTS EMPLOYEE&quot;)
 
 # Create table as per requirement
-sql = &amp;amp;quot;&amp;amp;quot;&amp;amp;quot;CREATE TABLE EMPLOYEE (
+sql = &quot;&quot;&quot;CREATE TABLE EMPLOYEE (
    FIRST_NAME  CHAR(20) NOT NULL,
    LAST_NAME  CHAR(20),
    AGE INT,
    SEX CHAR(1),
-   INCOME FLOAT )&amp;amp;quot;&amp;amp;quot;&amp;amp;quot;
+   INCOME FLOAT )&quot;&quot;&quot;
 
 cursor.execute(sql)
 
 # disconnect from server
 db.close()
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;h3&amp;gt;Operasi Insert&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Contoh berikut, mengeksekusi pernyataan SQL INSERT untuk membuat catatan di tabel EMPLOYEE&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-python&amp;quot;&amp;gt;import pymysql.cursors
+</code></pre>
+<h3>Operasi Insert</h3>
+<p>Contoh berikut, mengeksekusi pernyataan SQL INSERT untuk membuat catatan di tabel EMPLOYEE</p>
+<pre><code class="language-python">import pymysql.cursors
 
 # Open database connection
-db = pymysql.connect(&amp;amp;quot;localhost&amp;amp;quot;,&amp;amp;quot;testuser&amp;amp;quot;,&amp;amp;quot;test123&amp;amp;quot;,&amp;amp;quot;TESTDB&amp;amp;quot; )
+db = pymysql.connect(&quot;localhost&quot;,&quot;testuser&quot;,&quot;test123&quot;,&quot;TESTDB&quot; )
 
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
 
 # Prepare SQL query to INSERT a record into the database.
-sql = &amp;amp;quot;&amp;amp;quot;&amp;amp;quot;INSERT INTO EMPLOYEE(FIRST_NAME,
+sql = &quot;&quot;&quot;INSERT INTO EMPLOYEE(FIRST_NAME,
    LAST_NAME, AGE, SEX, INCOME)
-   VALUES (&amp;#39;Mac&amp;#39;, &amp;#39;Mohan&amp;#39;, 20, &amp;#39;M&amp;#39;, 2000)&amp;amp;quot;&amp;amp;quot;&amp;amp;quot;
+   VALUES ('Mac', 'Mohan', 20, 'M', 2000)&quot;&quot;&quot;
 try:
    # Execute the SQL command
    cursor.execute(sql)
@@ -345,21 +327,21 @@ except:
 
 # disconnect from server
 db.close()
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;p&amp;gt;Contoh di atas bisa dituliskan sebagai berikut untuk membuat query SQL secara dinamis&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-python&amp;quot;&amp;gt;import pymysql.cursors
+</code></pre>
+<p>Contoh di atas bisa dituliskan sebagai berikut untuk membuat query SQL secara dinamis</p>
+<pre><code class="language-python">import pymysql.cursors
 
 # Open database connection
-db = pymysql.connect(&amp;amp;quot;localhost&amp;amp;quot;,&amp;amp;quot;testuser&amp;amp;quot;,&amp;amp;quot;test123&amp;amp;quot;,&amp;amp;quot;TESTDB&amp;amp;quot; )
+db = pymysql.connect(&quot;localhost&quot;,&quot;testuser&quot;,&quot;test123&quot;,&quot;TESTDB&quot; )
 
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
 
 # Prepare SQL query to INSERT a record into the database.
-sql = &amp;amp;quot;INSERT INTO EMPLOYEE(FIRST_NAME, &amp;#92;
-   LAST_NAME, AGE, SEX, INCOME) &amp;#92;
-   VALUES (&amp;#39;%s&amp;#39;, &amp;#39;%s&amp;#39;, &amp;#39;%d&amp;#39;, &amp;#39;%c&amp;#39;, &amp;#39;%d&amp;#39; )&amp;amp;quot; % &amp;#92;
-   (&amp;#39;Mac&amp;#39;, &amp;#39;Mohan&amp;#39;, 20, &amp;#39;M&amp;#39;, 2000)
+sql = &quot;INSERT INTO EMPLOYEE(FIRST_NAME, \
+   LAST_NAME, AGE, SEX, INCOME) \
+   VALUES ('%s', '%s', '%d', '%c', '%d' )&quot; % \
+   ('Mac', 'Mohan', 20, 'M', 2000)
 try:
    # Execute the SQL command
    cursor.execute(sql)
@@ -371,26 +353,26 @@ except:
 
 # disconnect from server
 db.close()
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;h3&amp;gt;Read Operation&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;READ Operation pada database apapun berarti mengambil beberapa informasi berguna dari database.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Setelah koneksi database terbentuk, Anda siap untuk membuat query ke dalam database ini. Anda bisa menggunakan metode fetchone()
-untuk mengambil satu record atau fetchall() metode untuk mengambil beberapa nilai dari tabel database.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Fetchone () - Ini mengambil baris berikut dari kumpulan hasil query. Set hasil adalah objek yang dikembalikan saat objek kursor digunakan untuk query tabel.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Fetchall () - Ini menjemput semua baris dalam kumpulan hasil. Jika beberapa baris telah diekstraksi dari himpunan hasil, maka akan diambil baris yang tersisa dari kumpulan hasil.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Rowcount - Ini adalah atribut read-only dan mengembalikan jumlah baris yang dipengaruhi oleh metode execute ().&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Prosedur berikut menanyakan semua catatan dari tabel EMPLOYEE yang memiliki gaji lebih dari 1000&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-python&amp;quot;&amp;gt;import pymysql.cursors
+</code></pre>
+<h3>Read Operation</h3>
+<p>READ Operation pada database apapun berarti mengambil beberapa informasi berguna dari database.</p>
+<p>Setelah koneksi database terbentuk, Anda siap untuk membuat query ke dalam database ini. Anda bisa menggunakan metode fetchone()
+untuk mengambil satu record atau fetchall() metode untuk mengambil beberapa nilai dari tabel database.</p>
+<p>Fetchone () - Ini mengambil baris berikut dari kumpulan hasil query. Set hasil adalah objek yang dikembalikan saat objek kursor digunakan untuk query tabel.</p>
+<p>Fetchall () - Ini menjemput semua baris dalam kumpulan hasil. Jika beberapa baris telah diekstraksi dari himpunan hasil, maka akan diambil baris yang tersisa dari kumpulan hasil.</p>
+<p>Rowcount - Ini adalah atribut read-only dan mengembalikan jumlah baris yang dipengaruhi oleh metode execute ().</p>
+<p>Prosedur berikut menanyakan semua catatan dari tabel EMPLOYEE yang memiliki gaji lebih dari 1000</p>
+<pre><code class="language-python">import pymysql.cursors
 
 # Open database connection
-db = pymysql.connect(&amp;amp;quot;localhost&amp;amp;quot;,&amp;amp;quot;testuser&amp;amp;quot;,&amp;amp;quot;test123&amp;amp;quot;,&amp;amp;quot;TESTDB&amp;amp;quot; )
+db = pymysql.connect(&quot;localhost&quot;,&quot;testuser&quot;,&quot;test123&quot;,&quot;TESTDB&quot; )
 
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
 
 # Prepare SQL query to INSERT a record into the database.
-sql = &amp;amp;quot;SELECT * FROM EMPLOYEE &amp;#92;
-       WHERE INCOME &amp;amp;gt; &amp;#39;%d&amp;#39;&amp;amp;quot; % (1000)
+sql = &quot;SELECT * FROM EMPLOYEE \
+       WHERE INCOME &gt; '%d'&quot; % (1000)
 try:
    # Execute the SQL command
    cursor.execute(sql)
@@ -403,30 +385,30 @@ try:
       sex = row[3]
       income = row[4]
       # Now print fetched result
-      print (&amp;amp;quot;fname = %s,lname = %s,age = %d,sex = %s,income = %d&amp;amp;quot; % &amp;#92;
+      print (&quot;fname = %s,lname = %s,age = %d,sex = %s,income = %d&quot; % \
              (fname, lname, age, sex, income ))
 except:
-   print (&amp;amp;quot;Error: unable to fetch data&amp;amp;quot;)
+   print (&quot;Error: unable to fetch data&quot;)
 
 # menutup koneksi ke server
 db.close()
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;p&amp;gt;Setelah Anda eksekusi kode diatas, akan muncul hasil seperti dibawah ini :
-&amp;lt;code&amp;gt;fname = Mac, lname = Mohan, age = 20, sex = M, income = 2000&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;h3&amp;gt;Update Operation&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Operasi UPDATE pada database apapun berarti mengupdate satu atau lebih catatan, yang sudah tersedia di database.
-Prosedur berikut memperbarui semua catatan yang memiliki SEX sebagai &amp;#39;M&amp;#39;. Di sini, kita meningkatkan UMUR semua laki-laki satu tahun.&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-python&amp;quot;&amp;gt;import pymysql.cursors
+</code></pre>
+<p>Setelah Anda eksekusi kode diatas, akan muncul hasil seperti dibawah ini :
+<code>fname = Mac, lname = Mohan, age = 20, sex = M, income = 2000</code></p>
+<h3>Update Operation</h3>
+<p>Operasi UPDATE pada database apapun berarti mengupdate satu atau lebih catatan, yang sudah tersedia di database.
+Prosedur berikut memperbarui semua catatan yang memiliki SEX sebagai 'M'. Di sini, kita meningkatkan UMUR semua laki-laki satu tahun.</p>
+<pre><code class="language-python">import pymysql.cursors
 
 # Open database connection
-db = pymysql.connect(&amp;amp;quot;localhost&amp;amp;quot;,&amp;amp;quot;testuser&amp;amp;quot;,&amp;amp;quot;test123&amp;amp;quot;,&amp;amp;quot;TESTDB&amp;amp;quot; )
+db = pymysql.connect(&quot;localhost&quot;,&quot;testuser&quot;,&quot;test123&quot;,&quot;TESTDB&quot; )
 
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
 
 # Prepare SQL query to UPDATE required records
-sql = &amp;amp;quot;UPDATE EMPLOYEE SET AGE = AGE + 1
-                          WHERE SEX = &amp;#39;%c&amp;#39;&amp;amp;quot; % (&amp;#39;M&amp;#39;)
+sql = &quot;UPDATE EMPLOYEE SET AGE = AGE + 1
+                          WHERE SEX = '%c'&quot; % ('M')
 try:
    # Execute the SQL command
    cursor.execute(sql)
@@ -438,19 +420,19 @@ except:
 
 # disconnect from server
 db.close()
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;h3&amp;gt;Delete Operation&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;Operasi DELETE diperlukan bila Anda ingin menghapus beberapa catatan dari database Anda. Berikut ini adalah prosedur untuk menghapus semua catatan dari EMPLOYEE dimana AGE lebih dari 20&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-python&amp;quot;&amp;gt;import pymysql.cursors
+</code></pre>
+<h3>Delete Operation</h3>
+<p>Operasi DELETE diperlukan bila Anda ingin menghapus beberapa catatan dari database Anda. Berikut ini adalah prosedur untuk menghapus semua catatan dari EMPLOYEE dimana AGE lebih dari 20</p>
+<pre><code class="language-python">import pymysql.cursors
 
 # Open database connection
-db = pymysql.connect(&amp;amp;quot;localhost&amp;amp;quot;,&amp;amp;quot;testuser&amp;amp;quot;,&amp;amp;quot;test123&amp;amp;quot;,&amp;amp;quot;TESTDB&amp;amp;quot; )
+db = pymysql.connect(&quot;localhost&quot;,&quot;testuser&quot;,&quot;test123&quot;,&quot;TESTDB&quot; )
 
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
 
 # Prepare SQL query to DELETE required records
-sql = &amp;amp;quot;DELETE FROM EMPLOYEE WHERE AGE &amp;amp;gt; &amp;#39;%d&amp;#39;&amp;amp;quot; % (20)
+sql = &quot;DELETE FROM EMPLOYEE WHERE AGE &gt; '%d'&quot; % (20)
 try:
    # Execute the SQL command
    cursor.execute(sql)
@@ -462,47 +444,38 @@ except:
 
 # disconnect from server
 db.close()
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;p&amp;gt;Selain itu masih ada beberapa operasi sebagai berikut :&amp;lt;/p&amp;gt;
-&amp;lt;ul&amp;gt;
-&amp;lt;li&amp;gt;Commit Operation db.commit()&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Rollback Operation db.rollback()&amp;lt;/li&amp;gt;
-&amp;lt;li&amp;gt;Disconnect Operation db.close()&amp;lt;/li&amp;gt;
-&amp;lt;/ul&amp;gt;
-&amp;lt;p&amp;gt;Jika Anda menginginkan dokumentasi yang lebih lengkap dari bahasa pemrograman python, silahkan buka dokumentasi resmi dari Python - &amp;lt;a href=&amp;quot;https://docs.python.org/3/&amp;quot;&amp;gt;Dokumentasi Lengkap Python&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;blockquote&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/belajarpythoncom/belajarpython.com/edit/master/docs/tutorial/akses-database-python.md&amp;quot;&amp;gt;Edit tutorial ini&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;/blockquote&amp;gt;
-&amp;lt;div class=&amp;quot;mt-8 inline justify-between gap-x-4 md:flex&amp;quot;&amp;gt;
-  &amp;lt;div class=&amp;quot;flex justify-center mb-4 md:mb-0&amp;quot;&amp;gt;
-    &amp;lt;a href=&amp;quot;/tutorial/object-class-python&amp;quot; class=&amp;quot;text-primary-300 hover:text-primary-300 order-2 flex h-12 items-center rounded-full bg-blue-500 bg-opacity-20 px-8 text-base hover:no-underline md:order-1&amp;quot;&amp;gt;
-      &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; class=&amp;quot;mr-1 h-5 w-5&amp;quot; viewBox=&amp;quot;0 0 20 20&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;
-        &amp;lt;path fill-rule=&amp;quot;evenodd&amp;quot; d=&amp;quot;M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z&amp;quot; clip-rule=&amp;quot;evenodd&amp;quot; /&amp;gt;
-      &amp;lt;/svg&amp;gt;
-      &amp;lt;span class=&amp;quot;-mt-0.5&amp;quot;&amp;gt;Object &amp;amp;amp; Class Python&amp;lt;/span&amp;gt;
-    &amp;lt;/a&amp;gt;
-  &amp;lt;/div&amp;gt;
-  &amp;lt;div class=&amp;quot;order-1 flex justify-center&amp;quot;&amp;gt;
-    &amp;lt;a href=&amp;quot;/tutorial/networking-python&amp;quot; class=&amp;quot;order-1 flex h-12 items-center rounded-full bg-gradient-to-l from-yellow-500 to-yellow-400 px-8 text-base text-black shadow-xl hover:text-black hover:no-underline hover:shadow md:order-2&amp;quot;&amp;gt;
-      &amp;lt;span class=&amp;quot;-mt-0.5&amp;quot;&amp;gt;Networking Python&amp;lt;/span&amp;gt;
-      &amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; class=&amp;quot;ml-1 h-5 w-5&amp;quot; viewBox=&amp;quot;0 0 20 20&amp;quot; fill=&amp;quot;currentColor&amp;quot;&amp;gt;
-        &amp;lt;path fill-rule=&amp;quot;evenodd&amp;quot; d=&amp;quot;M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z&amp;quot; clip-rule=&amp;quot;evenodd&amp;quot; /&amp;gt;
-      &amp;lt;/svg&amp;gt;
-    &amp;lt;/a&amp;gt;
-  &amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-
-  </main>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
-    crossorigin="anonymous"></script>
-  <!-- Iklan manual content belajarpython -->
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2371526032008656" data-ad-slot="4149104089"
-    data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+</code></pre>
+<p>Selain itu masih ada beberapa operasi sebagai berikut :</p>
+<ul>
+<li>Commit Operation db.commit()</li>
+<li>Rollback Operation db.rollback()</li>
+<li>Disconnect Operation db.close()</li>
+</ul>
+<p>Jika Anda menginginkan dokumentasi yang lebih lengkap dari bahasa pemrograman python, silahkan buka dokumentasi resmi dari Python - <a href="https://docs.python.org/3/">Dokumentasi Lengkap Python</a></p>
+<blockquote>
+<p><a href="https://github.com/belajarpythoncom/belajarpython.com/edit/master/docs/tutorial/akses-database-python.md">Edit tutorial ini</a></p>
+</blockquote>
+<div class="mt-8 inline justify-between gap-x-4 md:flex">
+  <div class="flex justify-center mb-4 md:mb-0">
+    <a href="/tutorial/object-class-python" class="text-primary-300 hover:text-primary-300 order-2 flex h-12 items-center rounded-full bg-blue-500 bg-opacity-20 px-8 text-base hover:no-underline md:order-1">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+      </svg>
+      <span class="-mt-0.5">Object &amp; Class Python</span>
+    </a>
+  </div>
+  <div class="order-1 flex justify-center">
+    <a href="/tutorial/networking-python" class="order-1 flex h-12 items-center rounded-full bg-gradient-to-l from-yellow-500 to-yellow-400 px-8 text-base text-black shadow-xl hover:text-black hover:no-underline hover:shadow md:order-2">
+      <span class="-mt-0.5">Networking Python</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
+      </svg>
+    </a>
+  </div>
 </div>
-  
+
+    </main>
+  </div>
   <footer class="bg-slate-300 py-4">
   <div class="flex justify-center">
     <div class="flex gap-4 text-sm font-bold uppercase text-slate-600 md:gap-6">

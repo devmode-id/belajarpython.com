@@ -58,125 +58,107 @@
     </div>
   </div>
 </nav>
-  
-  
-
-
-<div class="max-w-4xl mx-auto py-10 flex">
-  
-  <main class="w-12/12 pb-10 px-4 md:w-12/12">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
-         crossorigin="anonymous"></script>
-    <!-- Iklan Belajarpython Okt 2024 -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-2371526032008656"
-         data-ad-slot="5950576158"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    <br/>
-    <h1 class="text-primary-500 font-medium text-3xl mb-3">Membaca dan Menulis File dengan Python</h1>
-    &amp;lt;p&amp;gt;Saat Anda ingin menyimpan data, Anda bisa menggunakan &amp;lt;a href=&amp;quot;https://belajarpython.com/tutorial/variabel-python&amp;quot;&amp;gt;variabel&amp;lt;/a&amp;gt;. Tapi &amp;amp;quot;masa hidup&amp;amp;quot; variabel hanyalah selama program tersebut berjalan — data variabel dihapus saat program berhenti.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Bagaimana jika Anda ingin menyimpan sesuatu selama jangka yang lebih panjang, sehingga bahkan setelah Anda mematikan komputer Anda, datanya tidak terhapus? Sehingga Anda bisa mengakses lagi datanya lain hari?&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Anda bisa menggunakan &amp;lt;em&amp;gt;files&amp;lt;/em&amp;gt; (atau, sebagaimana sebagian orang menerjemahkannya, berkas).&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Berbeda dengan variabel yang datanya disimpan di memori utama (&amp;lt;em&amp;gt;main memory&amp;lt;/em&amp;gt;), &amp;lt;em&amp;gt;files&amp;lt;/em&amp;gt; (atau berkas) berurusan dengan memori sekunder (&amp;lt;em&amp;gt;secondary memory&amp;lt;/em&amp;gt;). Data tidak hanya bakal tetap disimpan setelah komputer dimatikan dan bisa diakses lagi setelah komputer kembali dinyalakan, tetapi juga bisa disalin ke USB dan dipindahkan ke komputer lain.&amp;lt;/p&amp;gt;
-&amp;lt;h2&amp;gt;Text files&amp;lt;/h2&amp;gt;
-&amp;lt;p&amp;gt;File ada berbagai jenis, contohnya file biner (&amp;lt;em&amp;gt;binary file&amp;lt;/em&amp;gt;), tapi tutorial ini bakal membicarakan file berisi teks (&amp;lt;em&amp;gt;text files&amp;lt;/em&amp;gt;).&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Jika sebuah string terdiri dari rentetan karakter, maka sebuah text file terdiri dari rentetan baris (&amp;lt;em&amp;gt;line&amp;lt;/em&amp;gt;). Baris-baris tersebut dipisahkan oleh sebuah &amp;lt;em&amp;gt;special character&amp;lt;/em&amp;gt;, &amp;lt;code&amp;gt;&amp;#92;n&amp;lt;/code&amp;gt;, yang disebut &amp;lt;em&amp;gt;newline&amp;lt;/em&amp;gt;.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Jika Anda menge-&amp;lt;code&amp;gt;print&amp;lt;/code&amp;gt; sebuah variabel string yang mengandung karakter newline &amp;lt;code&amp;gt;&amp;#92;n&amp;lt;/code&amp;gt;, Python bakal menginterpretasikan karakter tersebut sebagai sebuah perintah untuk menge-&amp;lt;code&amp;gt;print&amp;lt;/code&amp;gt; sisa string setelahnya di baris baru.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Sebagai contoh, &amp;lt;code&amp;gt;print(&amp;#39;Selamat&amp;#92;npagi&amp;#39;)&amp;lt;/code&amp;gt; bakal menghasilkan output:&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;Selamat
+  <div class="max-w-4xl mx-auto py-10 flex">
+    <main class="w-12/12 pb-10 px-4 md:w-12/12">
+      <h1 class="text-primary-500 font-medium text-3xl mb-3">Membaca dan Menulis File dengan Python</h1>
+      <p>Saat Anda ingin menyimpan data, Anda bisa menggunakan <a href="https://belajarpython.com/tutorial/variabel-python">variabel</a>. Tapi &quot;masa hidup&quot; variabel hanyalah selama program tersebut berjalan — data variabel dihapus saat program berhenti.</p>
+<p>Bagaimana jika Anda ingin menyimpan sesuatu selama jangka yang lebih panjang, sehingga bahkan setelah Anda mematikan komputer Anda, datanya tidak terhapus? Sehingga Anda bisa mengakses lagi datanya lain hari?</p>
+<p>Anda bisa menggunakan <em>files</em> (atau, sebagaimana sebagian orang menerjemahkannya, berkas).</p>
+<p>Berbeda dengan variabel yang datanya disimpan di memori utama (<em>main memory</em>), <em>files</em> (atau berkas) berurusan dengan memori sekunder (<em>secondary memory</em>). Data tidak hanya bakal tetap disimpan setelah komputer dimatikan dan bisa diakses lagi setelah komputer kembali dinyalakan, tetapi juga bisa disalin ke USB dan dipindahkan ke komputer lain.</p>
+<h2>Text files</h2>
+<p>File ada berbagai jenis, contohnya file biner (<em>binary file</em>), tapi tutorial ini bakal membicarakan file berisi teks (<em>text files</em>).</p>
+<p>Jika sebuah string terdiri dari rentetan karakter, maka sebuah text file terdiri dari rentetan baris (<em>line</em>). Baris-baris tersebut dipisahkan oleh sebuah <em>special character</em>, <code>\n</code>, yang disebut <em>newline</em>.</p>
+<p>Jika Anda menge-<code>print</code> sebuah variabel string yang mengandung karakter newline <code>\n</code>, Python bakal menginterpretasikan karakter tersebut sebagai sebuah perintah untuk menge-<code>print</code> sisa string setelahnya di baris baru.</p>
+<p>Sebagai contoh, <code>print('Selamat\npagi')</code> bakal menghasilkan output:</p>
+<pre><code>Selamat
 pagi
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;p&amp;gt;Sedangkan &amp;lt;code&amp;gt;print(&amp;#39;selam&amp;#92;nat pagi&amp;#39;)&amp;lt;/code&amp;gt; bakal menghasilkan:&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;selam
+</code></pre>
+<p>Sedangkan <code>print('selam\nat pagi')</code> bakal menghasilkan:</p>
+<pre><code>selam
 at pagi
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;h2&amp;gt;Membuka file&amp;lt;/h2&amp;gt;
-&amp;lt;p&amp;gt;Untuk membuka sebuah file, perintah bisa diberikan agar Python berkomunikasi dengan sistem operasi komputer dan meminta filenya.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Dalam contoh berikut, file &amp;lt;code&amp;gt;helloworld.txt&amp;lt;/code&amp;gt; berada di folder yang sama dengan program Python tersebut.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;fread = open(&amp;#39;helloworld.txt&amp;#39;)&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Sistem operasi bakal kemudian mencari file yang dimaksud menurut alamat file yang telah diberikan, yaitu &amp;lt;code&amp;gt;helloworld.txt&amp;lt;/code&amp;gt;.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Jika file-nya ada dan Anda memiliki izin (&amp;lt;em&amp;gt;permission&amp;lt;/em&amp;gt;) untuk membuka file tersebut, maka sistem komputer bakal mengembalikan apa yang namanya adalah sebuah &amp;lt;em&amp;gt;file handle&amp;lt;/em&amp;gt;, yang dalam contoh di atas disimpan di dalam variabel &amp;lt;code&amp;gt;fread&amp;lt;/code&amp;gt;.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Jika file yang diminta tidak ada, akan terjadi &amp;lt;em&amp;gt;error&amp;lt;/em&amp;gt;.&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;Traceback (most recent call last):
-  File &amp;amp;quot;&amp;amp;lt;stdin&amp;amp;gt;&amp;amp;quot;, line 1, in &amp;amp;lt;module&amp;amp;gt;
-IOError: [Errno 2] No such file or directory: &amp;#39;tidakada.txt&amp;#39;
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;p&amp;gt;Karena &amp;lt;code&amp;gt;open()&amp;lt;/code&amp;gt; tidak membaca langsung seluruh file, &amp;lt;code&amp;gt;open()&amp;lt;/code&amp;gt; selalu memerlukan waktu yang sama tidak peduli besar file yang dibuka.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Menggunakan &amp;lt;a href=&amp;quot;https://belajarpython.com/tutorial/file-io-python&amp;quot;&amp;gt;input()&amp;lt;/a&amp;gt;, Anda bisa memberikan pengguna program kemampuan untuk memasukkan nama file sendiri.&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;fname = input(&amp;#39;File yang ingin dibuka: &amp;#39;)
+</code></pre>
+<h2>Membuka file</h2>
+<p>Untuk membuka sebuah file, perintah bisa diberikan agar Python berkomunikasi dengan sistem operasi komputer dan meminta filenya.</p>
+<p>Dalam contoh berikut, file <code>helloworld.txt</code> berada di folder yang sama dengan program Python tersebut.</p>
+<p><code>fread = open('helloworld.txt')</code></p>
+<p>Sistem operasi bakal kemudian mencari file yang dimaksud menurut alamat file yang telah diberikan, yaitu <code>helloworld.txt</code>.</p>
+<p>Jika file-nya ada dan Anda memiliki izin (<em>permission</em>) untuk membuka file tersebut, maka sistem komputer bakal mengembalikan apa yang namanya adalah sebuah <em>file handle</em>, yang dalam contoh di atas disimpan di dalam variabel <code>fread</code>.</p>
+<p>Jika file yang diminta tidak ada, akan terjadi <em>error</em>.</p>
+<pre><code>Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+IOError: [Errno 2] No such file or directory: 'tidakada.txt'
+</code></pre>
+<p>Karena <code>open()</code> tidak membaca langsung seluruh file, <code>open()</code> selalu memerlukan waktu yang sama tidak peduli besar file yang dibuka.</p>
+<p>Menggunakan <a href="https://belajarpython.com/tutorial/file-io-python">input()</a>, Anda bisa memberikan pengguna program kemampuan untuk memasukkan nama file sendiri.</p>
+<pre><code>fname = input('File yang ingin dibuka: ')
 fread = open(fname)
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;p&amp;gt;Tapi bagaimana jika pengguna meminta file yang tidak ada?&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;Traceback (most recent call last):
-  File &amp;amp;quot;q.py&amp;amp;quot;, line 2, in &amp;amp;lt;module&amp;amp;gt;
+</code></pre>
+<p>Tapi bagaimana jika pengguna meminta file yang tidak ada?</p>
+<pre><code>Traceback (most recent call last):
+  File &quot;q.py&quot;, line 2, in &lt;module&gt;
     fread = open(fname)
-FileNotFoundError: [Errno 2] No such file or directory: &amp;#39;aa&amp;#39;
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;p&amp;gt;Anda bisa menggunakan &amp;lt;a href=&amp;quot;https://belajarpython.com/tutorial/exception-python&amp;quot;&amp;gt;exception&amp;lt;/a&amp;gt; agar program tidak langsung error dan berhenti saat pengguna memasukkan input tidak valid.&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;fname = input(&amp;#39;File yang ingin dibuka: &amp;#39;)
+FileNotFoundError: [Errno 2] No such file or directory: 'aa'
+</code></pre>
+<p>Anda bisa menggunakan <a href="https://belajarpython.com/tutorial/exception-python">exception</a> agar program tidak langsung error dan berhenti saat pengguna memasukkan input tidak valid.</p>
+<pre><code>fname = input('File yang ingin dibuka: ')
 try:
     fread = open(fname)
 except:
-    print(&amp;#39;File yang diminta tidak ada.&amp;#39;)
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;h2&amp;gt;Membaca file yang sudah ada&amp;lt;/h2&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;em&amp;gt;File handle&amp;lt;/em&amp;gt; tidak berisi data file. Jika Anda menjalankan &amp;lt;code&amp;gt;print(fread)&amp;lt;/code&amp;gt;, Anda bakal mendapatkan &amp;lt;code&amp;gt;&amp;amp;lt;open file &amp;#39;helloworld.txt&amp;#39;, mode &amp;#39;r&amp;#39; at 0x7f20c47dd540&amp;amp;gt;&amp;lt;/code&amp;gt; atau variasinya sebagai output.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Tapi Anda bisa menggunakannya untuk membaca file baris demi baris dengan bantuan &amp;lt;a href=&amp;quot;https://belajarpython.com/tutorial/loop-python&amp;quot;&amp;gt;loop&amp;lt;/a&amp;gt; &amp;lt;code&amp;gt;for&amp;lt;/code&amp;gt;.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Sebagai contoh, program di bawah ini menghitung jumlah baris (termasuk baris kosong) yang ada di dalam file &amp;lt;a href=&amp;quot;https://gist.github.com/amuritna/90ddfa39e707db74cf6ad8faae2beed5&amp;quot;&amp;gt;chairil-anwar-aku.txt&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;fread = open(&amp;#39;chairil-anwar-aku.txt&amp;#39;)
+    print('File yang diminta tidak ada.')
+</code></pre>
+<h2>Membaca file yang sudah ada</h2>
+<p><em>File handle</em> tidak berisi data file. Jika Anda menjalankan <code>print(fread)</code>, Anda bakal mendapatkan <code>&lt;open file 'helloworld.txt', mode 'r' at 0x7f20c47dd540&gt;</code> atau variasinya sebagai output.</p>
+<p>Tapi Anda bisa menggunakannya untuk membaca file baris demi baris dengan bantuan <a href="https://belajarpython.com/tutorial/loop-python">loop</a> <code>for</code>.</p>
+<p>Sebagai contoh, program di bawah ini menghitung jumlah baris (termasuk baris kosong) yang ada di dalam file <a href="https://gist.github.com/amuritna/90ddfa39e707db74cf6ad8faae2beed5">chairil-anwar-aku.txt</a>.</p>
+<pre><code>fread = open('chairil-anwar-aku.txt')
 
 count = 0
 for line in fread:
     count += 1
 
 print(count)
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;p&amp;gt;Outputnya adalah &amp;lt;code&amp;gt;19&amp;lt;/code&amp;gt;.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Anda bisa mengecek isi tiap baris dengan memperlakukan &amp;lt;code&amp;gt;line&amp;lt;/code&amp;gt; sebagai sebuah variabel berisi string yang memiliki sebuah karakter &amp;lt;code&amp;gt;&amp;#92;n&amp;lt;/code&amp;gt; di ujung belakangnya.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Program di atas bisa dimodifikasi sehingga yang dihitung hanyalah baris yang &amp;lt;em&amp;gt;tidak&amp;lt;/em&amp;gt; kosong (&amp;lt;code&amp;gt;.strip()&amp;lt;/code&amp;gt; menghapus semua karakter spasi dan &amp;lt;code&amp;gt;&amp;#92;n&amp;lt;/code&amp;gt; di kiri-kanan string):&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;fread = open(&amp;#39;chairil-anwar-aku.txt&amp;#39;)
+</code></pre>
+<p>Outputnya adalah <code>19</code>.</p>
+<p>Anda bisa mengecek isi tiap baris dengan memperlakukan <code>line</code> sebagai sebuah variabel berisi string yang memiliki sebuah karakter <code>\n</code> di ujung belakangnya.</p>
+<p>Program di atas bisa dimodifikasi sehingga yang dihitung hanyalah baris yang <em>tidak</em> kosong (<code>.strip()</code> menghapus semua karakter spasi dan <code>\n</code> di kiri-kanan string):</p>
+<pre><code>fread = open('chairil-anwar-aku.txt')
 
 count = 0
 for line in fread:
-    if len(line.strip()) &amp;amp;gt; 0 :
+    if len(line.strip()) &gt; 0 :
         count += 1
 
 print(count)
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;p&amp;gt;Outputnya adalah &amp;lt;code&amp;gt;13&amp;lt;/code&amp;gt;.&amp;lt;/p&amp;gt;
-&amp;lt;h2&amp;gt;Membuat dan menulis file baru&amp;lt;/h2&amp;gt;
-&amp;lt;p&amp;gt;Untuk membuat sebuah file, gunakan &amp;lt;code&amp;gt;open()&amp;lt;/code&amp;gt;, tapi kali ini dengan dengan &amp;lt;code&amp;gt;&amp;#39;w&amp;#39;&amp;lt;/code&amp;gt; sebagai parameter kedua.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;fwrite = open(&amp;#39;filebaru.txt&amp;#39;, &amp;#39;w&amp;#39;)&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Jika file tersebut belum ada, maka bakal dibuat sebuah file baru. Jika sudah ada, maka file yang lama bakal dihapus.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Metode &amp;lt;code&amp;gt;.write()&amp;lt;/code&amp;gt; menambahkan data ke ujung akhir file.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;fwrite.write(&amp;#39;Baris baru!&amp;#92;n&amp;#39;)&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Sebagai contoh, program berikut bakal menghasilkan file &amp;lt;a href=&amp;quot;https://gist.github.com/amuritna/b03a2d4532fd8fd254945036ea299e6b&amp;quot;&amp;gt;output-angka-segitiga.txt&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;fwrite = open(&amp;#39;output-angka-segitiga.txt&amp;#39;, &amp;#39;w&amp;#39;)
+</code></pre>
+<p>Outputnya adalah <code>13</code>.</p>
+<h2>Membuat dan menulis file baru</h2>
+<p>Untuk membuat sebuah file, gunakan <code>open()</code>, tapi kali ini dengan dengan <code>'w'</code> sebagai parameter kedua.</p>
+<p><code>fwrite = open('filebaru.txt', 'w')</code></p>
+<p>Jika file tersebut belum ada, maka bakal dibuat sebuah file baru. Jika sudah ada, maka file yang lama bakal dihapus.</p>
+<p>Metode <code>.write()</code> menambahkan data ke ujung akhir file.</p>
+<p><code>fwrite.write('Baris baru!\n')</code></p>
+<p>Sebagai contoh, program berikut bakal menghasilkan file <a href="https://gist.github.com/amuritna/b03a2d4532fd8fd254945036ea299e6b">output-angka-segitiga.txt</a>.</p>
+<pre><code>fwrite = open('output-angka-segitiga.txt', 'w')
 
 n = 1
 for i in range(2, 50):
     n += i
-    fwrite.write(str(n) + &amp;#39;&amp;#92;n&amp;#39;)
+    fwrite.write(str(n) + '\n')
 
 fwrite.close()
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;p&amp;gt;Pastikan untuk menambahkan &amp;lt;code&amp;gt;.close()&amp;lt;/code&amp;gt; ke akhir setelah selesai menulis ke file.&amp;lt;/p&amp;gt;
-&amp;lt;h2&amp;gt;File sebagai input/output&amp;lt;/h2&amp;gt;
-&amp;lt;p&amp;gt;File sangat membantu jika Anda mesti berurusan dengan data input atau output dalam jumlah yang banyak dan repot jika mesti di-&amp;lt;code&amp;gt;input()&amp;lt;/code&amp;gt; atau di-&amp;lt;code&amp;gt;print()&amp;lt;/code&amp;gt; satu-persatu.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;Sebagai contoh terakhir, program berikut menghasilkan &amp;lt;a href=&amp;quot;https://gist.github.com/amuritna/f1217628865dad591431f13d9626aa2a&amp;quot;&amp;gt;output_daftar-provinsi.txt&amp;lt;/a&amp;gt; jika diberikan input &amp;lt;a href=&amp;quot;https://gist.github.com/amuritna/c00f6c34e80d19381761d85bc0dcd0d9&amp;quot;&amp;gt;daftar-provinsi.txt&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
-&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;while True:
-    fname = input(&amp;#39;Nama file input: &amp;#39;)
+</code></pre>
+<p>Pastikan untuk menambahkan <code>.close()</code> ke akhir setelah selesai menulis ke file.</p>
+<h2>File sebagai input/output</h2>
+<p>File sangat membantu jika Anda mesti berurusan dengan data input atau output dalam jumlah yang banyak dan repot jika mesti di-<code>input()</code> atau di-<code>print()</code> satu-persatu.</p>
+<p>Sebagai contoh terakhir, program berikut menghasilkan <a href="https://gist.github.com/amuritna/f1217628865dad591431f13d9626aa2a">output_daftar-provinsi.txt</a> jika diberikan input <a href="https://gist.github.com/amuritna/c00f6c34e80d19381761d85bc0dcd0d9">daftar-provinsi.txt</a>.</p>
+<pre><code>while True:
+    fname = input('Nama file input: ')
 
     try:
         fread = open(fname)
         break
     except:
-        print(&amp;#39;Tidak dapat menemukan file yang dimaksud, tolong cek lagi.&amp;#92;nNama file input: &amp;#39;)
+        print('Tidak dapat menemukan file yang dimaksud, tolong cek lagi.\nNama file input: ')
 
 nama = []
 for line in fread:
@@ -184,29 +166,20 @@ for line in fread:
 
 nama = sorted(nama)
 
-fwrite = open(&amp;#39;output_&amp;#39; + fname, &amp;#39;w&amp;#39;)
+fwrite = open('output_' + fname, 'w')
 
 for item in nama:
-    fwrite.write(item + &amp;#39;&amp;#92;n&amp;#39;)
+    fwrite.write(item + '\n')
 
 fwrite.close()
-&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&amp;lt;hr&amp;gt;
-&amp;lt;blockquote&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;em&amp;gt;penulis: Emmanuella Rumanti &amp;lt;a href=&amp;quot;https://github.com/amuritna&amp;quot;&amp;gt;https://github.com/amuritna&amp;lt;/a&amp;gt;&amp;lt;/em&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;/blockquote&amp;gt;
+</code></pre>
+<hr>
+<blockquote>
+<p><em>penulis: Emmanuella Rumanti <a href="https://github.com/amuritna">https://github.com/amuritna</a></em></p>
+</blockquote>
 
-  </main>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
-    crossorigin="anonymous"></script>
-  <!-- Iklan manual content belajarpython -->
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2371526032008656" data-ad-slot="4149104089"
-    data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
-  
+    </main>
+  </div>
   <footer class="bg-slate-300 py-4">
   <div class="flex justify-center">
     <div class="flex gap-4 text-sm font-bold uppercase text-slate-600 md:gap-6">
