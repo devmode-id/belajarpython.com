@@ -106,13 +106,13 @@ print(2 != 3) # Hasilnya akan bernilai True karena dua tidak sama dengan tiga
 print(5 > 3) # Hasilnya akan bernilai True karena lima lebih besar dari tiga
 
 # LEBIH KECIL DARI
-print(5 < 3) # Hasilnya akan bernilai False karena lima tidak lebih besar dari tiga
+print(5 < 3) # Hasilnya akan bernilai False karena lima tidak lebih kecil dari tiga
 
 # LEBIH BESAR DARI SAMA DENGAN
 print(5 >= 3) # Hasilnya akan bernilai True karena lima lebih besar dari sama dengan tiga
 
 # LEBIH KECIL DARI SAMA DENGAN
-print(5 <= 3) # Hasilnya akan bernilai False karena lima tidak lebih besar dari sama dengan tiga
+print(5 <= 3) # Hasilnya akan bernilai False karena lima tidak lebih kecil dari sama dengan tiga
 ```
 
 ### Operator Penugasan <a name="operator-penugasan"></a>
