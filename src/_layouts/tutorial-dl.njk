@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="{{ lang if lang else 'id' }}">
+    {% set isTutorial = true %}
+    {% include "head.njk" %}
+    <body class="overflow-x-hidden">
+        {% include "navbar.njk" %}
+        <!-- Mobile Sidebar Drawer -->
+        <div
+            id="tutorial-sidebar-overlay"
+            class="fixed inset-0 bg-black/50 z-[70] hidden transition-opacity duration-300 opacity-0 md:hidden"></div>
+        <div
+            id="tutorial-sidebar-drawer"
+            class="fixed top-0 left-0 h-full w-4/5 max-w-[280px] bg-white z-[80] transform -translate-x-full transition-transform
+                duration-300 md:hidden overflow-y-auto custom-scrollbar shadow-2xl">
+            <div class="p-4 md:p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold text-primary-500">{{ 'Tutorial Material' if lang == 'en' else 'Materi Tutorial' }}</h2>
+                    <button id="close-tutorial-sidebar" class="text-slate-400 hover:text-slate-600 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="mobile-sidebar-content">
+                    {% if lang == 'en' %}
+                        {% include "sidebar-list-en.njk" %}
+                    {% else %}
+                        {% include "sidebar-list.njk" %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% set currentTutorial = page.url | getTutorialName %}
+        <div class="max-w-4xl mx-auto py-10 flex">
+            {% include "sidebar.njk" %}
+            <main class="w-full min-w-0 pb-10 px-4 md:w-9/12 tutorial">
+                <h1 class="text-primary-500 font-medium text-3xl mb-3">{{ title }}</h1>
+                <!-- DL Notice -->
+                <p class="text-sm text-slate-500 mb-6 flex items-center gap-2 flex-wrap">
+                    <span class="inline-flex items-center gap-1.5 bg-red-500/10 text-red-700 text-xs font-medium px-2.5 py-1 rounded-full border
+                            border-red-500/20">
+                        <span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+                        Deep Learning
+                    </span>
+                    <span>Konsep dasar dapat dijalankan di browser. TensorFlow/PyTorch butuh GPU lokal.</span>
+                </p>
+                {{ content | safe }}
+            </main>
+        </div>
+        {% include "footer.njk" %}
+        {% include "progress-script.njk" %}
+        {% include "analytics.njk" %}
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const toggleBtn = document.getElementById('mobile-tutorial-sidebar-toggle');
+                const closeBtn = document.getElementById('close-tutorial-sidebar');
+                const overlay = document.getElementById('tutorial-sidebar-overlay');
+                const drawer = document.getElementById('tutorial-sidebar-drawer');
+                const body = document.body;
+                function toggleSidebar() {
+                    const isOpen = ! drawer.classList.contains('-translate-x-full');
+                    if (! isOpen) {
+                        overlay.classList.remove('hidden');
+                        setTimeout(() => {
+                            overlay.classList.add('opacity-100');
+                            drawer.classList.remove('-translate-x-full');
+                        }, 10);
+                        body.classList.add('overflow-hidden');
+                    } else {
+                        overlay.classList.remove('opacity-100');
+                        drawer.classList.add('-translate-x-full');
+                        setTimeout(() => {
+                            overlay.classList.add('hidden');
+                        }, 300);
+                        body.classList.remove('overflow-hidden');
+                    }
+                }
+                if (toggleBtn) 
+                    toggleBtn.addEventListener('click', toggleSidebar);
+                
+                if (closeBtn) 
+                    closeBtn.addEventListener('click', toggleSidebar);
+                
+                if (overlay) 
+                    overlay.addEventListener('click', toggleSidebar);
+                
+            });
+        </script>
+        <!-- Use Hybrid DL Runner that supports NumPy concepts and Colab links -->
+        {% include "python-runner-dl.njk" %}
+    </body>
+</html>

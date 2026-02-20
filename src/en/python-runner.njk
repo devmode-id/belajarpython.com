@@ -1,0 +1,69 @@
+---
+layout: tool-simple.njk
+title: Python Runner - Execute Python Scripts Online
+description: Run small Python scripts quickly without opening a heavy IDE. Lightweight tool for testing Python logic.
+lang: en
+---
+
+<div class="mb-10 text-center bg-gradient-to-b from-primary-600 to-primary-800 -mx-4 -mt-10 px-4 py-12 md:py-16 text-white rounded-b-3xl shadow-lg">
+    <h1 class="text-3xl md:text-5xl font-bold mb-4">Python Runner</h1>
+    <p class="text-primary-100 max-w-2xl mx-auto text-lg leading-relaxed">
+        <strong>Online Python Runner</strong> is a lightweight, instant code execution tool.
+        Designed specifically for testing programming logic (if-else, loops), math functions, or simple algorithms without the need for a heavy IDE.
+        Simply type, click Run, and watch the magic happen.
+    </p>
+</div>
+
+<div class="bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden max-w-3xl mx-auto">
+    <!-- Toolbar -->
+    <div class="bg-slate-100 dark:bg-slate-900 px-4 py-3 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center">
+        <span class="font-mono text-sm text-slate-500">script.py</span>
+        <div class="flex items-center gap-3">
+            <span id="status-badge" class="text-xs text-slate-500 font-medium">Ready</span>
+            <button id="run-btn" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-2">
+                Run Script
+            </button>
+        </div>
+    </div>
+
+    <!-- Editor -->
+    <div class="relative min-h-[200px] bg-[#282c34]">
+        <pre class="m-0 p-4 language-python h-full"><code id="editor" class="language-python block h-full outline-none text-base" contenteditable="true" spellcheck="false"># Simple Python Runner
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+print("Factorial of 5 is:", factorial(5))
+</code></pre>
+    </div>
+
+    <!-- Output -->
+    <div class="border-t border-slate-200 dark:border-slate-700">
+        <div class="bg-slate-50 dark:bg-slate-950 p-4 min-h-[100px] font-mono text-sm whitespace-pre-wrap text-slate-800 dark:text-slate-200" id="output">// Result...</div>
+    </div>
+</div>
+
+<div class="mt-12 grid md:grid-cols-3 gap-6">
+    <div class="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+        <h3 class="font-bold text-lg mb-2 dark:text-white">No Install</h3>
+        <p class="text-slate-600 dark:text-slate-400 text-sm">Run code directly from your browser. No need to install Python or setup environment. Save time and storage.</p>
+    </div>
+    <div class="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+        <h3 class="font-bold text-lg mb-2 dark:text-white">Fast & Light</h3>
+        <p class="text-slate-600 dark:text-slate-400 text-sm">Using WebAssembly (Pyodide), code runs client-side with near-native performance.</p>
+    </div>
+    <div class="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+        <h3 class="font-bold text-lg mb-2 dark:text-white">Secure</h3>
+        <p class="text-slate-600 dark:text-slate-400 text-sm">Code executes in your own browser (sandboxed), never sent to any server. Your code privacy is guaranteed.</p>
+    </div>
+</div>
+
+{% include "python-tool-runner.njk" %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        window.initPythonTool('editor', 'output', 'run-btn', null, 'status-badge');
+    });
+</script>

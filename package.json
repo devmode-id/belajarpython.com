@@ -1,27 +1,36 @@
 {
-  "name": "purwnt.github.io",
-  "version": "1.0.0",
-  "description": "",
+  "name": "belajarpython.com",
+  "version": "1.3.2",
+  "description": "Situs Open Source Tutorial Pemrograman Python Bahasa Indonesia",
   "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
-    "tw:dev": "npx tailwindcss -i ./tailwind.css -o ./belajarpython_theme/css/base.css --watch",
-    "tw:build": "npx tailwindcss -i ./tailwind.css -o ./belajarpython_theme/css/base.css --minify"
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:11ty": "eleventy --serve --watch",
+    "dev:css": "npx tailwindcss -i ./tailwind.css -o ./src/css/base.css --watch",
+    "build": "npm-run-all build:css build:11ty",
+    "build:11ty": "eleventy",
+    "build:css": "npx tailwindcss -i ./tailwind.css -o ./src/css/base.css --minify"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/purwnt/purwnt.github.io.git"
+    "url": "git+https://github.com/belajarpythoncom/belajarpython.com.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "python",
+    "tutorial",
+    "indonesia"
+  ],
+  "author": "Purwanto",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/purwnt/purwnt.github.io/issues"
+    "url": "https://github.com/belajarpythoncom/belajarpython.com/issues"
   },
-  "homepage": "https://github.com/purwnt/purwnt.github.io#readme",
+  "homepage": "https://belajarpython.com",
   "devDependencies": {
-    "tailwindcss": "^3.2.4"
+    "@11ty/eleventy": "^2.0.1",
+    "markdown-it": "^14.0.0",
+    "markdown-it-prism": "^2.3.0",
+    "npm-run-all": "^4.1.5",
+    "tailwindcss": "^3.4.0"
   }
 }

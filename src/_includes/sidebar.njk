@@ -1,0 +1,7 @@
+<sidebar class="hidden md:block md:w-3/12 sticky top-24 self-start h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar pr-4">
+    {% if lang == 'en' %}
+        {% include "sidebar-list-en.njk" %}
+    {% else %}
+        {% include "sidebar-list.njk" %}
+    {% endif %}
+</sidebar>

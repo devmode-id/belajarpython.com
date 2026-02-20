@@ -1,0 +1,139 @@
+<!-- Basic Level -->
+<div
+  class="flex items-center gap-2 px-4 py-3 bg-slate-50 mb-2 border border-slate-100 relative"
+  data-level-header="basic">
+  <img src="/img/icons/bronze.png" alt="Basic Level" class="w-5 h-5">
+    <span class="font-bold text-slate-700 text-xs uppercase tracking-wider">Basic Level</span>
+    <div class="progress-circle-container absolute right-4 top-1/2 -translate-y-1/2"></div>
+  </div>
+  <ul class="leading-normal mb-6" data-level-list="basic">
+    {% set items = [
+    ['what-is-python', '1. Introduction'],
+    ['python-installation', '2. Installation'],
+    ['running-python', '3. Running'],
+    ['hello-world-python', '4. Hello World'],
+    ['python-comments', '5. Comments'],
+    ['python-data-types', '6. Data Types'],
+    ['python-variables', '7. Variables'],
+    ['python-operators', '8. Operators'],
+    ['python-conditions', '9. Conditions'],
+    ['python-loops', '10. Loop'],
+    ['python-numbers', '11. Number'],
+    ['python-strings', '12. String'],
+    ['python-f-strings', '13. F-Strings'],
+    ['python-lists', '14. List'],
+    ['python-list-comprehension', '15. List Comprehension'],
+    ['python-tuples', '16. Tuple'],
+    ['python-dictionaries', '17. Dictionary'],
+    ['python-sets', '18. Sets'],
+    ['python-date-time', '19. Date & Time'],
+    ['python-functions', '20. Functions'],
+    ['python-lambda', '21. Lambda']
+  ] %}
+    {% for slug, label in items %}
+      <li class="border-l-2 {{ 'border-primary-500 bg-primary-50/30' if currentTutorial == slug else 'border-slate-100' }} py-[6px]
+          relative group">
+        <a href="/en/tutorial/{{ slug }}" class="{{ 'font-bold text-primary-500' if currentTutorial == slug else 'font-medium text-slate-400' }} hover:text-primary-500 leading-relaxed px-4 block transition-colors text-sm">
+          {{ label }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  <!-- Intermediate Level -->
+  <div
+    class="flex items-center gap-2 px-4 py-3 bg-slate-50 rounded mb-2 border border-slate-100 relative"
+    data-level-header="intermediate">
+    <img src="/img/icons/silver.png" alt="Intermediate Level" class="w-5 h-5">
+      <span class="font-bold text-slate-700 text-xs uppercase tracking-wider">Intermediate</span>
+      <div class="progress-circle-container absolute right-4 top-1/2 -translate-y-1/2"></div>
+    </div>
+    <ul class="leading-normal mb-6" data-level-list="intermediate">
+      {% set items = [
+    ['python-modules', '22. Modules'],
+    ['python-file-io', '23. File I/O'],
+    ['python-exceptions', '24. Exception'],
+    ['python-class-objects', '25. Object & Class'],
+    ['python-database-access', '26. Database Access'],
+    ['python-networking', '27. Networking'],
+    ['python-web-development', '28. Web Development'],
+    ['python-regex', '29. RegEx'],
+    ['python-json', '30. JSON Data'],
+    ['python-virtual-environment', '31. Virtual Environment'],
+    ['python-pip-package', '32. Pip & Package']
+  ] %}
+      {% for slug, label in items %}
+        <li class="border-l-2 {{ 'border-primary-500 bg-primary-50/30' if currentTutorial == slug else 'border-slate-200' }}
+            py-[6px]">
+          <a href="/en/tutorial/{{ slug }}" class="{{ 'font-bold text-primary-500' if currentTutorial == slug else 'font-medium text-slate-400' }} hover:text-primary-500 leading-relaxed px-4 block transition-colors text-sm">
+            {{ label }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+    <!-- Advanced Level -->
+    <div
+      class="flex items-center gap-2 px-4 py-3 bg-slate-50 rounded mb-2 border border-slate-100 relative"
+      data-level-header="advanced">
+      <img src="/img/icons/gold.png" alt="Advanced Level" class="w-5 h-5">
+        <span class="font-bold text-slate-700 text-xs uppercase tracking-wider">Advanced</span>
+        <div class="progress-circle-container absolute right-4 top-1/2 -translate-y-1/2"></div>
+      </div>
+      <ul class="leading-normal mb-6" data-level-list="advanced">
+        {% set items = [
+    ['python-type-hints', '33. Type Hints'],
+    ['python-decorators', '34. Decorators, Closures'],
+    ['python-iterators-generators', '35. Iterators, Generators'],
+    ['python-context-managers', '36. Context Managers'],
+    ['python-metaprogramming', '37. Metaprogramming'],
+    ['python-multithreading-multiprocessing', '38. Multithreading'],
+    ['python-async-await', '39. Asynchronous'],
+    ['python-design-patterns', '40. Design Patterns'],
+    ['python-unit-testing', '41. Unit Testing'],
+    ['python-memory-management', '42. Memory Handling']
+  ] %}
+        {% for slug, label in items %}
+          <li class="border-l-2 {{ 'border-primary-500 bg-primary-50/30' if currentTutorial == slug else 'border-slate-200' }}
+              py-[6px]">
+            <a href="/en/tutorial/{{ slug }}" class="{{ 'font-bold text-primary-500' if currentTutorial == slug else 'font-medium text-slate-400' }} hover:text-primary-500 leading-relaxed px-4 block transition-colors text-sm">
+              {{ label }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      <!-- Professional Level -->
+      <div class="flex items-center gap-2 px-4 py-3 bg-slate-50 rounded mb-2 border border-slate-100">
+        <img src="/img/icons/platinum.png" alt="Professional Level" class="w-5 h-5">
+          <span class="font-bold text-slate-700 text-xs uppercase tracking-wider">Professional Level</span>
+        </div>
+        <ul class="leading-normal mb-6 opacity-60">
+          <li class="border-l-2 border-slate-100 py-[6px]">
+            <span class="font-medium text-slate-400 italic px-4 block text-sm">43. Data Analytics</span>
+          </li>
+          <li class="border-l-2 border-slate-100 py-[6px]">
+            <span class="font-medium text-slate-400 italic px-4 block text-sm">44. Machine Learning</span>
+          </li>
+          <li class="border-l-2 border-slate-100 py-[6px]">
+            <span class="font-medium text-slate-400 italic px-4 block text-sm">45. Deep Learning</span>
+          </li>
+          <li class="border-l-2 border-slate-100 py-[6px]">
+            <span class="font-medium text-slate-400 italic px-4 block text-sm">46. Cybersecurity</span>
+          </li>
+          <li class="border-l-2 border-slate-100 py-[6px]">
+            <span class="font-medium text-slate-400 italic px-4 block text-sm">47. RESTful APIs</span>
+          </li>
+          <li class="border-l-2 border-slate-100 py-[6px]">
+            <span class="font-medium text-slate-400 italic px-4 block text-sm">48. Fullstack Web App</span>
+          </li>
+          <li class="border-l-2 border-slate-100 py-[6px]">
+            <span class="font-medium text-slate-400 italic px-4 block text-sm">49. Microservices</span>
+          </li>
+          <li class="border-l-2 border-slate-100 py-[6px]">
+            <span class="font-medium text-slate-400 italic px-4 block text-sm">50. Deploying Apps</span>
+          </li>
+          <li class="border-l-2 border-slate-100 py-[6px]">
+            <span class="font-medium text-slate-400 italic px-4 block text-sm">51. DevOps & CI/CD</span>
+          </li>
+          <li class="border-l-2 border-slate-100 py-[6px]">
+            <span class="font-medium text-slate-400 italic px-4 block text-sm">52. AI MCP</span>
+          </li>
+        </ul>

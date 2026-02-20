@@ -4,13 +4,13 @@ title: Instalasi Python
 order: 2
 ---
 
-Sebelum Anda menggunakan Python, Anda harus menginstalnya terlebih dahulu di sistem operasi komputer Anda. Saat ini Python memiliki 2 versi yang berbeda, yaitu Python versi **3.4.3** dan Python versi **2.7.10**. Disini kita akan belajar bahasa pemrograman Python menggunakan versi terbaru **3.4.3**.
+Sebelum Anda menggunakan Python, Anda harus menginstalnya terlebih dahulu di sistem operasi komputer Anda. Saat ini Python memiliki versi stabil terbaru yaitu Python **3.13**. Disini kita akan belajar bahasa pemrograman Python menggunakan versi terbaru tersebut.
 
 Cara menginstal python sangat mudah, ikuti panduan dibawah ini. Dibawah adalah panduan cara instal python di platform Linux, Windows dan Mac OS.
 
 ### Linux
 
-1. Buka browser, kunjungi [http://www.python.org/downloads/source/](http://www.python.org/downloads/source/)
+1. Buka browser, kunjungi [halaman download Python](https://www.python.org/downloads/source/)
 2. Download versi terbaru Python berbentuk file zip untuk Unix/Linux
 3. Ekstrak file zip yang baru saja di download
 4. Edit file Modules/Setup jika Anda ingin kostumisasi Python
@@ -24,14 +24,14 @@ Langkah ini akan menginstal Python di lokasi standar `/usr/local/bin` dan librar
 
 ### Windows
 
-1. Buka browser, kunjungi [http://www.python.org/downloads/windows/](http://www.python.org/downloads/windows/)
-2. ATAU, klik direct link [https://www.python.org/ftp/python/3.8.1/python-3.8.1.exe](https://www.python.org/ftp/python/3.8.1/python-3.8.1.exe)
+1. Buka browser, kunjungi [halaman download Python untuk Windows](https://www.python.org/downloads/windows/)
+2. Download installer Python 3.13 (pilih versi 64-bit untuk Windows)
 3. Buka (klik 2x) file installer python yang baru saja di download
 4. Ikuti langkah instalasi sampai selesai
 
 ### Mac OS
 
-1. Buka browser, kunjungi [http://www.python.org/download/mac/](http://www.python.org/download/mac/)
+1. Buka browser, kunjungi [halaman download Python untuk Mac](https://www.python.org/downloads/macos/)
 2. Download versi terbaru Python untuk Macintosh
 3. Buka file yang baru saja di download
 4. Ikuti langkah instalasi sampai selesai

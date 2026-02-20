@@ -38,24 +38,28 @@ main .tutorial a:hover {
 }
 
 main pre {
-  width: 92vw;
-  overflow-x: scroll;
+  max-width: 100%;
+  overflow-x: auto;
+  border-radius: 0.5rem;
 }
 
-@media only screen and (min-width: 768px) {
-  main pre {
-    width: 100%;
-  }
+
+main pre code {
+  display: block;
+  overflow-x: auto;
+  white-space: pre;
+  border: none;
+  background: transparent;
+  padding: 0;
 }
 
 main code {
-  margin-bottom: 15px;
   background-color: #eee;
-  padding: 2.5px 3px;
-  font-size: 14px;
+  padding: 2px 4px;
+  font-size: 0.9em;
   border: 1px solid #e0e0e0;
   border-radius: 3px;
-  overflow-x: scroll;
+  word-break: break-all;
 }
 
 main h1 {
@@ -139,4 +143,77 @@ main kbd {
   margin: 0 2px 0 2px;
   background-color: #212529;
   border-radius: 0.2rem;
+}
+
+/* Fix Overflow Mobile */
+main {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+main img {
+  max-width: 100%;
+  height: auto;
+}
+
+main table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+main pre,
+main code {
+  max-width: 100%;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+/* Heading responsive sizes */
+@media (max-width: 768px) {
+  main h1 {
+    font-size: 2.2rem !important;
+  }
+
+  main h2 {
+    font-size: 1.8rem !important;
+  }
+
+  main h3 {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }

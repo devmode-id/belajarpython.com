@@ -1,0 +1,314 @@
+<style>:root
+{
+    --runner-bg: #0f172a;
+    --runner-header: #2a5880;
+    --runner-border: #334155;
+    --runner-text: #f8fafc;
+    --runner-accent: #38bdf8;
+    --runner-success: #22c55e;
+    --runner-error: #ef4444;
+    --runner-terminal: #000000;
+    --runner-output-text: #fdd244;
+}
+.code-runner-container {
+    position: relative;
+    margin: 1.5rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--runner-bg);
+    border: 1px solid var(--runner-border);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+@media(max-width: 640px) {
+    .code-runner-container {
+        margin: 1rem -0.5rem;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+}
+.code-runner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--runner-header);
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--runner-border);
+    gap: 0.5rem;
+}
+.code-runner-title {
+    color: var(--runner-text);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.code-runner-actions {
+    display: flex;
+    gap: 0.375rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.375rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    min-width: 32px;
+    height: 32px;
+}
+.btn-run {
+    background: linear-gradient(to left, #fdd03f, #ffdf76);
+    color: #000;
+}
+.btn-run:hover {
+    background: linear-gradient(to left, #ffdf76, #fdd03f);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+.btn-reset {
+    background: transparent;
+    color: #cbd5e1;
+    border: 1px solid #8f9fb5;
+}
+.btn-reset:hover {
+    color: #ffffff;
+    border-color: #cbd5e1;
+}
+.btn-copy {
+    background: transparent;
+    color: #94a3b8;
+    border: none;
+    padding: 4px;
+}
+.btn-copy:hover {
+    color: var(--runner-text);
+}
+.code-editor-wrapper {
+    position: relative;
+    min-height: 100px;
+}
+/* Override highlight.js padding and background when inside runner */
+.code-runner-container pre {
+    margin: 0 !important;
+    background: transparent !important;
+    padding: 1rem !important;
+}
+.code-runner-container code {
+    background: transparent !important;
+    padding: 0 !important;
+    display: block;
+    outline: none;
+}
+.code-output {
+    background: var(--runner-terminal);
+    color: var(--runner-output-text);
+    padding: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    min-height: 2.5rem;
+    max-height: 300px;
+    overflow-y: auto;
+    border-top: 1px solid var(--runner-border);
+    white-space: pre-wrap;
+    display: none;
+    border-left: 4px solid var(--runner-terminal);
+}
+.code-output.active {
+    display: block;
+}
+.code-output.error {
+    color: var(--runner-error);
+    border-left-color: var(--runner-error);
+}
+.loading-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    display: none;
+}
+.spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(56, 189, 248, 0.3);
+    border-top-color: var(--runner-accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 0.5rem;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.status-badge {
+    font-size: 0.75rem;
+    color: #f8fafc;
+    margin-right: 0.5rem;
+    font-weight: 500;
+}
+/* Premium touch: Glow effect on hover */
+.code-runner-container:hover {
+    border-color: var(--runner-accent);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
+}</style><script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script><script>
+(function () {
+    let pyodidePromise = null;
+    async function getPyodide() {
+        if (! pyodidePromise) {
+            pyodidePromise = loadPyodide();
+        }
+        return pyodidePromise;
+    }
+    function initRunners() {
+        const pythonBlocks = document.querySelectorAll('pre > code.language-python');
+        pythonBlocks.forEach((block, index) => {
+            if (block.closest('.code-runner-container')) 
+                return;
+            
+            // Already initialized
+            const pre = block.parentElement;
+            const originalCode = block.textContent.trim();
+            // Create container
+            const container = document.createElement('div');
+            container.className = 'code-runner-container';
+            // Create header
+            const header = document.createElement('div');
+            header.className = 'code-runner-header';
+            header.innerHTML = `
+                    <div class="code-runner-title">
+                        <img src="/img/icons/icon-python.ico" width="20" height="20" alt="Logo Python" style="display: block;">
+                        <span>Interactive Python <span class="hidden md:inline">Editor</span></span>
+                    </div>
+                    <div class="code-runner-actions">
+                        <span class="status-badge" id="status-${index}"></span>
+                        <button class="btn-action btn-reset" id="copy-btn-${index}" title="Copy Code">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                        </button>
+                        <button class="btn-action btn-reset" id="reset-btn-${index}" title="Reset Code">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+                        </button>
+                        <button class="btn-action btn-run" id="run-btn-${index}">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            <span>Run</span>
+                        </button>
+                    </div>
+                `;
+            // Create output
+            const output = document.createElement('div');
+            output.className = 'code-output';
+            output.id = `output-${index}`;
+            // Create loading overlay
+            const loadingOverlay = document.createElement('div');
+            loadingOverlay.className = 'loading-overlay';
+            loadingOverlay.innerHTML = `
+                    <div class="spinner"></div>
+                    <div style="color: white; font-size: 0.75rem;">Initializing Python...</div>
+                `;
+            // Wrap pre in the container
+            pre.parentNode.insertBefore(container, pre);
+            container.appendChild(header);
+            const editorWrapper = document.createElement('div');
+            editorWrapper.className = 'code-editor-wrapper';
+            editorWrapper.appendChild(loadingOverlay);
+            editorWrapper.appendChild(pre);
+            container.appendChild(editorWrapper);
+            container.appendChild(output);
+            // Make block editable
+            block.setAttribute('contenteditable', 'true');
+            block.setAttribute('spellcheck', 'false');
+            block.addEventListener(
+                'focus',
+                () => { // Remove highlight.js classes when editing to avoid weird behavior block.className = 'language-python';
+                }
+            );
+            const runBtn = header.querySelector(`#run-btn-${index}`);
+            const resetBtn = header.querySelector(`#reset-btn-${index}`);
+            const copyBtn = header.querySelector(`#copy-btn-${index}`);
+            const statusBadge = header.querySelector(`#status-${index}`);
+            copyBtn.addEventListener('click', async () => {
+                await navigator.clipboard.writeText(block.innerText);
+                statusBadge.textContent = 'Copied!';
+                setTimeout(() => (statusBadge.textContent = ''), 2000);
+            });
+            runBtn.addEventListener('click', async () => {
+                output.classList.add('active');
+                output.classList.remove('error');
+                output.textContent = '';
+                if (!window.pyodideInstance) {
+                    loadingOverlay.style.display = 'flex';
+                    statusBadge.textContent = 'Loading...';
+                    try {
+                        window.pyodideInstance = await getPyodide();
+                    } catch (err) {
+                        output.classList.add('error');
+                        output.textContent = 'Failed to load Python engine: ' + err.message;
+                        loadingOverlay.style.display = 'none';
+                        return;
+                    }
+                    loadingOverlay.style.display = 'none';
+                }
+                statusBadge.textContent = 'Running...';
+                runBtn.disabled = true;
+                try {
+                    const py = window.pyodideInstance;
+                    let stdoutContent = '';
+                    py.setStdout({
+                        batched: (str) => {
+                            stdoutContent += str + '\n';
+                            output.textContent = stdoutContent;
+                        }
+                    });
+                    const code = block.innerText;
+                    await py.runPythonAsync(code);
+                    statusBadge.textContent = 'Done';
+                    if (! stdoutContent) {
+                        output.textContent = '(Executed successfully, no output)';
+                    }
+                } catch (err) {
+                    output.classList.add('error');
+                    output.textContent = err.message;
+                    statusBadge.textContent = 'Error';
+                } finally {
+                    runBtn.disabled = false;
+                    setTimeout(() => {
+                        if (statusBadge.textContent !== 'Error') 
+                            statusBadge.textContent = '';
+                        
+                    }, 3000);
+                }
+            });
+            resetBtn.addEventListener('click', () => {
+                block.textContent = originalCode;
+                if (window.hljs) 
+                    hljs.highlightElement(block);
+                
+                output.classList.remove('active');
+                statusBadge.textContent = 'Reset';
+                setTimeout(() => statusBadge.textContent = '', 2000);
+            });
+        });
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initRunners);
+    } else {
+        initRunners();
+    }
+})();</script>

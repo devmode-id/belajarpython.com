@@ -1,0 +1,185 @@
+<!-- Community Popup Modal -->
+<div
+    id="community-popup" class="fixed inset-0 z-[100] hidden items-center justify-center px-4">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0" id="community-popup-backdrop"></div>
+    <!-- Modal Content -->
+    <div
+        class="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden transform scale-95 opacity-0
+            transition-all duration-300"
+        id="community-popup-content">
+        <!-- Close Button -->
+        <button
+            id="close-community-popup"
+            class="absolute top-4 right-4 z-10 p-2 bg-white/20 hover:bg-white/40 rounded-full text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+        <div class="flex flex-col md:flex-row">
+            <!-- Banner Image Section (Top on mobile, Left/Split on desktop if needed, but here full width or top is easier for
+            generic banner) -->
+            <!-- User asked for a "banner", usually top. But since aspect ratio 1200x600, it's a wide rectangle. -->
+                <div class="relative md:h-64 h-48 w-full bg-slate-900 group"> <img
+                    src="https://devmode.id/images/illustrations/welcome-page-1.webp"
+                    alt="Belajarpython x DevMode Community"
+                    class="w-full h-full object-cover object-top transition-transform duration-700">
+                <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
+            </div>
+        </div>
+        <!-- Content Section -->
+        <div class="p-6 md:p-8 text-center -mt-6 relative z-10">
+            <span class="inline-block py-1 px-3 rounded-full bg-red-100 text-red-600 text-xs font-bold tracking-wide mb-4">
+                OFFICIAL COMMUNITY
+            </span>
+            <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-2">
+                Gabung Komunitas Developer, <br class="hidden md:block"> Entrepreneur & Kreator Digital Indonesia
+            </h2>
+            <p class="text-slate-600 mb-6 max-w-lg mx-auto leading-relaxed">
+                Tingkatkan skill codingmu, sharing project, networking dengan expert, dan dapatkan update teknologi terbaru langsung di
+                inbox-mu.
+            </p>
+            <!-- Newsletter Form -->
+            <form id="devmode-newsletter-form" class="max-w-lg mx-auto">
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <div class="relative w-full">
+                        <input
+                            type="email"
+                            id="devmode-email"
+                            required
+                            class="w-full px-5 py-3.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-4 focus:ring-red-100
+                                focus:border-red-500 transition-all pl-12"
+                            placeholder="Masukkan alamat email...">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2"
+                            fill="none"
+                            viewbox="0 0 24 24"
+                            stroke="currentColor">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"/>
+                        </svg>
+                    </div>
+                    <button
+                        type="submit"
+                        id="devmode-submit-btn"
+                        class="w-full sm:w-auto bg-red-600 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg hover:shadow-xl
+                            hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 whitespace-nowrap">
+                        <span>Gabung Gratis</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </button>
+                </div>
+                <p class="text-xs text-slate-400 mt-3">
+                    Bebas spam. Unsubscribe kapan saja.
+                    <a href="https://devmode.id" target="_blank" class="text-red-600 hover:underline">DEVMODE Community</a>
+                </p>
+            </form>
+            <!-- Success Message (Hidden by default) -->
+            <div id="devmode-success-message" class="hidden">
+                <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Terima Kasih!</h3>
+                <p class="text-slate-600">Selamat! Anda telah sukses mendaftar di newsletter.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const popup = document.getElementById('community-popup');
+        const backdrop = document.getElementById('community-popup-backdrop');
+        const content = document.getElementById('community-popup-content');
+        const closeBtn = document.getElementById('close-community-popup');
+        const form = document.getElementById('devmode-newsletter-form');
+        const successMsg = document.getElementById('devmode-success-message');
+        const submitBtn = document.getElementById('devmode-submit-btn');
+        // Supabase Configuration
+        const SUPABASE_URL = 'https://wvtnnvusgdrxsawnavfd.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2dG5udnVzZ2RyeHNhd25hdmZkIiwicm9sZSI6ImFub24iLCJ' +
+                'pYXQiOjE3NDQ3MzQ5MjYsImV4cCI6MjA2MDMxMDkyNn0.tOpNl6O59c4eCtf00N147XaTl55nQf9H3V6o33VXVkU';
+        // Use window.createClient or ensure globally available if loaded via script tag The script tag at
+        // https://unpkg.com/@supabase/supabase-js@2 exposes 'supabase' global object with createClient method. We should not
+        // shadow it.
+        const _supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        // Check if user already saw popup
+        const hasSeenPopup = localStorage.getItem('devmode_popup_seen');
+        // Show popup after 5 seconds if not seen
+        if (! hasSeenPopup) {
+            setTimeout(() => {
+                showPopup();
+            }, 1000);
+        }
+        function showPopup() {
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                content.classList.remove('opacity-0', 'scale-95');
+                content.classList.add('opacity-100', 'scale-100');
+            }, 10);
+        }
+        function hidePopup() {
+            backdrop.classList.add('opacity-0');
+            content.classList.remove('opacity-100', 'scale-100');
+            content.classList.add('opacity-0', 'scale-95');
+            setTimeout(() => {
+                popup.classList.add('hidden');
+                popup.classList.remove('flex');
+            }, 300);
+            localStorage.setItem('devmode_popup_seen', 'true');
+        }
+        closeBtn.addEventListener('click', hidePopup);
+        backdrop.addEventListener('click', hidePopup);
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('devmode-email').value;
+            const originalBtnText = submitBtn.innerHTML;
+            try {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Memproses...
+            `;
+                // Direct Insert to Supabase
+                const {error} = await _supabase.from('newsletter_subscribers').insert({email: email});
+                // Check for specific error (duplicate email)
+                if (error) {
+                    if (error.code === '23505') { // Unique violation Treat as success or show "Always subscribed"
+                        form.classList.add('hidden');
+                        successMsg.classList.remove('hidden');
+                        setTimeout(() => {
+                            hidePopup();
+                        }, 3000);
+                        return;
+                    }
+                    throw error;
+                }
+                // Success
+                form.classList.add('hidden');
+                successMsg.classList.remove('hidden');
+                setTimeout(() => {
+                    hidePopup();
+                }, 3000);
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Gagal bergabung: ' + (
+                    error.message || 'Terjadi kesalahan'
+                ));
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
+        });
+    });
+</script>

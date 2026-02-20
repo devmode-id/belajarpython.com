@@ -1,0 +1,120 @@
+---
+layout: tool-split.njk
+title: Python Formatter Online - Beautify Python Code
+description: Automatic Python code formatter. Tidy up indentation and code structure to meet pythonic standards (beautifier).
+lang: en
+---
+
+<div class="h-full flex flex-col">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-primary-600 to-primary-800 text-white border-b border-primary-700 shrink-0">
+        <div class="h-14 flex items-center justify-between px-4">
+            <div class="flex items-center gap-3">
+                 <h1 class="font-bold flex items-center gap-2 text-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-yellow-400">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+                    </svg>
+                    Python Formatter
+                 </h1>
+            </div>
+            <div class="flex items-center gap-2">
+                <span id="status-badge" class="text-xs text-white/80 font-medium w-20 text-right">Ready</span>
+                <button id="run-btn" class="bg-yellow-400 hover:bg-yellow-300 text-slate-900 px-4 py-1.5 rounded text-sm font-bold shadow-lg shadow-yellow-900/20 flex items-center gap-2 transition-all">
+                    Format Code
+                </button>
+            </div>
+        </div>
+        <!-- SEO Text -->
+        <div class="px-4 pb-4 pt-1 text-sm text-primary-50 max-w-4xl opacity-90 leading-relaxed hidden md:block">
+            <p>
+                <strong>Python Formatter</strong> (Beautifier) tidies up messy Python code automatically.
+                This tool fixes indentation and spacing issues, making your code cleaner, consistent, and consistent with Python standards.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Split Area -->
+    <div class="flex-1 flex min-h-0">
+         <!-- Code Input -->
+        <div class="w-1/2 flex flex-col border-r border-slate-700">
+             <div class="bg-slate-800 px-4 py-2 text-xs text-slate-400 font-medium flex justify-between items-center border-b border-slate-700">
+                <span>Input Code</span>
+                <button id="reset-btn" class="hover:text-white transition-colors">Clear</button>
+            </div>
+            <div class="bg-[#1e293b] flex-1 relative overflow-auto">
+                <pre class="h-full language-python"><code id="editor" class="language-python focus:outline-none p-4 block min-h-full" contenteditable="true" spellcheck="false"># Messy code example
+def calculate(  x,y ):
+  if x>y:
+      return x-y
+  else: return y-x
+print( calculate( 10,  5 ))
+</code></pre>
+            </div>
+        </div>
+
+        <!-- Output -->
+        <div class="w-1/2 flex flex-col bg-slate-950">
+            <div class="bg-slate-800 px-4 py-2 text-xs text-slate-400 font-medium border-b border-slate-700">
+                Formatted Output
+            </div>
+            <div class="flex-1 p-4 font-mono text-sm text-blue-200 overflow-auto whitespace-pre-wrap selection:bg-blue-500/30" id="output"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+<script>
+(function() {
+    let pyodidePromise = null;
+    async function getPyodide() {
+        if (!pyodidePromise) pyodidePromise = loadPyodide();
+        return pyodidePromise;
+    }
+
+    const editor = document.getElementById('editor');
+    const output = document.getElementById('output');
+    const runBtn = document.getElementById('run-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const status = document.getElementById('status-badge');
+
+    runBtn.addEventListener('click', async () => {
+        output.textContent = 'Formatting...';
+        status.textContent = 'Formatting...';
+        runBtn.disabled = true;
+
+        try {
+            const py = await getPyodide();
+            py.globals.set("input_code", editor.innerText);
+            
+            // Using ast.unparse as a lightweight built-in formatter (Beautifier)
+            const runCode = `
+import ast
+try:
+    # Parse and unparse to re-format styling
+    parsed = ast.parse(input_code)
+    print(ast.unparse(parsed))
+except Exception as e:
+    print(f"Error parsing code: {e}")
+            `;
+
+            let stdout = "";
+            py.setStdout({ batched: (str) => stdout += str + "\\n" });
+            await py.runPythonAsync(runCode);
+            
+            output.textContent = stdout;
+            status.textContent = 'Done';
+            
+        } catch (err) {
+            output.textContent = "Error: " + err.message;
+            status.textContent = 'Failed';
+        } finally {
+            runBtn.disabled = false;
+        }
+    });
+    
+    resetBtn.addEventListener('click', () => {
+        editor.innerText = '';
+        output.textContent = '';
+    });
+})();
+</script>

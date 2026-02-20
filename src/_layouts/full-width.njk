@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+{% include "head.njk" %}
+
+<body class="overflow-x-hidden">
+  {% include "navbar.njk" %}
+  
+  <main>
+    {{ content | safe }}
+  </main>
+
+  {% include "footer.njk" %}
+  {% include "analytics.njk" %}
+</body>
+
+</html>

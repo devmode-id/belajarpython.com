@@ -1,0 +1,235 @@
+<style>
+:root {
+  --tool-bg: #1e293b;
+  --tool-header: #334155;
+  --tool-border: #475569;
+  --tool-text: #f1f5f9;
+  --tool-accent: #38bdf8;
+  --tool-success: #22c55e;
+  --tool-error: #ef4444;
+  --tool-terminal: #0f172a;
+  --tool-output-text: #e2e8f0;
+}
+
+.python-tool-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.python-tool-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--tool-header);
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--tool-border);
+}
+
+.python-tool-title {
+  color: var(--tool-text);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.python-tool-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.btn-tool {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+.btn-tool-run {
+  background: var(--tool-accent);
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.btn-tool-run:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+.btn-tool-reset {
+  background: transparent;
+  color: #94a3b8;
+  border: 1px solid #475569;
+}
+
+.btn-tool-reset:hover {
+  color: #fff;
+  border-color: #94a3b8;
+}
+
+.python-tool-editor-area {
+  flex: 1;
+  position: relative;
+  background: var(--tool-bg);
+  min-height: 0;
+  overflow: auto;
+}
+
+.python-tool-editor-area pre {
+  margin: 0 !important;
+  padding: 1rem !important;
+  background: transparent !important;
+  min-height: 100%;
+}
+
+.python-tool-editor-area code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  outline: none;
+  min-height: 100%;
+  display: block;
+}
+
+.python-tool-output-area {
+  background: var(--tool-terminal);
+  color: var(--tool-output-text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.875rem;
+  padding: 1rem;
+  overflow-y: auto;
+  min-height: 100px;
+  max-height: 100%;
+  white-space: pre-wrap;
+  border-left: 1px solid var(--tool-border);
+}
+
+/* Loading overlay */
+.tool-loading {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 50;
+  color: white;
+}
+.tool-loading.active {
+  display: flex;
+}
+.tool-spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: var(--tool-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 0.5rem;
+}
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+<script>
+(function() {
+  let pyodidePromise = null;
+  async function getPyodide() {
+    if (!pyodidePromise) {
+      pyodidePromise = loadPyodide();
+    }
+    return pyodidePromise;
+  }
+
+  window.initPythonTool = function(editorId, outputId, runBtnId, resetBtnId, statusId) {
+    const editor = document.getElementById(editorId);
+    const output = document.getElementById(outputId);
+    const runBtn = document.getElementById(runBtnId);
+    const resetBtn = document.getElementById(resetBtnId);
+    const status = document.getElementById(statusId);
+    
+    // Store original code for reset
+    const originalCode = editor.innerText;
+    
+    // Loading overlay logic (simple implementation)
+    const loadingOverlay = document.createElement('div');
+    loadingOverlay.className = 'tool-loading';
+    loadingOverlay.innerHTML = '<div class="tool-spinner"></div><div>Initializing Python...</div>';
+    editor.parentElement.appendChild(loadingOverlay);
+
+    // Make editable
+    editor.setAttribute('contenteditable', 'true');
+    editor.setAttribute('spellcheck', 'false');
+
+    runBtn.addEventListener('click', async () => {
+        output.textContent = '';
+        output.classList.remove('text-red-400');
+        
+        if (!window.pyodideInstance) {
+            loadingOverlay.classList.add('active');
+            status.textContent = 'Loading Engine...';
+            try {
+                window.pyodideInstance = await getPyodide();
+            } catch (err) {
+                output.textContent = 'Failed to load Python: ' + err.message;
+                output.classList.add('text-red-400');
+                loadingOverlay.classList.remove('active');
+                return;
+            }
+            loadingOverlay.classList.remove('active');
+        }
+
+        status.textContent = 'Running...';
+        runBtn.disabled = true;
+        
+        try {
+            const py = window.pyodideInstance;
+            let stdoutContent = '';
+            py.setStdout({
+                batched: (str) => {
+                    stdoutContent += str + '\n';
+                    output.textContent = stdoutContent;
+                }
+            });
+            
+            const code = editor.innerText;
+            await py.runPythonAsync(code);
+            
+            status.textContent = 'Done';
+            if (!stdoutContent) {
+                output.textContent = '(Executed successfully, no output)';
+            }
+        } catch (err) {
+            output.classList.add('text-red-400');
+            output.textContent = err.message;
+            status.textContent = 'Error';
+        } finally {
+            runBtn.disabled = false;
+            setTimeout(() => { 
+                if (status.textContent !== 'Error') status.textContent = 'Ready'; 
+            }, 2000);
+        }
+    });
+
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+             editor.textContent = originalCode;
+             // optional: highlight again if using highlight.js
+             if (window.hljs) hljs.highlightElement(editor);
+             output.textContent = '';
+             status.textContent = 'Reset';
+        });
+    }
+  };
+})();
+</script>

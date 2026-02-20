@@ -1,0 +1,33 @@
+<nav class="h-16 bg-primary-500 text-white {{ 'fixed top-0 left-0 right-0 z-[60] shadow-md' if not isHomepage }}">
+    <div class="relative flex items-center justify-center md:justify-between pt-3 max-w-7xl px-4 md:px-10 mx-auto">
+        {% if isTutorial %}
+            <button
+                id="mobile-tutorial-sidebar-toggle"
+                class="absolute left-4 top-4 md:hidden text-white focus:outline-none"
+                aria-label="Toggle Sidebar">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        {% endif %}
+        <a href="{{ '/en/' if lang == 'en' else '/' }}" class="z-10">
+            <img class="h-10 pt-1" src="/img/logo-belajarpython-140.png" alt="logo-belajarpython"/>
+        </a>
+        <div class="hidden md:flex items-center justify-end">
+            <div class="mr-5 flex gap-5">
+                <a class="text-white text-opacity-70 hover:text-opacity-100" href="{{ '/en/tutorial/what-is-python' if lang == 'en' else '/tutorial/apa-itu-python' }}">Tutorial</a>
+                <a class="text-white text-opacity-70 hover:text-opacity-100" href="/article">{{ 'Articles' if lang == 'en' else 'Artikel' }}</a>
+                <a class="text-white text-opacity-70 hover:text-opacity-100" href="{{ '/en/contribute' if lang == 'en' else '/contribute' }}">{{ 'Contribute' if lang == 'en' else 'Kontribusi' }}</a>
+            </div>
+            <a
+                class="flex h-9 items-center rounded-full bg-gradient-to-l from-secondary-500 to-secondary-400 px-7 text-sm text-black"
+                href="https://github.com/belajarpythoncom/belajarpython.com">
+                <span class="-mt-0.5">Join on Github</span>
+                <img class="ml-2 h-4" src="/img/icon-github.svg" class="button-github-yellow-img"/>
+            </a>
+        </div>
+    </div>
+</nav>
+{% if not isHomepage %}
+    <div class="h-16"></div>
+{% endif %}

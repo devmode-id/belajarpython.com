@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ lang if lang else 'id' }}" class="scroll-smooth">
+  {% include "head.njk" %}
+  <body class="overflow-x-hidden bg-slate-50 dark:bg-slate-900">
+    {% include "navbar.njk" %}
+    <div class="max-w-5xl mx-auto py-10 px-4">
+        <main class="w-full">
+             {{ content | safe }}
+        </main>
+    </div>
+    {% include "footer.njk" %}
+    {% include "progress-script.njk" %}
+    {% include "analytics.njk" %}
+  </body>
+</html>

@@ -1,0 +1,116 @@
+---
+layout: tool-split.njk
+title: JSON to Python Converter - Konversi JSON ke Dictionary
+description: Konversi data JSON menjadi format Python Dictionary secara otomatis. Tools wajib untuk developer API.
+---
+
+<div class="h-full flex flex-col">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-primary-600 to-primary-800 text-white border-b border-primary-700 shrink-0">
+        <div class="h-14 flex items-center justify-between px-4">
+            <div class="flex items-center gap-3">
+                 <h1 class="font-bold flex items-center gap-2 text-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-yellow-400">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                    </svg>
+                    JSON to Python
+                 </h1>
+            </div>
+            <div class="flex items-center gap-2">
+                <span id="status-badge" class="text-xs text-white/80 font-medium w-20 text-right">Ready</span>
+                <button id="run-btn" class="bg-yellow-400 hover:bg-yellow-300 text-slate-900 px-4 py-1.5 rounded text-sm font-bold shadow-lg shadow-yellow-900/20 flex items-center gap-2 transition-all">
+                    Convert
+                </button>
+            </div>
+        </div>
+        <!-- SEO Text -->
+        <div class="px-4 pb-4 pt-1 text-sm text-primary-50 max-w-4xl opacity-90 leading-relaxed hidden md:block">
+            <p>
+                <strong>JSON to Python Converter</strong> mengubah string JSON menjadi format <i>Python Dictionary</i> yang valid. 
+                Memudahkan developer API untuk menyalin respon JSON dan langsung menggunakannya dalam kode Python tanpa perlu mengubah sintaks (seperti <code>true</code> ke <code>True</code>, <code>null</code> ke <code>None</code>).
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Split Area -->
+    <div class="flex-1 flex min-h-0">
+         <!-- JSON Input -->
+        <div class="w-1/2 flex flex-col border-r border-slate-700">
+            <div class="bg-slate-800 px-4 py-2 text-xs text-slate-400 font-medium border-b border-slate-700">
+                Input JSON
+            </div>
+            <div class="bg-[#1e293b] flex-1 relative overflow-auto">
+                <pre class="h-full language-json"><code id="editor" class="language-json focus:outline-none p-4 block min-h-full" contenteditable="true" spellcheck="false">{
+  "name": "BelajarPython",
+  "is_active": true,
+  "users": 15000,
+  "features": ["tutorial", "tools", null],
+  "meta": {
+    "cached": false
+  }
+}</code></pre>
+            </div>
+        </div>
+
+        <!-- Python Output -->
+        <div class="w-1/2 flex flex-col bg-slate-950">
+            <div class="bg-slate-800 px-4 py-2 text-xs text-slate-400 font-medium border-b border-slate-700">
+                Python Dictionary Output
+            </div>
+            <div class="flex-1 p-4 font-mono text-sm text-green-300 overflow-auto whitespace-pre-wrap" id="output"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+<script>
+(function() {
+    let pyodidePromise = null;
+    async function getPyodide() {
+        if (!pyodidePromise) pyodidePromise = loadPyodide();
+        return pyodidePromise;
+    }
+
+    const editor = document.getElementById('editor');
+    const output = document.getElementById('output');
+    const runBtn = document.getElementById('run-btn');
+    const status = document.getElementById('status-badge');
+
+    runBtn.addEventListener('click', async () => {
+        output.textContent = 'Converting...';
+        status.textContent = 'Working...';
+        runBtn.disabled = true;
+
+        try {
+            const py = await getPyodide();
+            py.globals.set("json_input", editor.innerText);
+            
+            const runCode = `
+import json
+import pprint
+
+try:
+    data = json.loads(json_input)
+    # pprint with sort_dicts=False to keep order if Python 3.8+
+    print(pprint.pformat(data, width=80, sort_dicts=False))
+except json.JSONDecodeError as e:
+    print(f"Invalid JSON: {e}")
+except Exception as e:
+    print(f"Error: {e}")
+            `;
+
+            let stdout = "";
+            py.setStdout({ batched: (str) => stdout += str + "\\n" });
+            await py.runPythonAsync(runCode);
+            output.textContent = stdout;
+            status.textContent = 'Done';
+            
+        } catch (err) {
+            output.textContent = "Error: " + err.message;
+            status.textContent = 'Failed';
+        } finally {
+            runBtn.disabled = false;
+        }
+    });
+})();
+</script>

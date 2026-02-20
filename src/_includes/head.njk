@@ -1,0 +1,101 @@
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+    <meta name="author" content="Belajarpython.com"/>
+    <meta name="language" content="{{ lang if lang else 'id' }}"/>
+    <meta name="geo.region" content="{{ 'US' if lang == 'en' else 'ID' }}"/>
+    <meta name="geo.placename" content="{{ 'Global' if lang == 'en' else 'Indonesia' }}"/>
+    <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+        <meta name="keywords" content="{{ 'learn python, python tutorial, python programming, python for beginners, free python course, python data science, python machine learning' if lang == 'en' else site.keywords }}"/>
+        <meta
+        name="google-site-verification" content=""/> <!-- Canonical URL -->
+        <link
+        rel="canonical" href="{{ site.url }}{{ page.url }}"/> <!-- Open Graph / Facebook -->
+        <meta property="og:locale" content="{{ 'en_US' if lang == 'en' else 'id_ID' }}"/>
+        <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
+        <meta property="og:site_name" content="{{ site.name }}"/>
+        <meta property="og:title" content="{% if isHomepage %}{{ 'Python Programming Tutorial | Basic to Advanced ' if lang == 'en' else 'Tutorial Pemrograman Python Bahasa Indonesia | Dasar Sampai Advance ' }}{{ site.name }}{% elif title %}{{ title }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}"/>
+        <meta property="og:image" content="{{ site.url }}/img/logos/logo-belajarpython-square.png"/>
+        <meta property="og:image:width" content="1200"/>
+        <meta property="og:image:height" content="630"/>
+        <meta
+        property="og:image:alt"
+            content="Belajarpython.com - {{ 'Python Tutorial' if lang == 'en' else 'Tutorial Python Bahasa Indonesia' }}"/> <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:site" content="@belajarpythoncom"/>
+        <meta name="twitter:creator" content="@belajarpythoncom"/>
+        <meta name="twitter:title" content="{% if isHomepage %}{{ 'Python Programming Tutorial ' if lang == 'en' else 'Tutorial Pemrograman Python Bahasa Indonesia' }}{% elif title %}{{ title }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}"/>
+        <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}"/>
+        <meta
+        name="twitter:image" content="{{ site.url }}/img/logos/logo-belajarpython-square.png"/> <!-- Favicon & Theme -->
+        <link rel="icon" href="/img/favicon.png"/>
+        <link rel="apple-touch-icon" href="/img/favicon.png"/>
+        <meta name="theme-color" content="#2a5880"/>
+        <meta
+        name="msapplication-TileColor" content="#2a5880"/> <!-- Verification -->
+        <meta
+        name="msvalidate.01" content="8CFBF57F61ECFF6C84740E37B7FCDE15"/> <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="/css/base.css?v={{ site.version }}"/>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark-reasonable.min.css">
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"
+                integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ=="
+                crossorigin="anonymous"
+                referrerpolicy="no-referrer"></script>
+            <script>
+                hljs.initHighlightingOnLoad();
+            </script>
+            <!-- Structured Data / Schema.org -->
+            {% if isHomepage %}
+                <script type="application/ld+json">
+                    { "@context": "https://schema.org", "@type": "WebSite", "@id": "{{ site.url }}/#website", "url": "{{ site.url }} ", "name": "{{ site.name }} ", "description": "{% if description %}
+                        {{ description }}
+                    {% else %}
+                        {{ site.description }}
+                    {% endif %}",
+                                                                                                    "inLanguage": "{{ 'en-US' if lang == 'en' else 'id-ID' }} ", "potentialAction": { "@type": "SearchAction", "target": "{{ site.url }}
+                    /search?q={search_term_string}", "query-input": "required name=search_term_string" } }
+                </script>
+                <script type="application/ld+json">
+                    { "@context": "https://schema.org", "@type": "EducationalOrganization", "@id": "{{ site.url }}/#organization", "name": "{{ site.name }} ", "url": "{{ site.url }} ", "logo": "{{ site.url }}
+                    /img/logos/logo-belajarpython-square.png", "description": "{{ 'Complete Python Tutorial for Beginners to Advanced' if lang == 'en' else site.tagline }}
+                    ", "foundingDate": "2015", "sameAs": [ "https://github.com/belajarpythoncom" ], "areaServed": { "@type": "Country",
+                    "name": "{{ 'Global' if lang == 'en' else 'Indonesia' }}
+                    " }, "teaches": [ "Python Programming", "Data Science", "Machine Learning", "Web Development" ] }
+                </script>
+                <script type="application/ld+json">
+                    { "@context": "https://schema.org", "@type": "ItemList", "itemListElement": [ { "@type": "Course", "position": 1,
+                    "name": "{{ 'Basic Python Tutorial' if lang == 'en' else 'Tutorial Python Dasar' }}", "description": "{{ 'Learn Python basics from installation to OOP concepts' if lang == 'en' else 'Pelajari dasar-dasar pemrograman Python dari instalasi hingga konsep OOP' }}
+                    ", "provider": { "@type": "Organization", "name": "{{ site.name }} " }, "educationalLevel": "Beginner", "inLanguage": "{{ 'en' if lang == 'en' else 'id' }}
+                    ", "isAccessibleForFree": true } ] }
+                </script>
+            {% else %}
+                <script type="application/ld+json">
+                    { "@context": "https://schema.org", "@type": "Article", "headline": "{{ title }}", "description":
+                                        "{% if description %}
+                        {{ description }}
+                    {% else %}
+                        {{ site.description }}
+                    {% endif %}", "url":
+                    "{{ site.url }}{{ page.url }}",
+                                                                                "inLanguage": "{{ 'en-US' if lang == 'en' else 'id-ID' }} ", "publisher": { "@type": "Organization", "name": "{{ site.name }}
+                    ", "logo": { "@type": "ImageObject", "url": "{{ site.url }} /img/logos/logo-belajarpython-square.png" } } }
+                </script>
+            {% endif %}
+            <title>
+                {% if isHomepage %}
+                    {{ 'LearnPython - Python Programming Tutorial From Basic to Advanced 2026' if lang == 'en' else 'Belajarpython - Tutorial Pemrograman Python Bahasa Indonesia Terbaru 2026' }}
+                {% elif isTutorial %}
+                    {{ title }} - {{ 'Complete Tutorial Basic to Advanced' if lang == 'en' else 'Tutorial Lengkap Dasar Sampai Advance' }}
+                {% elif title %}
+                    {{ title }} | {{ site.name }}
+                {% else %}
+                    {{ site.name }}
+                {% endif %}
+            </title>
+        </head>

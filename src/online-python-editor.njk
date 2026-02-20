@@ -1,0 +1,69 @@
+---
+layout: tool-split.njk
+title: Online Python Editor - Teks Editor Python Berbasis Web
+description: Editor Python Online dengan fitur highlighting syntax. Modifikasi dan uji coba script Python scara instan.
+---
+
+<div class="h-full flex flex-col">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-primary-600 to-primary-800 text-white border-b border-primary-700 shrink-0">
+        <div class="h-14 flex items-center justify-between px-4">
+            <div class="flex items-center gap-3">
+                 <h1 class="font-bold flex items-center gap-2 text-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-yellow-400">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 18" />
+                    </svg>
+                    Online Python Editor
+                 </h1>
+            </div>
+            <div class="flex items-center gap-2">
+                <span id="status-badge" class="text-xs text-white/80 font-medium w-20 text-right">Ready</span>
+                <button id="run-btn" class="bg-yellow-400 hover:bg-yellow-300 text-slate-900 px-4 py-1.5 rounded text-sm font-bold transition-all flex items-center gap-2">
+                    <span>Execute</span>
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                      <path fill-rule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- SEO Text Section -->
+        <div class="px-4 pb-4 pt-1 text-sm text-primary-50 max-w-4xl opacity-90 leading-relaxed hidden md:block">
+            <p>
+                <strong>Online Python Editor</strong> modern dengan fitur syntax highlighting untuk pengalaman coding yang lebih baik. 
+                Edit script Python Anda, lakukan debugging sederhana, dan lihat outputnya secara realtime. Solusi praktis bagi programmer Python yang ingin coding di mana saja tanpa ribet.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Split Area -->
+    <div class="flex-1 flex min-h-0">
+        <!-- Editor Column -->
+        <div class="w-1/2 flex flex-col border-r border-slate-700">
+             <div class="bg-[#1e293b] flex-1 relative overflow-auto">
+                <pre class="h-full language-python"><code id="editor" class="language-python focus:outline-none p-4 block min-h-full" contenteditable="true" spellcheck="false"># Python Editor Online
+# Mulai koding disini...
+
+import random
+
+numbers = [random.randint(1, 100) for _ in range(10)]
+print(f"Random numbers: {numbers}")
+print(f"Sorted: {sorted(numbers)}")
+</code></pre>
+            </div>
+        </div>
+
+        <!-- Output Column -->
+        <div class="w-1/2 flex flex-col bg-slate-950">
+            <div class="flex-1 p-4 font-mono text-sm text-blue-200 overflow-auto whitespace-pre-wrap" id="output">
+                // Output will appear here...
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "python-tool-runner.njk" %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        window.initPythonTool('editor', 'output', 'run-btn', null, 'status-badge');
+    });
+</script>

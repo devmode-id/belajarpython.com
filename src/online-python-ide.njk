@@ -1,0 +1,120 @@
+---
+layout: tool-split.njk
+title: Online Python IDE - Lingkungan Pengembangan Terintegrasi Web
+description: Python IDE full-featured versi web. Tampilan mirip VS Code dengan panel output terpisah. Cocok untuk project Python skala kecil-menengah.
+---
+
+<div class="h-full flex flex-col bg-[#1e1e1e] text-[#d4d4d4]">
+    <!-- Menu Bar (Fake) -->
+    <div class="h-auto bg-gradient-to-r from-primary-700 to-primary-900 border-b border-primary-800 flex flex-col shrink-0">
+        <!-- SEO Text for IDE -->
+        <div class="px-4 py-2 text-xs text-primary-200 border-b border-primary-800 hidden md:block text-center bg-primary-900/50">
+            <strong>Python IDE Online</strong> - Lingkungan pengembangan terintegrasi (IDE) berbasis web dengan tampilan profesional mirip VS Code. Nikmati fitur file explorer visual dan terminal output terpisah.
+        </div>
+        
+        <div class="h-8 flex items-center px-4 gap-4 text-xs select-none text-slate-300">
+            <img src="/img/icons/icon-python.ico" class="w-4 h-4" alt="Icon">
+            <span class="hover:bg-white/10 px-2 py-0.5 rounded cursor-pointer transition-colors">File</span>
+            <span class="hover:bg-white/10 px-2 py-0.5 rounded cursor-pointer transition-colors">Edit</span>
+            <span class="hover:bg-white/10 px-2 py-0.5 rounded cursor-pointer transition-colors">Selection</span>
+            <span class="hover:bg-white/10 px-2 py-0.5 rounded cursor-pointer transition-colors">View</span>
+            <span class="hover:bg-white/10 px-2 py-0.5 rounded cursor-pointer transition-colors">Go</span>
+            <span class="hover:bg-white/10 px-2 py-0.5 rounded cursor-pointer transition-colors">Run</span>
+            <div class="ml-auto flex items-center gap-3">
+                 <span id="status-badge" class="text-xs text-slate-400">Ready</span>
+                 <button id="run-btn" class="bg-green-600 hover:bg-green-500 px-3 py-0.5 text-white rounded-sm flex items-center gap-1 transition-colors shadow-sm">
+                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Run
+                 </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex-1 flex min-h-0">
+        <!-- Sidebar (Fake) -->
+        <div class="w-12 bg-[#333333] flex flex-col items-center py-2 text-[#858585] border-r border-[#252526]">
+            <div class="p-2 border-l-2 border-white text-white mb-2"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg></div>
+            <div class="p-2 hover:text-white mb-2"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg></div>
+            <div class="p-2 hover:text-white mb-2"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg></div>
+        </div>
+
+        <!-- File Explorer (Fake) -->
+        <div class="w-48 bg-[#252526] text-xs font-sans text-slate-300 hidden md:block border-r border-[#1e1e1e]">
+            <div class="p-2 px-4 font-bold uppercase tracking-wider text-xs mb-1">Explorer</div>
+            <div class="px-2 py-1 bg-[#37373d] flex items-center gap-1 cursor-pointer">
+                 <svg class="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-width="2" /></svg>
+                 app.py
+            </div>
+            <div class="px-2 py-1 hover:bg-[#2a2d2e] flex items-center gap-1 text-slate-500 cursor-not-allowed">
+                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-width="2" /></svg>
+                 utils.py
+            </div>
+            <div class="px-2 py-1 hover:bg-[#2a2d2e] flex items-center gap-1 text-slate-500 cursor-not-allowed">
+                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" stroke-width="2" /></svg>
+                 __pycache__
+            </div>
+        </div>
+
+        <!-- Main Editor Area -->
+        <div class="flex-1 flex flex-col min-w-0">
+             <!-- Tabs -->
+             <div class="h-9 bg-[#2d2d2d] flex items-center no-scrollbar overflow-x-auto">
+                 <div class="bg-[#1e1e1e] h-full flex items-center px-3 border-t-2 border-blue-500 text-white min-w-fit gap-2 text-xs">
+                    <img src="/img/icons/icon-python.ico" class="w-3 h-3"> app.py
+                    <span class="hover:bg-slate-700 rounded-sm p-0.5 cursor-pointer ml-2">×</span>
+                 </div>
+             </div>
+
+             <!-- Editor & Terminal Split -->
+             <div class="flex-1 flex flex-col md:flex-row min-h-0">
+                  <div class="flex-1 relative bg-[#1e1e1e] border-r border-[#414141]">
+                       <pre class="h-full language-python"><code id="editor" class="language-python block h-full focus:outline-none p-4" contenteditable="true" spellcheck="false"># Python Online IDE
+# VS Code-like experience in browser
+
+class User:
+    def __init__(self, name, role):
+        self.name = name
+        self.role = role
+    
+    def describe(self):
+        return f"{self.name} is a {self.role}"
+
+admin = User("Admin", "Superuser")
+guest = User("Guest", "Visitor")
+
+print(admin.describe())
+print(guest.describe())
+</code></pre>
+                  </div>
+                  
+                  <div class="h-48 md:h-auto md:w-1/3 flex flex-col bg-[#1e1e1e] border-t md:border-t-0 md:border-l border-[#414141]">
+                       <div class="h-8 flex items-center px-4 bg-[#252526] text-xs uppercase font-bold text-slate-400 gap-4 border-b border-[#414141]">
+                            <span class="text-white border-b border-white h-full flex items-center">Terminal</span>
+                            <span class="cursor-pointer hover:text-white">Output</span>
+                            <span class="cursor-pointer hover:text-white">Debug Console</span>
+                       </div>
+                       <div id="output" class="flex-1 p-3 font-mono text-sm text-[#cccccc] overflow-auto whitespace-pre-wrap"></div>
+                  </div>
+             </div>
+        </div>
+    </div>
+    
+    <!-- Status Bar -->
+    <div class="h-6 bg-[#007acc] text-white flex items-center px-3 text-xs justify-between shrink-0">
+         <div class="flex items-center gap-4">
+             <span>main</span>
+             <span>0 errors, 0 warnings</span>
+         </div>
+         <div class="flex items-center gap-4">
+             <span>Ln 12, Col 45</span>
+             <span>UTF-8</span>
+             <span>Python 3.11 (Pyodide)</span>
+         </div>
+    </div>
+</div>
+
+{% include "python-tool-runner.njk" %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        window.initPythonTool('editor', 'output', 'run-btn', null, 'status-badge');
+    });
+</script>

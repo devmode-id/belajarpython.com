@@ -1,0 +1,461 @@
+<style>:root
+{
+    --runner-bg: #0f172a;
+    --runner-header: #1e3a5f;
+    --runner-border: #334155;
+    --runner-text: #f8fafc;
+    --runner-accent: #38bdf8;
+    --runner-success: #22c55e;
+    --runner-error: #ef4444;
+    --runner-terminal: #000000;
+    --runner-output-text: #fdd244;
+    --runner-dl-accent: #ef4444; /* Red for DL/TF/Torch */
+}
+.code-runner-container {
+    position: relative;
+    margin: 1.5rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--runner-bg);
+    border: 1px solid var(--runner-border);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.code-runner-container.deep-learning {
+    border-color: var(--runner-dl-accent);
+}
+@media(max-width: 640px) {
+    .code-runner-container {
+        margin: 1rem -0.5rem;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+}
+.code-runner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #1e3a5f 0%, #4a1e1e 100%);
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--runner-border);
+    gap: 0.5rem;
+}
+.code-runner-title {
+    color: var(--runner-text);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.dl-badge {
+    background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+    color: white;
+    font-size: 0.625rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.code-runner-actions {
+    display: flex;
+    gap: 0.375rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.375rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    min-width: 32px;
+    height: 32px;
+}
+.btn-run {
+    background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+    color: #fff;
+}
+.btn-run:hover {
+    background: linear-gradient(135deg, #b91c1c 0%, #ef4444 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+.btn-reset {
+    background: transparent;
+    color: #cbd5e1;
+    border: 1px solid #8f9fb5;
+}
+.btn-reset:hover {
+    color: #ffffff;
+    border-color: #cbd5e1;
+}
+.btn-copy {
+    background: transparent;
+    color: #94a3b8;
+    border: none;
+    padding: 4px;
+}
+.btn-copy:hover {
+    color: var(--runner-text);
+}
+.code-editor-wrapper {
+    position: relative;
+    min-height: 100px;
+}
+.code-runner-container pre {
+    margin: 0 !important;
+    background: transparent !important;
+    padding: 1rem !important;
+}
+.code-runner-container code {
+    background: transparent !important;
+    padding: 0 !important;
+    display: block;
+    outline: none;
+}
+.code-output {
+    background: var(--runner-terminal);
+    color: var(--runner-output-text);
+    padding: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    min-height: 2.5rem;
+    max-height: 400px;
+    overflow-y: auto;
+    border-top: 1px solid var(--runner-border);
+    white-space: pre-wrap;
+    display: none;
+    border-left: 4px solid var(--runner-terminal);
+}
+.code-output.active {
+    display: block;
+}
+.code-output.error {
+    color: var(--runner-error);
+    border-left-color: var(--runner-error);
+}
+.code-output.success {
+    border-left-color: var(--runner-dl-accent);
+}
+.loading-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    display: none;
+}
+.loading-content {
+    text-align: center;
+    max-width: 280px;
+}
+.spinner-dl {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(239, 68, 68, 0.3);
+    border-top-color: var(--runner-dl-accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 0.75rem;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.loading-text {
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.loading-subtext {
+    color: #94a3b8;
+    font-size: 0.75rem;
+}
+.progress-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    height: 6px;
+    margin-top: 0.75rem;
+    overflow: hidden;
+}
+.progress-bar {
+    background: linear-gradient(90deg, #ef4444, #f87171);
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+.status-badge {
+    font-size: 0.75rem;
+    color: #f8fafc;
+    margin-right: 0.5rem;
+    font-weight: 500;
+}
+.status-badge.ready {
+    color: var(--runner-dl-accent);
+}
+.code-runner-container.deep-learning:hover {
+    border-color: var(--runner-dl-accent);
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.15);
+}
+.package-indicator {
+    display: flex;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.package-pill {
+    background: rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    font-size: 0.625rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.package-pill.loaded {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+}
+.package-pill .checkmark {
+    display: none;
+}
+.package-pill.loaded .checkmark {
+    display: inline;
+}
+.colab-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 600;
+}
+.colab-link:hover {
+    text-decoration: underline;
+}</style><script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script><script>
+(function () {
+    let pyodidePromise = null;
+    let packagesLoaded = false;
+    async function getPyodideWithPackages() {
+        if (! pyodidePromise) {
+            pyodidePromise = (async () => {
+                const pyodide = await loadPyodide();
+                return pyodide;
+            })();
+        }
+        return pyodidePromise;
+    }
+    async function loadDLPackages(pyodide, updateProgress) {
+        if (packagesLoaded) 
+            return;
+        
+        updateProgress('Loading micropip...', 10);
+        await pyodide.loadPackage('micropip');
+        const micropip = pyodide.pyimport('micropip');
+        updateProgress('Installing NumPy...', 30);
+        await micropip.install('numpy');
+        updateProgress('Initializing...', 90);
+        await pyodide.runPythonAsync(`
+import numpy as np
+print(f"✓ NumPy {np.__version__} ready (for basic Neural Networks)")
+        `);
+        packagesLoaded = true;
+        updateProgress('Ready!', 100);
+    }
+    function initDLRunners() {
+        const pythonBlocks = document.querySelectorAll('pre > code.language-python');
+        pythonBlocks.forEach((block, index) => {
+            if (block.closest('.code-runner-container')) 
+                return;
+            
+            const pre = block.parentElement;
+            const originalCode = block.textContent.trim();
+            const isHeavyLib = originalCode.includes('tensorflow') || originalCode.includes('torch') || originalCode.includes('keras');
+            const container = document.createElement('div');
+            container.className = 'code-runner-container deep-learning';
+            const header = document.createElement('div');
+            header.className = 'code-runner-header';
+            header.innerHTML = `
+                <div class="code-runner-title">
+                    <img src="/img/icons/icon-python.ico" width="20" height="20" alt="Logo Python" style="display: block;">
+                    <span>DL <span class="hidden md:inline">Editor</span></span>
+                    <span class="dl-badge">${
+                isHeavyLib
+                    ? 'Requires Colab'
+                    : 'NumPy Ready'
+                }</span>
+                </div>
+                <div class="code-runner-actions">
+                    <span class="status-badge" id="status-dl-${index}"></span>
+                    <button class="btn-action btn-reset" id="copy-btn-dl-${index}" title="Copy Code">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                    </button>
+                    ${
+                    ! isHeavyLib
+                        ? `
+                    <button class="btn-action btn-reset" id="reset-btn-dl-${index}" title="Reset Code">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+                    </button>
+                    <button class="btn-action btn-run" id="run-btn-dl-${index}">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <span>Run</span>
+                    </button>
+                    `
+                        : `
+                    <a href="https://colab.research.google.com/" target="_blank" class="btn-action btn-run" style="text-decoration:none">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" width="14" height="14">
+                        <span>Colab</span>
+                    </a>
+                    `
+                    }
+                </div>
+            `;
+            const output = document.createElement('div');
+            output.className = 'code-output';
+            output.id = `output-dl-${index}`;
+            const loadingOverlay = document.createElement('div');
+            loadingOverlay.className = 'loading-overlay';
+            loadingOverlay.id = `loading-dl-${index}`;
+            loadingOverlay.innerHTML = `
+                <div class="loading-content">
+                    <div class="spinner-dl"></div>
+                    <div class="loading-text" id="loading-text-dl-${index}">Initializing Python...</div>
+                    <div class="loading-subtext">Loading NumPy for Neural Networks</div>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar-dl-${index}"></div>
+                    </div>
+                </div>
+            `;
+            pre.parentNode.insertBefore(container, pre);
+            container.appendChild(header);
+            const editorWrapper = document.createElement('div');
+            editorWrapper.className = 'code-editor-wrapper';
+            if (! isHeavyLib) 
+                editorWrapper.appendChild(loadingOverlay);
+            
+            editorWrapper.appendChild(pre);
+            container.appendChild(editorWrapper);
+            if (! isHeavyLib) 
+                container.appendChild(output);
+            
+            block.setAttribute('contenteditable', 'true');
+            block.setAttribute('spellcheck', 'false');
+            block.addEventListener('focus', () => {
+                block.className = 'language-python';
+            });
+            const runBtn = header.querySelector(`#run-btn-dl-${index}`);
+            const resetBtn = header.querySelector(`#reset-btn-dl-${index}`);
+            const copyBtn = header.querySelector(`#copy-btn-dl-${index}`);
+            const statusBadge = header.querySelector(`#status-dl-${index}`);
+            copyBtn.addEventListener('click', async () => {
+                await navigator.clipboard.writeText(block.innerText);
+                statusBadge.textContent = 'Copied!';
+                setTimeout(() => (statusBadge.textContent = ''), 2000);
+            });
+            if (isHeavyLib) 
+                return;
+             // Skip logic for TF/Torch blocks
+            const progressBar = loadingOverlay.querySelector(`#progress-bar-dl-${index}`);
+            const loadingText = loadingOverlay.querySelector(`#loading-text-dl-${index}`);
+            runBtn.addEventListener('click', async () => {
+                output.classList.add('active');
+                output.classList.remove('error', 'success');
+                output.textContent = '';
+                const updateProgress = (text, percent) => {
+                    loadingText.textContent = text;
+                    progressBar.style.width = percent + '%';
+                };
+                if (!window.pyodideDLInstance || ! packagesLoaded) {
+                    loadingOverlay.style.display = 'flex';
+                    statusBadge.textContent = 'Loading...';
+                    try {
+                        if (!window.pyodideDLInstance) {
+                            updateProgress('Starting Python engine...', 5);
+                            window.pyodideDLInstance = await getPyodideWithPackages();
+                        }
+                        await loadDLPackages(window.pyodideDLInstance, updateProgress);
+                    } catch (err) {
+                        output.classList.add('error');
+                        output.textContent = 'Failed to load Python: ' + err.message;
+                        loadingOverlay.style.display = 'none';
+                        statusBadge.textContent = 'Error';
+                        return;
+                    }
+                    loadingOverlay.style.display = 'none';
+                    statusBadge.textContent = 'Ready';
+                    statusBadge.classList.add('ready');
+                }
+                statusBadge.textContent = 'Running...';
+                runBtn.disabled = true;
+                try {
+                    const py = window.pyodideDLInstance;
+                    let stdoutContent = '';
+                    py.setStdout({
+                        batched: (str) => {
+                            stdoutContent += str + '\n';
+                            output.textContent = stdoutContent;
+                        }
+                    });
+                    const code = block.innerText;
+                    if (code.includes('tensorflow') || code.includes('torch')) {
+                        throw new Error("TensorFlow dan PyTorch tidak didukung di browser ini karena ukurannya yang besar. Silakan gunakan Google Colab.");
+                    }
+                    await py.runPythonAsync(code);
+                    output.classList.add('success');
+                    statusBadge.textContent = 'Done';
+                    statusBadge.classList.add('ready');
+                    if (! stdoutContent) {
+                        output.textContent = '(Executed successfully, no output)';
+                    }
+                } catch (err) {
+                    output.classList.add('error');
+                    output.textContent = err.message;
+                    if (err.message.includes('TensorFlow')) {
+                        output.innerHTML += '<br><br><a href="https://colab.research.google.com/" target="_blank" class="colab-link">Open in Google Colab ↗</a>';
+                    }
+                    statusBadge.textContent = 'Error';
+                    statusBadge.classList.remove('ready');
+                } finally {
+                    runBtn.disabled = false;
+                    setTimeout(() => {
+                        if (statusBadge.textContent === 'Done') {
+                            statusBadge.textContent = 'Ready';
+                        }
+                    }, 3000);
+                }
+            });
+            resetBtn.addEventListener('click', () => {
+                block.textContent = originalCode;
+                if (window.hljs) 
+                    hljs.highlightElement(block);
+                
+                output.classList.remove('active', 'error', 'success');
+                statusBadge.textContent = 'Reset';
+            });
+        });
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initDLRunners);
+    } else {
+        initDLRunners();
+    }
+})();</script>

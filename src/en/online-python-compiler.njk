@@ -1,0 +1,76 @@
+---
+layout: tool-split.njk
+title: Online Python Compiler - Run Python Code in Browser
+description: Free Online Python Compiler. Write, edit, and run Python scripts directly in your browser without installation. Fast, lightweight, and easy to use.
+lang: en
+---
+
+<div class="h-full flex flex-col">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-primary-600 to-primary-800 text-white border-b border-primary-700 shrink-0">
+        <div class="h-14 flex items-center justify-between px-4">
+            <div class="flex items-center gap-3">
+                 <h1 class="font-bold flex items-center gap-2 text-lg">
+                    <img src="/img/icons/icon-python.ico" alt="Python" class="w-6 h-6 brightness-125">
+                    Online Python Compiler
+                 </h1>
+                 <span class="text-xs px-2 py-0.5 rounded bg-white/20 text-white border border-white/30">Beta</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span id="status-badge" class="text-xs text-white/80 font-medium w-20 text-right">Ready</span>
+                <button id="run-btn" class="bg-yellow-400 hover:bg-yellow-300 text-slate-900 px-4 py-1.5 rounded text-sm font-bold shadow-lg shadow-yellow-900/20 flex items-center gap-2 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                      <path fill-rule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clip-rule="evenodd" />
+                    </svg>
+                    Run Code
+                </button>
+            </div>
+        </div>
+        <!-- SEO Text Section -->
+        <div class="px-4 pb-4 pt-1 text-sm text-primary-50 max-w-4xl opacity-90 leading-relaxed hidden md:block">
+            <p>
+                Use our free <strong>Online Python Compiler</strong> to write, edit, and run Python code directly in your browser. 
+                No installation required. Perfect for learning programming logic, testing code snippets, or doing quick assignments with zero setup.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Split Area -->
+    <div class="flex-1 flex min-h-0">
+        <!-- Editor Column -->
+        <div class="w-1/2 flex flex-col border-r border-slate-700">
+            <div class="bg-slate-800 px-4 py-2 text-xs text-slate-400 font-medium flex justify-between items-center border-b border-slate-700">
+                <span>main.py</span>
+                <button id="reset-btn" class="hover:text-white transition-colors">Reset</button>
+            </div>
+            <div class="flex-1 relative bg-slate-900 overflow-hidden">
+                <pre class="h-full language-python"><code id="editor" class="language-python focus:outline-none" contenteditable="true" spellcheck="false"># Online Python Compiler
+# Write your code here
+
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Programmer"))
+
+for i in range(5):
+    print(f"Counting: {i}")
+</code></pre>
+            </div>
+        </div>
+
+        <!-- Output Column -->
+        <div class="w-1/2 flex flex-col bg-[#0f172a]">
+            <div class="bg-slate-800 px-4 py-2 text-xs text-slate-400 font-medium border-b border-slate-700">
+                Output Terminal
+            </div>
+            <div id="output" class="flex-1 p-4 font-mono text-sm text-green-400 overflow-auto whitespace-pre-wrap"></div>
+        </div>
+    </div>
+</div>
+
+{% include "python-tool-runner.njk" %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        window.initPythonTool('editor', 'output', 'run-btn', 'reset-btn', 'status-badge');
+    });
+</script>

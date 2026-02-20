@@ -1,0 +1,214 @@
+[
+    {
+        "id": "dasar",
+        "name": "Level Dasar",
+        "items": [
+            [
+                "apa-itu-python",
+                "1. Pendahuluan"
+            ],
+            [
+                "instalasi-python",
+                "2. Instalasi"
+            ],
+            [
+                "menjalankan-python",
+                "3. Menjalankan"
+            ],
+            [
+                "hello-world-python",
+                "4. Hello World"
+            ],
+            [
+                "komentar-python",
+                "5. Komentar"
+            ],
+            [
+                "tipe-data-python",
+                "6. Tipe Data"
+            ],
+            [
+                "variabel-python",
+                "7. Variabel"
+            ],
+            [
+                "operator-python",
+                "8. Operator"
+            ],
+            [
+                "kondisi-if-else-python",
+                "9. Kondisi"
+            ],
+            [
+                "loop-python",
+                "10. Loop"
+            ],
+            [
+                "number-python",
+                "11. Number"
+            ],
+            [
+                "string-python",
+                "12. String"
+            ],
+            [
+                "list-python",
+                "13. List"
+            ],
+            [
+                "tuple-python",
+                "14. Tuple"
+            ],
+            [
+                "dictionary-python",
+                "15. Dictionary"
+            ],
+            [
+                "tanggal-waktu-python",
+                "16. Tanggal & Waktu"
+            ],
+            [
+                "fungsi-python",
+                "17. Fungsi"
+            ]
+        ]
+    },
+    {
+        "id": "menengah",
+        "name": "Level Menengah",
+        "items": [
+            [
+                "modul-python",
+                "18. Modul"
+            ],
+            [
+                "file-io-python",
+                "19. File I/O"
+            ],
+            [
+                "exception-python",
+                "20. Exception"
+            ],
+            [
+                "object-class-python",
+                "21. Object & Class"
+            ],
+            [
+                "akses-database-python",
+                "22. Akses Database"
+            ],
+            [
+                "networking-python",
+                "23. Networking"
+            ],
+            [
+                "pengembangan-web-python",
+                "24. Pengembangan Web"
+            ],
+            [
+                "regex-python",
+                "25. RegEx"
+            ],
+            [
+                "json-python",
+                "26. JSON Data"
+            ],
+            [
+                "virtual-environment-python",
+                "27. Virtual Environment"
+            ],
+            [
+                "pip-package-python",
+                "28. Pip & Package"
+            ]
+        ]
+    },
+    {
+        "id": "advanced",
+        "name": "Level Advanced",
+        "items": [
+            [
+                "decorator-python",
+                "29. Decorators & Closures"
+            ],
+            [
+                "iterators-generators-python",
+                "30. Iterators & Generators"
+            ],
+            [
+                "context-managers-python",
+                "31. Context Managers"
+            ],
+            [
+                "metaprogramming-python",
+                "32. Metaprogramming"
+            ],
+            [
+                "multithreading-multiprocessing-python",
+                "33. Multithreading"
+            ],
+            [
+                "async-await-python",
+                "34. Asynchronous"
+            ],
+            [
+                "design-patterns-python",
+                "35. Design Patterns"
+            ],
+            [
+                "unit-testing-python",
+                "36. Unit Testing"
+            ],
+            [
+                "memory-management-python",
+                "37. Memory Management"
+            ]
+        ]
+    },
+    {
+        "id": "professional",
+        "name": "Level Professional",
+        "items": [
+            [
+                "data-analytics",
+                "38. Data Analytics"
+            ],
+            [
+                "machine-learning",
+                "39. Machine Learning"
+            ],
+            [
+                "deep-learning",
+                "40. Deep Learning"
+            ],
+            [
+                "cybersecurity",
+                "41. Cybersecurity"
+            ],
+            [
+                "restful-apis",
+                "42. RESTful APIs"
+            ],
+            [
+                "fullstack-web-app",
+                "43. Fullstack Web App"
+            ],
+            [
+                "microservices",
+                "44. Microservices"
+            ],
+            [
+                "deploying-apps",
+                "45. Deploying Apps"
+            ],
+            [
+                "devops-cicd",
+                "46. DevOps & CI/CD"
+            ],
+            [
+                "ai-mcp",
+                "47. AI MCP"
+            ]
+        ]
+    }
+]

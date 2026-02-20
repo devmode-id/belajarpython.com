@@ -1,0 +1,189 @@
+<!-- Level Dasar -->
+<div
+    class="flex items-center gap-2 px-4 py-3 bg-slate-50 mb-2 border border-slate-100 relative"
+    data-level-header="dasar">
+    <img src="/img/icons/bronze.png" alt="Level Dasar" class="w-5 h-5">
+        <span class="font-bold text-slate-700 text-xs uppercase tracking-wider">Level Dasar</span>
+        <div class="progress-circle-container absolute right-4 top-1/2 -translate-y-1/2"></div>
+    </div>
+    <ul class="leading-normal mb-6" data-level-list="dasar">
+        {% set items = [
+    ['apa-itu-python', '1. Pendahuluan'],
+    ['instalasi-python', '2. Instalasi'],
+    ['menjalankan-python', '3. Menjalankan'],
+    ['hello-world-python', '4. Hello World'],
+    ['komentar-python', '5. Komentar'],
+    ['tipe-data-python', '6. Tipe Data'],
+    ['variabel-python', '7. Variabel'],
+    ['operator-python', '8. Operator'],
+    ['kondisi-if-else-python', '9. Kondisi'],
+    ['loop-python', '10. Loop'],
+    ['number-python', '11. Number'],
+    ['string-python', '12. String'],
+    ['list-python', '13. List'],
+    ['tuple-python', '14. Tuple'],
+    ['dictionary-python', '15. Dictionary'],
+    ['tanggal-waktu-python', '16. Tanggal & Waktu'],
+    ['fungsi-python', '17. Fungsi']
+  ] %}
+        {% for slug, label in items %}
+            <li class="border-l-2 {{ 'border-primary-500 bg-primary-50/30' if currentTutorial == slug else 'border-slate-100' }} py-[6px]
+                    relative group">
+                <a href="/tutorial/{{ slug }}" class="{{ 'font-bold text-primary-500' if currentTutorial == slug else 'font-medium text-slate-400' }} hover:text-primary-500 leading-relaxed px-4 block transition-colors text-sm">
+                    {{ label }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <!-- Level Menengah -->
+    <div
+        class="flex items-center gap-2 px-4 py-3 bg-slate-50 rounded mb-2 border border-slate-100 relative"
+        data-level-header="menengah">
+        <img src="/img/icons/silver.png" alt="Level Menengah" class="w-5 h-5">
+            <span class="font-bold text-slate-700 text-xs uppercase tracking-wider">Menengah</span>
+            <div class="progress-circle-container absolute right-4 top-1/2 -translate-y-1/2"></div>
+        </div>
+        <ul class="leading-normal mb-6" data-level-list="menengah">
+            {% set items = [
+    ['modul-python', '18. Modul'],
+    ['file-io-python', '19. File I/O'],
+    ['exception-python', '20. Exception'],
+    ['object-class-python', '21. Object & Class'],
+    ['akses-database-python', '22. Akses Database'],
+    ['networking-python', '23. Networking'],
+    ['pengembangan-web-python', '24. Web Dev'],
+    ['regex-python', '25. RegEx'],
+    ['json-python', '26. JSON Data'],
+    ['virtual-environment-python', '27. Virtual Env'],
+    ['pip-package-python', '28. Pip & Package']
+  ] %}
+            {% for slug, label in items %}
+                <li class="border-l-2 {{ 'border-primary-500 bg-primary-50/30' if currentTutorial == slug else 'border-slate-200' }} py-[6px]
+                        relative group">
+                    <a href="/tutorial/{{ slug }}" class="{{ 'font-bold text-primary-500' if currentTutorial == slug else 'font-medium text-slate-400' }} hover:text-primary-500 leading-relaxed px-4 block transition-colors text-sm">
+                        {{ label }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        <!-- Level Advanced -->
+        <div
+            class="flex items-center gap-2 px-4 py-3 bg-slate-50 rounded mb-2 border border-slate-100 relative"
+            data-level-header="advanced">
+            <img src="/img/icons/gold.png" alt="Level Advanced" class="w-5 h-5">
+                <span class="font-bold text-slate-700 text-xs uppercase tracking-wider">Advanced</span>
+                <div class="progress-circle-container absolute right-4 top-1/2 -translate-y-1/2"></div>
+            </div>
+            <ul class="leading-normal mb-6" data-level-list="advanced">
+                {% set items = [
+    ['decorator-python', '29. Decorators, Closures'],
+    ['iterators-generators-python', '30. Iterators, Generators'],
+    ['context-managers-python', '31. Context Managers'],
+    ['metaprogramming-python', '32. Metaprogramming'],
+    ['multithreading-multiprocessing-python', '33. Multithreading'],
+    ['async-await-python', '34. Asynchronous'],
+    ['design-patterns-python', '35. Design Patterns'],
+    ['unit-testing-python', '36. Unit Testing'],
+    ['memory-management-python', '37. Memory Handling']
+  ] %}
+                {% for slug, label in items %}
+                    <li class="border-l-2 {{ 'border-primary-500 bg-primary-50/30' if currentTutorial == slug else 'border-slate-200' }}
+                            py-[6px]">
+                        <a href="/tutorial/{{ slug }}" class="{{ 'font-bold text-primary-500' if currentTutorial == slug else 'font-medium text-slate-400' }} hover:text-primary-500 leading-relaxed px-4 block transition-colors text-sm">
+                            {{ label }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <!-- Level Professional -->
+            <div class="flex items-center gap-2 px-4 py-3 bg-slate-50 rounded mb-2 border border-slate-100">
+                <img src="/img/icons/platinum.png" alt="Level Professional" class="w-5 h-5">
+                    <span class="font-bold text-slate-700 text-xs uppercase tracking-wider">Professional</span>
+                </div>
+                <ul class="leading-normal mb-6">
+                    <li class="border-l-2 {{ 'border-primary-500 bg-primary-50/30' if currentTutorial == 'data-analytics-pandas-numpy-python'
+                            else 'border-slate-100' }} py-[6px]">
+                        <a href="/tutorial/data-analytics-pandas-numpy-python" class="{{ 'font-bold text-primary-500' if currentTutorial == 'data-analytics-pandas-numpy-python' else 'font-medium text-slate-400' }} hover:text-primary-500 leading-relaxed px-4 block transition-colors text-sm">
+                            38. Data Analytics
+                        </a>
+                    </li>
+                    <li class="border-l-2 {{ 'border-primary-500 bg-primary-50/30' if currentTutorial == 'implementasi-machine-learning-python'
+                            else 'border-slate-100' }} py-[6px]">
+                        <a href="/tutorial/implementasi-machine-learning-python" class="{{ 'font-bold text-primary-500' if currentTutorial == 'implementasi-machine-learning-python' else 'font-medium text-slate-400' }} hover:text-primary-500 leading-relaxed px-4 block transition-colors text-sm">
+                            39. Machine Learning
+                        </a>
+                    </li>
+                    <li class="border-l-2 {{ 'border-primary-500 bg-primary-50/30' if currentTutorial ==
+                            'deep-learning-tensorflow-pytorch-python' else 'border-slate-100' }} py-[6px]">
+                        <a href="/tutorial/deep-learning-tensorflow-pytorch-python" class="{{ 'font-bold text-primary-500' if currentTutorial == 'deep-learning-tensorflow-pytorch-python' else 'font-medium text-slate-400' }} hover:text-primary-500 leading-relaxed px-4 block transition-colors text-sm">
+                            40. Deep Learning
+                        </a>
+                    </li>
+                    <li class="border-l-2 {{ 'border-primary-500 bg-primary-50/30' if currentTutorial == 'cybersecurity-ethical-hacking-python'
+                            else 'border-slate-100' }} py-[6px]">
+                        <a href="/tutorial/cybersecurity-ethical-hacking-python" class="{{ 'font-bold text-primary-500' if currentTutorial == 'cybersecurity-ethical-hacking-python' else 'font-medium text-slate-400' }} hover:text-primary-500 leading-relaxed px-4 block transition-colors text-sm">
+                            41. Cybersecurity
+                        </a>
+                    </li>
+                    <li class="border-l-2 {{ 'border-primary-500 bg-primary-50/30' if currentTutorial == 'restful-api-fastapi-python' else
+                            'border-slate-100' }} py-[6px]">
+                        <a href="/tutorial/restful-api-fastapi-python" class="{{ 'font-bold text-primary-500' if currentTutorial == 'restful-api-fastapi-python' else 'font-medium text-slate-400' }} hover:text-primary-500 leading-relaxed px-4 block transition-colors text-sm">
+                            42. RESTful APIs
+                        </a>
+                    </li>
+                    <li class="border-l-2 {{ 'border-primary-500 bg-primary-50/30' if currentTutorial == 'fullstack-django-python' else
+                            'border-slate-100' }} py-[6px]">
+                        <a href="/tutorial/fullstack-django-python" class="{{ 'font-bold text-primary-500' if currentTutorial == 'fullstack-django-python' else 'font-medium text-slate-400' }} hover:text-primary-500 leading-relaxed px-4 block transition-colors text-sm">
+                            43. Fullstack Web App
+                        </a>
+                    </li>
+                    <li class="border-l-2 {{ 'border-primary-500 bg-primary-50/30' if currentTutorial == 'microservices-python' else
+                            'border-slate-100' }} py-[6px]">
+                        <a href="/tutorial/microservices-python" class="{{ 'font-bold text-primary-500' if currentTutorial == 'microservices-python' else 'font-medium text-slate-400' }} hover:text-primary-500 leading-relaxed px-4 block transition-colors text-sm">
+                            44. Microservices
+                        </a>
+                    </li>
+                    <li class="border-l-2 {{ 'border-primary-500 bg-primary-50/30' if currentTutorial == 'deploying-docker-kubernetes-python'
+                            else 'border-slate-100' }} py-[6px]">
+                        <a href="/tutorial/deploying-docker-kubernetes-python" class="{{ 'font-bold text-primary-500' if currentTutorial == 'deploying-docker-kubernetes-python' else 'font-medium text-slate-400' }} hover:text-primary-500 leading-relaxed px-4 block transition-colors text-sm">
+                            45. Deploying Apps
+                        </a>
+                    </li>
+                    <li class="border-l-2 {{ 'border-primary-500 bg-primary-50/30' if currentTutorial == 'devops-ci-cd-python' else
+                            'border-slate-100' }} py-[6px]">
+                        <a href="/tutorial/devops-ci-cd-python" class="{{ 'font-bold text-primary-500' if currentTutorial == 'devops-ci-cd-python' else 'font-medium text-slate-400' }} hover:text-primary-500 leading-relaxed px-4 block transition-colors text-sm">
+                            46. DevOps & CI/CD
+                        </a>
+                    </li>
+                    <li class="border-l-2 {{ 'border-primary-500 bg-primary-50/30' if currentTutorial == 'ai-mcp-fastmcp-python' else
+                            'border-slate-100' }} py-[6px]">
+                        <a href="/tutorial/ai-mcp-fastmcp-python" class="{{ 'font-bold text-primary-500' if currentTutorial == 'ai-mcp-fastmcp-python' else 'font-medium text-slate-400' }} hover:text-primary-500 leading-relaxed px-4 block transition-colors text-sm">
+                            47. AI MCP
+                        </a>
+                    </li>
+                    <li class="border-l-2 border-slate-100 py-[6px]">
+                        <span class="font-medium text-slate-400 leading-relaxed px-4 block text-sm opacity-70">
+                            48. NLP (Natural Language)
+                        </span>
+                    </li>
+                    <li class="border-l-2 border-slate-100 py-[6px]">
+                        <span class="font-medium text-slate-400 leading-relaxed px-4 block text-sm opacity-70">
+                            49. Computer Vision (OpenCV)
+                        </span>
+                    </li>
+                    <li class="border-l-2 border-slate-100 py-[6px]">
+                        <span class="font-medium text-slate-400 leading-relaxed px-4 block text-sm opacity-70">
+                            50. Big Data (PySpark)
+                        </span>
+                    </li>
+                    <li class="border-l-2 border-slate-100 py-[6px]">
+                        <span class="font-medium text-slate-400 leading-relaxed px-4 block text-sm opacity-70">
+                            51. Serverless AWS
+                        </span>
+                    </li>
+                    <li class="border-l-2 border-slate-100 py-[6px]">
+                        <span class="font-medium text-slate-400 leading-relaxed px-4 block text-sm opacity-70">
+                            52. System Design
+                        </span>
+                    </li>
+                </ul>

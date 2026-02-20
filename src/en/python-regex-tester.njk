@@ -1,0 +1,152 @@
+---
+layout: tool-split.njk
+title: Python Regex Tester - Test Regular Expressions Online
+description: Realtime Python Regular Expression (RegEx) tester. Learn and validate your regex patterns directly in the browser.
+lang: en
+---
+
+<div class="h-full flex flex-col">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-primary-600 to-primary-800 text-white border-b border-primary-700 shrink-0">
+        <div class="h-14 flex items-center justify-between px-4">
+            <div class="flex items-center gap-3">
+                 <h1 class="font-bold flex items-center gap-2 text-lg">
+                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-yellow-400">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                    </svg>
+                    Python Regex Tester
+                 </h1>
+            </div>
+            <div class="flex items-center gap-2">
+                <span id="status-badge" class="text-xs text-white/80 font-medium w-20 text-right">Ready</span>
+                <button id="run-btn" class="bg-yellow-400 hover:bg-yellow-300 text-slate-900 px-4 py-1.5 rounded text-sm font-bold shadow-lg shadow-yellow-900/20 flex items-center gap-2 transition-all">
+                    Test Regex
+                </button>
+            </div>
+        </div>
+        <!-- SEO Text -->
+        <div class="px-4 pb-4 pt-1 text-sm text-primary-50 max-w-4xl opacity-90 leading-relaxed hidden md:block">
+            <p>
+                <strong>Python Regex Tester</strong> is a tool for testing Regular Expression patterns using Python's native <code>re</code> module.
+                Validate your search patterns against input text, view capture groups, and learn how Python's regex functions interactively.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Split Area -->
+    <div class="flex-1 flex min-h-0">
+         <!-- Inputs -->
+        <div class="w-1/2 flex flex-col border-r border-slate-700 bg-slate-900">
+            <!-- Pattern Input -->
+            <div class="bg-slate-800 px-4 py-2 border-b border-slate-700">
+                 <label class="text-xs text-slate-400 font-bold uppercase block mb-1">Regular Expression Pattern</label>
+                 <div class="flex items-center gap-2 bg-slate-950 rounded border border-slate-600 px-2 py-1 focus-within:border-blue-500">
+                     <span class="text-slate-500 font-mono">r"</span>
+                     <input type="text" id="pattern-input" class="bg-transparent border-none text-white font-mono flex-1 focus:ring-0 text-sm p-0" value="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b" placeholder="Insert regex here...">
+                     <span class="text-slate-500 font-mono">"</span>
+                 </div>
+            </div>
+            
+            <!-- Flags Input -->
+            <div class="bg-slate-800 px-4 py-2 border-b border-slate-700 flex gap-4 text-xs text-slate-300">
+                 <label class="flex items-center gap-1 cursor-pointer hover:text-white"><input type="checkbox" id="flag-i" class="rounded bg-slate-700 border-slate-600 text-blue-500"> IGNORECASE (i)</label>
+                 <label class="flex items-center gap-1 cursor-pointer hover:text-white"><input type="checkbox" id="flag-m" class="rounded bg-slate-700 border-slate-600 text-blue-500"> MULTILINE (m)</label>
+                 <label class="flex items-center gap-1 cursor-pointer hover:text-white"><input type="checkbox" id="flag-s" class="rounded bg-slate-700 border-slate-600 text-blue-500"> DOTALL (s)</label>
+            </div>
+
+            <div class="bg-slate-800 px-4 py-2 text-xs text-slate-400 font-medium border-b border-slate-700 mt-2">
+                Test String
+            </div>
+            <div class="flex-1 relative overflow-hidden">
+                <textarea id="text-input" class="w-full h-full bg-[#1e293b] text-slate-200 p-4 font-mono text-sm focus:outline-none resize-none" spellcheck="false">Hello user@example.com, this is a test.
+Contact support@belajarpython.com for help.
+Invalid emails like user@.com or @domain.com should not match.</textarea>
+            </div>
+        </div>
+
+        <!-- Output -->
+        <div class="w-1/2 flex flex-col bg-slate-950">
+            <div class="bg-slate-800 px-4 py-2 text-xs text-slate-400 font-medium border-b border-slate-700">
+                Match Results
+            </div>
+            <div class="flex-1 p-4 font-mono text-sm text-slate-300 overflow-auto whitespace-pre-wrap" id="output">
+                Click "Test Regex" to see matches.
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+<script>
+(function() {
+    let pyodidePromise = null;
+    async function getPyodide() {
+        if (!pyodidePromise) pyodidePromise = loadPyodide();
+        return pyodidePromise;
+    }
+
+    const runBtn = document.getElementById('run-btn');
+    const output = document.getElementById('output');
+    const status = document.getElementById('status-badge');
+
+    runBtn.addEventListener('click', async () => {
+        output.textContent = 'Processing...';
+        status.textContent = 'Matching...';
+        runBtn.disabled = true;
+
+        try {
+            const py = await getPyodide();
+            
+            const pattern = document.getElementById('pattern-input').value;
+            const text = document.getElementById('text-input').value; // Using textarea value
+            
+            // Build flags
+            let flags = [];
+            if(document.getElementById('flag-i').checked) flags.push("re.IGNORECASE");
+            if(document.getElementById('flag-m').checked) flags.push("re.MULTILINE");
+            if(document.getElementById('flag-s').checked) flags.push("re.DOTALL");
+            const flagStr = flags.length > 0 ? flags.join(" | ") : "0";
+
+            py.globals.set("py_pattern", pattern);
+            py.globals.set("py_text", text);
+            py.globals.set("py_flag_str", flagStr); // We pass string, but need to eval it in Py
+            
+            const runCode = `
+import re
+
+try:
+    flags = ${flagStr} # Injected directly
+    hits = list(re.finditer(py_pattern, py_text, flags))
+    
+    if not hits:
+        print("No matches found.")
+    else:
+        print(f"Found {len(hits)} matches:\\n")
+        for i, match in enumerate(hits, 1):
+            print(f"Match {i}: '{match.group()}'")
+            print(f"   Range: {match.span()}")
+            if match.groups():
+                print(f"   Groups: {match.groups()}")
+            print("-" * 20)
+            
+except re.error as e:
+    print(f"Regex Error: {e}")
+except Exception as e:
+    print(f"Error: {e}")
+            `;
+
+            let stdout = "";
+            py.setStdout({ batched: (str) => stdout += str + "\\n" });
+            await py.runPythonAsync(runCode);
+            output.textContent = stdout;
+            status.textContent = 'Done';
+            
+        } catch (err) {
+            output.textContent = "Error: " + err.message;
+            status.textContent = 'Failed';
+        } finally {
+            runBtn.disabled = false;
+        }
+    });
+})();
+</script>

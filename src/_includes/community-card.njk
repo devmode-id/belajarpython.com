@@ -1,0 +1,134 @@
+<div class="w-full max-w-4xl mx-auto my-12 relative overflow-hidden bg-white rounded-2xl border border-slate-100">
+    <div
+        class="flex flex-col">
+        <!-- Banner Image Section -->
+        <div class="relative w-full h-48 md:h-64 bg-slate-900 group overflow-hidden">
+            <img
+                src="https://devmode.id/images/illustrations/welcome-page-1.webp"
+                alt="Belajarpython x DevMode Community"
+                class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
+        </div>
+        <!-- Content Section -->
+        <div class="flex-1 p-6 md:p-8 relative z-10 text-left">
+            <span class="inline-block py-1 px-3 rounded-full bg-red-100 text-red-600 text-xs font-bold tracking-wide mb-3">
+                OFFICIAL COMMUNITY
+            </span>
+            <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2">
+                Gabung Komunitas Developer & Kreator Digital
+            </h3>
+            <p class="text-slate-600 mb-6 text-sm md:text-base leading-relaxed">
+                Dapatkan teman coding, sharing project, networking dengan expert, dan update teknologi terbaru.
+            </p>
+            <!-- Newsletter Form -->
+            <form id="devmode-newsletter-form-card" class="max-w-full">
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <div class="relative w-full">
+                        <input
+                            type="email"
+                            id="devmode-email-card"
+                            required
+                            class="w-full px-5 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-4 focus:ring-red-100
+                                focus:border-red-500 transition-all pl-12"
+                            placeholder="Masukkan alamat email...">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2"
+                            fill="none"
+                            viewbox="0 0 24 24"
+                            stroke="currentColor">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"/>
+                        </svg>
+                    </div>
+                    <button
+                        type="submit"
+                        id="devmode-submit-btn-card"
+                        class="w-full sm:w-auto bg-red-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl
+                            hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 whitespace-nowrap">
+                        <span>Gabung Gratis</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </button>
+                </div>
+                <p class="text-xs text-slate-400 mt-3">
+                    Bebas spam. Unsubscribe kapan saja.
+                    <a href="https://devmode.id" target="_blank" class="text-red-600 hover:underline">DEVMODE Community</a>
+                </p>
+            </form>
+            <!-- Success Message -->
+            <div id="devmode-success-message-card" class="hidden mt-4 bg-green-50 p-4 rounded-xl border border-green-100">
+                <div class="flex items-center gap-3">
+                    <div class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <p class="text-green-800 font-medium text-sm m-0 leading-none pt-0.5">Selamat! Anda telah sukses mendaftar di
+                        newsletter.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Check if Supabase client is available, if not wait or create (popup might have loaded it) We'll just re-init if
+        // needed or assume popup script loaded library. SAFEST: Check if window.supabase exists (from CDN script in popup), if
+        // not load it dynamically? Actually, layouts used by tutorials might NOT have the popup (homepage only!). So we MUST
+        // include the CDN script here too if not present.
+        if (typeof window.supabase === 'undefined') {
+            const script = document.createElement('script');
+            script.src = 'https://unpkg.com/@supabase/supabase-js@2';
+            script.onload = initCard;
+            document.head.appendChild(script);
+        } else {
+            initCard();
+        }
+        function initCard() {
+            const form = document.getElementById('devmode-newsletter-form-card');
+            const successMsg = document.getElementById('devmode-success-message-card');
+            const submitBtn = document.getElementById('devmode-submit-btn-card');
+            const emailInput = document.getElementById('devmode-email-card');
+            if (! form) 
+                return;
+            
+            const SUPABASE_URL = 'https://wvtnnvusgdrxsawnavfd.supabase.co';
+            const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2dG5udnVzZ2RyeHNhd25hdmZkIiwicm9sZSI6ImFub24iLCJ' +
+                    'pYXQiOjE3NDQ3MzQ5MjYsImV4cCI6MjA2MDMxMDkyNn0.tOpNl6O59c4eCtf00N147XaTl55nQf9H3V6o33VXVkU';
+            const _supabaseCard = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const email = emailInput.value;
+                const originalBtnText = submitBtn.innerHTML;
+                try {
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = `
+                    <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                `;
+                    const {error} = await _supabaseCard.from('newsletter_subscribers').insert({email: email});
+                    if (error && error.code !== '23505') {
+                        throw error;
+                    }
+                    // Success (or duplicate which we treat as success)
+                    form.classList.add('hidden');
+                    successMsg.classList.remove('hidden');
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Gagal bergabung: ' + (
+                        error.message || 'Terjadi kesalahan'
+                    ));
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                }
+            });
+        }
+    });
+</script>

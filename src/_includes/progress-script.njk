@@ -1,0 +1,211 @@
+<script>
+  (function () {
+    const STORAGE_KEY = 'python_tutorial_progress';
+    // --- Data Management ---
+    function getProgress() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+      } catch (e) {
+        console.error('Error reading progress:', e);
+        return [];
+      }
+    }
+    function saveProgress(path) { // Normalize path: remove trailing slash, ensure it starts with /
+      let normalized = path.replace(/\/$/, '');
+      if (! normalized.startsWith('/')) 
+        normalized = '/' + normalized;
+      
+      const progress = getProgress();
+      if (! progress.includes(normalized)) {
+        progress.push(normalized);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+        // Trigger update immediately
+        updateAllProgress();
+      }
+    }
+    function isCompleted(url, progressList) {
+      if (! url) 
+        return false;
+      
+      let normalized = url.replace(/\/$/, '');
+      if (! normalized.startsWith('/')) 
+        normalized = '/' + normalized;
+      
+      return progressList.includes(normalized);
+    }
+    // --- UI Rendering ---
+    function createProgressCircle(percentage, size = 40) {
+      const radius = 15.9155;
+      const circumference = 2 * Math.PI * radius; // ~100
+      const offset = 100 - percentage;
+      let color = '#ef4444'; // Red < 40
+      if (percentage >= 80) 
+        color = '#22c55e';
+      
+      // Green >= 80 else if (percentage >= 40)
+      color = '#eab308';
+      // Yellow 40-79
+      return `
+        <div class="relative flex items-center justify-center" style="width: ${size}px; height: ${size}px;">
+            <svg viewBox="0 0 36 36" class="w-full h-full transform -rotate-90">
+                <path
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                    fill="none"
+                    stroke="#eee"
+                    stroke-width="3"
+                />
+                <path
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                    fill="none"
+                    stroke="${color}"
+                    stroke-width="3"
+                    stroke-dasharray="100, 100"
+                    stroke-dashoffset="${offset}"
+                    stroke-linecap="round"
+                    class="transition-all duration-1000 ease-out"
+                />
+            </svg>
+            <span class="absolute text-[10px] font-bold text-slate-700">${percentage}%</span>
+        </div>
+        `;
+    }
+    function createCardProgress(percentage) { // Larger version for card
+      const size = window.innerWidth < 768
+        ? 48
+        : 60;
+      const radius = 15.9155;
+      const offset = 100 - percentage;
+      let color = '#ef4444'; // Red < 40
+      if (percentage >= 80) 
+        color = '#22c55e';
+      
+      // Green >= 80 else if (percentage >= 40)
+      color = '#eab308';
+      // Yellow 40-79
+      return `
+        <div class="flex flex-col items-center">
+             <div class="relative flex items-center justify-center" style="width: ${size}px; height: ${size}px;">
+                <svg viewBox="0 0 36 36" class="w-full h-full transform -rotate-90 drop-shadow-sm">
+                    <path
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        fill="white"
+                        stroke="#f1f5f9"
+                        stroke-width="3"
+                    />
+                    <path
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        fill="none"
+                        stroke="${color}"
+                        stroke-width="3"
+                        stroke-dasharray="100, 100"
+                        stroke-dashoffset="${offset}"
+                        stroke-linecap="round"
+                        class="transition-all duration-1000 ease-out"
+                    />
+                </svg>
+                <div class="absolute text-center">
+                     <span class="block text-sm font-bold text-slate-700">${percentage}%</span>
+                </div>
+            </div>
+            <span class="text-[10px] mt-1 font-medium text-slate-400 uppercase tracking-wide">Progress</span>
+        </div>
+        `;
+    }
+    function updateAllProgress() {
+      const progress = getProgress();
+      // 1. Sidebar Progress
+      const levelLists = document.querySelectorAll('[data-level-list]');
+      levelLists.forEach(list => {
+        const levelId = list.getAttribute('data-level-list');
+        if (levelId === 'professional') 
+          return;
+        
+        const links = list.querySelectorAll('a');
+        const total = links.length;
+        if (total === 0) 
+          return;
+        
+        let completed = 0;
+        links.forEach(link => {
+          const href = link.getAttribute('href');
+          const isDone = isCompleted(href, progress);
+          if (isDone) {
+            completed++;
+            // Check for existing checkmark to prevent duplicates
+            if (!link.querySelector('.checkmark-icon')) {
+              const checkmark = document.createElement('span');
+              checkmark.className = 'checkmark-icon absolute right-3 top-[2px] translate-y-[2px] text-yellow-500/50';
+              checkmark.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+              link.style.position = 'relative'; // Ensure relative positioning for absolute icon
+              link.appendChild(checkmark);
+            }
+          }
+        });
+        const percentage = Math.round((completed / total) * 100);
+        // Find header container
+        const headers = document.querySelectorAll(`[data-level-header="${levelId}"]`);
+        headers.forEach(header => {
+          const container = header.querySelector('.progress-circle-container');
+          if (container) {
+            container.innerHTML = createProgressCircle(percentage, 32);
+          }
+        });
+      });
+      // 2. Homepage Card Progress
+      const cardProgressContainer = document.getElementById('level-card-progress');
+      if (cardProgressContainer) {
+        const activeTab = document.querySelector('.level-tab.active');
+        const levelId = activeTab
+          ? activeTab.getAttribute('data-level')
+          : 'dasar';
+        if (levelId === 'professional') {
+          cardProgressContainer.innerHTML = '';
+          return;
+        }
+        const levelItems = document.querySelectorAll(`.tutorial-list-container > a[data-level="${levelId}"]`);
+        const total = levelItems.length;
+        if (total > 0) {
+          let completed = 0;
+          levelItems.forEach(link => {
+            const href = link.getAttribute('href');
+            const isDone = isCompleted(href, progress);
+            if (isDone) {
+              completed++;
+              // Add checkmark if not present
+              if (!link.querySelector('.checkmark-icon')) {
+                const checkmark = document.createElement('span');
+                checkmark.className = 'checkmark-icon absolute right-3 top-[2px] translate-y-4 text-[#eab308]';
+                checkmark.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+                link.style.position = 'relative';
+                link.appendChild(checkmark);
+              }
+            }
+          });
+          const percentage = Math.round((completed / total) * 100);
+          cardProgressContainer.innerHTML = createCardProgress(percentage);
+        } else {
+          cardProgressContainer.innerHTML = '';
+        }
+      }
+    }
+    // --- Init ---
+    document.addEventListener('DOMContentLoaded', () => {
+      updateAllProgress();
+      // Listener for Next Button
+      const nextBtns = document.querySelectorAll('a.bg-gradient-to-l.from-secondary-500.to-secondary-400, a[href*="/tutorial/"].rounded-full.bg-gradient-to-l');
+      nextBtns.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+          const currentPath = window.location.pathname;
+          saveProgress(currentPath);
+        });
+      });
+      // Listener for Homepage Tabs
+      const tabs = document.querySelectorAll('.level-tab');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          setTimeout(updateAllProgress, 50);
+        });
+      });
+    });
+  })();
+</script>

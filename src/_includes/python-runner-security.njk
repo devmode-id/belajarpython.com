@@ -1,0 +1,375 @@
+<style>:root
+{
+    --runner-bg: #0a0f0d;
+    --runner-header: #0d1a14;
+    --runner-border: #1a3d2e;
+    --runner-text: #00ff41;
+    --runner-accent: #00ff41;
+    --runner-success: #00ff41;
+    --runner-error: #ff3333;
+    --runner-terminal: #000000;
+    --runner-output-text: #00ff41;
+}
+.code-runner-container {
+    position: relative;
+    margin: 1.5rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--runner-bg);
+    border: 1px solid var(--runner-border);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.code-runner-container.security {
+    border-color: var(--runner-accent);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+}
+@media(max-width: 640px) {
+    .code-runner-container {
+        margin: 1rem -0.5rem;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+}
+.code-runner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0d1a14 0%, #0a1f15 100%);
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--runner-border);
+    gap: 0.5rem;
+}
+.code-runner-title {
+    color: var(--runner-text);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.security-badge {
+    background: linear-gradient(135deg, #00ff41 0%, #00cc33 100%);
+    color: #000;
+    font-size: 0.625rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.code-runner-actions {
+    display: flex;
+    gap: 0.375rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.375rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    min-width: 32px;
+    height: 32px;
+}
+.btn-run {
+    background: linear-gradient(135deg, #00ff41 0%, #00cc33 100%);
+    color: #000;
+}
+.btn-run:hover {
+    background: linear-gradient(135deg, #00cc33 0%, #00ff41 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 255, 65, 0.3);
+}
+.btn-reset {
+    background: transparent;
+    color: #00ff41;
+    border: 1px solid #1a3d2e;
+}
+.btn-reset:hover {
+    color: #00ff41;
+    border-color: #00ff41;
+}
+.btn-copy {
+    background: transparent;
+    color: #00aa2e;
+    border: none;
+    padding: 4px;
+}
+.btn-copy:hover {
+    color: var(--runner-text);
+}
+.code-editor-wrapper {
+    position: relative;
+    min-height: 100px;
+}
+.code-runner-container pre {
+    margin: 0 !important;
+    background: transparent !important;
+    padding: 1rem !important;
+}
+.code-runner-container code {
+    background: transparent !important;
+    padding: 0 !important;
+    display: block;
+    outline: none;
+}
+.code-output {
+    background: var(--runner-terminal);
+    color: var(--runner-output-text);
+    padding: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    min-height: 2.5rem;
+    max-height: 400px;
+    overflow-y: auto;
+    border-top: 1px solid var(--runner-border);
+    white-space: pre-wrap;
+    display: none;
+    border-left: 4px solid var(--runner-terminal);
+}
+.code-output.active {
+    display: block;
+}
+.code-output.error {
+    color: var(--runner-error);
+    border-left-color: var(--runner-error);
+}
+.code-output.success {
+    border-left-color: var(--runner-accent);
+}
+.loading-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 15, 13, 0.95);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    display: none;
+}
+.loading-content {
+    text-align: center;
+    max-width: 280px;
+}
+.spinner-security {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(0, 255, 65, 0.2);
+    border-top-color: var(--runner-accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 0.75rem;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.loading-text {
+    color: var(--runner-accent);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.loading-subtext {
+    color: #00aa2e;
+    font-size: 0.75rem;
+}
+.progress-container {
+    background: rgba(0, 255, 65, 0.1);
+    border-radius: 4px;
+    height: 6px;
+    margin-top: 0.75rem;
+    overflow: hidden;
+}
+.progress-bar {
+    background: linear-gradient(90deg, #00ff41, #00cc33);
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+.status-badge {
+    font-size: 0.75rem;
+    color: #00aa2e;
+    margin-right: 0.5rem;
+    font-weight: 500;
+}
+.status-badge.ready {
+    color: var(--runner-accent);
+}
+.code-runner-container.security:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+}</style><script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script><script>
+(function () {
+    let pyodidePromise = null;
+    let packagesLoaded = false;
+    async function getPyodide() {
+        if (! pyodidePromise) {
+            pyodidePromise = loadPyodide();
+        }
+        return pyodidePromise;
+    }
+    function initSecurityRunners() {
+        const pythonBlocks = document.querySelectorAll('pre > code.language-python');
+        pythonBlocks.forEach((block, index) => {
+            if (block.closest('.code-runner-container')) 
+                return;
+            
+            const pre = block.parentElement;
+            const originalCode = block.textContent.trim();
+            // Detect if code uses network/system features not available in browser
+            const isNetworkCode = originalCode.includes('socket') || originalCode.includes('scapy') || originalCode.includes('nmap') || originalCode.includes('subprocess');
+            const container = document.createElement('div');
+            container.className = 'code-runner-container security';
+            const header = document.createElement('div');
+            header.className = 'code-runner-header';
+            header.innerHTML = `
+                <div class="code-runner-title">
+                    <span style="font-size:16px;">🔐</span>
+                    <span>Security <span class="hidden md:inline">Lab</span></span>
+                    <span class="security-badge">${
+                isNetworkCode
+                    ? 'Local Only'
+                    : 'Interactive'
+                }</span>
+                </div>
+                <div class="code-runner-actions">
+                    <span class="status-badge" id="status-sec-${index}"></span>
+                    <button class="btn-action btn-reset" id="copy-btn-sec-${index}" title="Copy Code">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                    </button>
+                    <button class="btn-action btn-reset" id="reset-btn-sec-${index}" title="Reset Code">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+                    </button>
+                    <button class="btn-action btn-run" id="run-btn-sec-${index}">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <span>Run</span>
+                    </button>
+                </div>
+            `;
+            const output = document.createElement('div');
+            output.className = 'code-output';
+            output.id = `output-sec-${index}`;
+            const loadingOverlay = document.createElement('div');
+            loadingOverlay.className = 'loading-overlay';
+            loadingOverlay.id = `loading-sec-${index}`;
+            loadingOverlay.innerHTML = `
+                <div class="loading-content">
+                    <div class="spinner-security"></div>
+                    <div class="loading-text" id="loading-text-sec-${index}">Initializing Security Lab...</div>
+                    <div class="loading-subtext">Loading Python environment</div>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar-sec-${index}"></div>
+                    </div>
+                </div>
+            `;
+            pre.parentNode.insertBefore(container, pre);
+            container.appendChild(header);
+            const editorWrapper = document.createElement('div');
+            editorWrapper.className = 'code-editor-wrapper';
+            editorWrapper.appendChild(loadingOverlay);
+            editorWrapper.appendChild(pre);
+            container.appendChild(editorWrapper);
+            container.appendChild(output);
+            block.setAttribute('contenteditable', 'true');
+            block.setAttribute('spellcheck', 'false');
+            const runBtn = header.querySelector(`#run-btn-sec-${index}`);
+            const resetBtn = header.querySelector(`#reset-btn-sec-${index}`);
+            const copyBtn = header.querySelector(`#copy-btn-sec-${index}`);
+            const statusBadge = header.querySelector(`#status-sec-${index}`);
+            const progressBar = loadingOverlay.querySelector(`#progress-bar-sec-${index}`);
+            const loadingText = loadingOverlay.querySelector(`#loading-text-sec-${index}`);
+            copyBtn.addEventListener('click', async () => {
+                await navigator.clipboard.writeText(block.innerText);
+                statusBadge.textContent = 'Copied!';
+                setTimeout(() => (statusBadge.textContent = ''), 2000);
+            });
+            runBtn.addEventListener('click', async () => {
+                output.classList.add('active');
+                output.classList.remove('error', 'success');
+                output.textContent = '';
+                const code = block.innerText;
+                // Check for network features
+                if (code.includes('socket.') || code.includes('connect_ex') || code.includes('scapy')) {
+                    output.classList.add('error');
+                    output.textContent = '⚠️ Kode ini menggunakan fitur jaringan (socket/scapy) yang tidak tersedia di browser.\n\nSilakan jalankan di terminal lo' +
+                            'kal Anda:\n  python script.py\n\nAtau gunakan environment seperti Kali Linux.';
+                    statusBadge.textContent = 'Local Only';
+                    return;
+                }
+                if (!window.pyodideSecurityInstance) {
+                    loadingOverlay.style.display = 'flex';
+                    statusBadge.textContent = 'Loading...';
+                    loadingText.textContent = 'Starting Python...';
+                    progressBar.style.width = '30%';
+                    try {
+                        window.pyodideSecurityInstance = await getPyodide();
+                        progressBar.style.width = '100%';
+                        loadingText.textContent = 'Ready!';
+                    } catch (err) {
+                        output.classList.add('error');
+                        output.textContent = 'Failed to load Python: ' + err.message;
+                        loadingOverlay.style.display = 'none';
+                        return;
+                    }
+                    loadingOverlay.style.display = 'none';
+                    statusBadge.textContent = 'Ready';
+                    statusBadge.classList.add('ready');
+                }
+                statusBadge.textContent = 'Running...';
+                runBtn.disabled = true;
+                try {
+                    const py = window.pyodideSecurityInstance;
+                    let stdoutContent = '';
+                    py.setStdout({
+                        batched: (str) => {
+                            stdoutContent += str + '\n';
+                            output.textContent = stdoutContent;
+                        }
+                    });
+                    await py.runPythonAsync(code);
+                    output.classList.add('success');
+                    statusBadge.textContent = 'Done';
+                    statusBadge.classList.add('ready');
+                    if (! stdoutContent) {
+                        output.textContent = '(Executed successfully, no output)';
+                    }
+                } catch (err) {
+                    output.classList.add('error');
+                    output.textContent = err.message;
+                    statusBadge.textContent = 'Error';
+                    statusBadge.classList.remove('ready');
+                } finally {
+                    runBtn.disabled = false;
+                }
+            });
+            resetBtn.addEventListener('click', () => {
+                block.textContent = originalCode;
+                if (window.hljs) 
+                    hljs.highlightElement(block);
+                
+                output.classList.remove('active', 'error', 'success');
+                statusBadge.textContent = '';
+            });
+        });
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSecurityRunners);
+    } else {
+        initSecurityRunners();
+    }
+})();</script>

@@ -1,0 +1,32 @@
+{% set currentTutorial = page.url | getTutorialName %}
+
+<div class="max-w-4xl mx-auto py-10 flex">
+  {% if isTutorial %}
+  {% include "sidebar.njk" %}
+  {% endif %}
+  <main class="w-12/12 pb-10 px-4 {{ 'md:w-9/12 tutorial' if isTutorial else 'md:w-12/12' }}">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
+         crossorigin="anonymous"></script>
+    <!-- Iklan Belajarpython Okt 2024 -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2371526032008656"
+         data-ad-slot="5950576158"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <br/>
+    <h1 class="text-primary-500 font-medium text-3xl mb-3">{{ title }}</h1>
+    {{ content | safe }}
+  </main>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2371526032008656"
+    crossorigin="anonymous"></script>
+  <!-- Iklan manual content belajarpython -->
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2371526032008656" data-ad-slot="4149104089"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
