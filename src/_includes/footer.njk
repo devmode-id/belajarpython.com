@@ -1,9 +1,16 @@
 <footer class="bg-slate-300 py-4">
     <div class="flex justify-center">
         <div class="flex gap-4 text-sm font-bold uppercase text-slate-600 md:gap-6">
-            <a href="{{ '/en/' if lang == 'en' else '/' }}">Home</a>
-            <a href="/about">About</a>
-            <a target="_blank" href="https://goo.gl/forms/ZPyZgIagXcanYwzH2">Contact</a>
+            <a
+                class="cursor-pointer transition duration-200 hover:text-primary-500 hover:underline focus:outline-none focus:ring-4 focus:ring-blue-500"
+                href="{{ '/en/' if lang == 'en' else '/' }}">Home</a>
+            <a
+                class="cursor-pointer transition duration-200 hover:text-primary-500 hover:underline focus:outline-none focus:ring-4 focus:ring-blue-500"
+                href="/about">About</a>
+            <a
+                class="cursor-pointer transition duration-200 hover:text-primary-500 hover:underline focus:outline-none focus:ring-4 focus:ring-blue-500"
+                target="_blank"
+                href="https://goo.gl/forms/ZPyZgIagXcanYwzH2">Contact</a>
         </div>
     </div>
 </footer>
