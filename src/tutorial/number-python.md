@@ -74,7 +74,7 @@ Nomor acak digunakan untuk aplikasi permainan, simulasi, pengujian, keamanan, da
 | Random    | `random()`                          | A random float r, sehingga 0 kurang dari atau sama dengan r dan r kurang dari 1                                                                                       |
 | Seed      | `seed([x])`                         | Menetapkan nilai awal integer yang digunakan dalam menghasilkan bilangan acak. Panggil fungsi ini sebelum memanggil fungsi modul acak lainnya. Tidak ada pengembalian |
 | Shuffle   | `shuffle(lst)`                      | Mengacak daftar dari daftar di tempat. Tidak ada pengembalian                                                                                                         |
-| Floor     | `floor(x)`                          | The floor of x: the largest integer not greater than x.                                                                                                               |
+| Floor     | `floor(x)`                          | The floor of x: mengubah nilai x menjadi bilangan bulat dengan cara membulatkan ke bawah.                                                                             |
 | Uniform   | `uniform(x, y)`                     | Sebuah float acak r, sedemikian rupa sehingga x kurang dari atau sama dengan r dan r kurang dari y.                                                                   |
 
 ### Fungsi Trigonometri Python
